@@ -1,0 +1,57 @@
+﻿@page "/Recipes"
+
+@using DataAccesLib
+@using DataAccesLib.Models
+
+@inject IRecipeData _db 
+
+
+
+<h1>Resept: PIX-318</h1>
+
+<h4>Resepttabell for PIX</h4>
+
+<input placeholder="Enter your text" @bind-value="@value" />
+
+@if (recipes is null)
+    {
+    <p><em>Loading....</em></p>
+    }
+else
+    {
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>batch</th>
+                <th>id</th>
+                <th>hcl</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var recipe in recipes.Take(2))
+                {
+            <tr>
+                <td>@recipe.BatchNr</td>
+                <td>@recipe.ID</td>
+                <td>@recipe.HCL</td>
+            </tr>
+                }
+        </tbody>
+    </table>
+
+    }
+
+
+
+@code {
+
+    private string value { get; set; }
+    private List<RecipeModels> recipes;
+
+    protected override async Task OnInitializedAsync()
+    {
+        string sql = "select * from recipe";
+        recipes = await _db.GetRecipes(sql);
+
+    }
+}

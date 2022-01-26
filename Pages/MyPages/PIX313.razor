@@ -1,0 +1,123 @@
+﻿@page "/PIX-313"
+@using Microsoft.AspNetCore.Components.Web
+
+
+@using KemiraRapportering.Data
+@inject WeatherForecastService ForecastService
+
+<h1>Resept: PIX-318</h1>
+
+<p>Resepttabell for PIX-318</p>
+
+@if ("temp" == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+
+{
+
+<div class="btn-group" role="toolbar" aria-label="Basic example">
+    <div class="dropdown show">
+        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            @BatchDrop
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item">Batch1</a>
+            <a class="dropdown-item" href="#">Batch2</a>
+            <a class="dropdown-item" href="#">Batch3</a>
+        </div>
+    </div>
+
+    <div class="dropdown show">
+        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dato
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item">23.01.2022</a>
+            <a class="dropdown-item">24.01.2022</a>
+            <a class="dropdown-item" href="#">25.01.2022</a>
+        </div>
+
+    </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Batch</th>
+                <th>Dato</th>
+                <th>SAP</th>
+                <th>ID</th>
+                <th>Reaktor</th>
+                <th>Satsvolum</th>
+                <th>Forventet Fe-Kons</th>
+                <th>Ønsket Fe-Kons</th>
+                <th>Ønsket Fri Syre</th>
+                <th>Ønsket Fe2+</th>
+                <th>HCLT</th>
+                <th>FMD</th>
+                <th>Vann, overordnet</th>
+                <th>Varmtvann</th>
+                <th>SpillVann</th>
+                <th>ScrubberVæske</th>
+                <th>HCL</th>
+                <th>Jernsulfat</th>
+                <th>Temperatur</th>
+                <th>Modningstid</th>
+                <th>Dampventil</th>
+                <th>Etterspyling</th>
+                <th>O2 Trykk</th>
+                <th>O2 Reaksjonstid</th>
+                <th>Delta Temp</th>
+                <th>Analysert Fe3+</th>
+                <th>Analysert Fe-tot</th>
+                <th>Vann Sluttjustering</th>
+                <th>VMV for sluttjustering</th>
+                <th>Tot. til lager</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>@batch</td>
+                <th>@dato</th>
+                <td>@SAP</td>
+                <td>@ID</td>
+                <td>@Reaktor</td>
+                <td>@Satsv</td>
+                <td>@ForvFeKonm</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    }
+
+    @code {
+    public int batch = 1;
+    public int SAP = 2;
+    public int ID = 3;
+    public int Reaktor = 4;
+    public double Satsv = 5.5;
+    public string dato = "20.01.22";
+    public double ForvFeKonm = 6.6;
+    public double OnskFeKons = 7.7;
+
+
+    public string BatchDrop = "Batch";
+
+
+
+
+
+    //private WeatherForecast[] forecasts;
+
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+    //}
+
+    }
