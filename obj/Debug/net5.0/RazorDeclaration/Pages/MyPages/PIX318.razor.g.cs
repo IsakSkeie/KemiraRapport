@@ -105,40 +105,50 @@ using DataAccesLib.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 149 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
-       
+#line 156 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
+           
 
 
-    private string value { get; set; }
-    private string batch { get; set; }
+        private string value { get; set; }
+        private string batch { get; set; }
 
-    private List<RecipeModels> recipes;
+        private List<RecipeModels> recipes;
 
-    public string dropBatch = "Batch";
-    private string dropDate = "Dato";
-    private string dropID = "ID";
-
-
-    Queries query = new Queries();
-
-    public void dropChange()
-    {
-        DropContent.btnBatch = "hello";
-
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-        string sql = query.pix318();
+        public string dropBatch = "Batch";
+        private string dropDate = "Dato";
+        private string dropID = "ID";
 
 
-        recipes = await _db.GetRecipes(sql);
-        RecipeRead.Table = recipes;
+
+        Queries query = new Queries();
 
 
-    }
+
+        protected override async Task OnInitializedAsync()
+        {
+            string sql = query.pix318();
+            recipes = await _db.GetRecipes(sql);
+            RecipeRead.Table = recipes;
+            TableUpdate();
+        }
+
+        public async void TableUpdate()
+        {
+
+            await InvokeAsync(StateHasChanged);
+        }
+
+        public async Task resetTable()
+        {
+
+            string sql = "SELECT top (7) * FROM recipe";
+            recipes =  await _db.GetRecipes(sql);
+            RecipeRead.Table = recipes;
+            Queries.TableLen = 7;
+        }
 
 
+    
 
 #line default
 #line hidden

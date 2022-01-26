@@ -105,7 +105,7 @@ using KemiraRapportering.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 99 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX313.razor"
+#line 126 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX313.razor"
            
     public int batch = 1;
     public int SAP = 2;

@@ -44,55 +44,82 @@ else
     </div>
     </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Batch</th>
-                <th>Dato</th>
-                <th>SAP</th>
-                <th>ID</th>
-                <th>Reaktor</th>
-                <th>Satsvolum</th>
-                <th>Forventet Fe-Kons</th>
-                <th>Ønsket Fe-Kons</th>
-                <th>Ønsket Fri Syre</th>
-                <th>Ønsket Fe2+</th>
-                <th>HCLT</th>
-                <th>FMD</th>
-                <th>Vann, overordnet</th>
-                <th>Varmtvann</th>
-                <th>SpillVann</th>
-                <th>ScrubberVæske</th>
-                <th>HCL</th>
-                <th>Jernsulfat</th>
-                <th>Temperatur</th>
-                <th>Modningstid</th>
-                <th>Dampventil</th>
-                <th>Etterspyling</th>
-                <th>O2 Trykk</th>
-                <th>O2 Reaksjonstid</th>
-                <th>Delta Temp</th>
-                <th>Analysert Fe3+</th>
-                <th>Analysert Fe-tot</th>
-                <th>Vann Sluttjustering</th>
-                <th>VMV for sluttjustering</th>
-                <th>Tot. til lager</th>
-            </tr>
-        </thead>
-        <tbody>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>batch</th>
+            <th>Dato</th>
+            <th>SAP</th>
+            <th>ID</th>
+            <th>Reaktor</th>
+            <th>Satsvolum</th>
+            <th>Forventet Fe</th>
+            <th>Ønsket Fe</th>
+            <th>Ønsket Syre</th>
+            <th>Ønsket Fe2</th>
+            <th>HCL Type</th>
+            <th>Forv. Damp</th>
+            <th>Vann Overordnet</th>
+            <th>VarmtVann</th>
+            <th>SpillVann</th>
+            <th>ScrubberVæske</th>
+            <th>HCL</th>
+            <th>Jernsulfat</th>
+            <th>Temperatur</th>
+            <th>Modningstid</th>
+            <th>DampVentil</th>
+            <th>Etterspyling</th>
+            <th>O2 Trykk</th>
+            <th>O2 Reaksjonstid</th>
+            <th>DeltaTemp</th>
+            <th>Analysert Fe3</th>
+            <th>Analysert FeTot</th>
+            <th>VannSluttjustering</th>
+            <th>Virkelig mengde vann</th>
+            <th>Tot til Lager</th>
 
-            <tr>
-                <td>@batch</td>
-                <th>@dato</th>
-                <td>@SAP</td>
-                <td>@ID</td>
-                <td>@Reaktor</td>
-                <td>@Satsv</td>
-                <td>@ForvFeKonm</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var recipe in RecipeRead.Table)
+        {
+            <tr @key="recipe">
+                <td>@recipe.BatchNr</td>
+                <td>@recipe.Dato</td>
+                <td>@recipe.SAP</td>
+                <td>@recipe.ID</td>
+                <td>@recipe.Reaktor</td>
+                <td>@recipe.SatsVolum</td>
+                <td>@recipe.ForvFe</td>
+                <td>@recipe.OnsketFe</td>
+                <td>@recipe.OnsketSyre</td>
+                <td>@recipe.OnsketFe2</td>
+                <td>@recipe.HCLType</td>
+                <td>@recipe.ForvDamp</td>
+                <td>@recipe.VannOverordnet</td>
+                <td>@recipe.VarmtVann</td>
+                <td>@recipe.SpillVann</td>
+                <td>@recipe.ScrubberVaeske</td>
+                <th>@recipe.HCL</th>
+                <th>@recipe.Jernsulfat</th>
+                <th>@recipe.Temp</th>
+                <th>@recipe.Modningstid</th>
+                <th>@recipe.DampVentil</th>
+                <th>@recipe.Etterspyling</th>
+                <th>@recipe.O2Trykk</th>
+                <th>@recipe.O2Reaksjonstid</th>
+                <th>@recipe.DeltaTemp</th>
+                <th>@recipe.AnalysertFe3</th>
+                <th>@recipe.AnalysertFeTot</th>
+                <th>@recipe.VannSluttJustering</th>
+                <th>@recipe.VirkeligMVann</th>
+                <th>@recipe.TotTilLager</th>
+
 
             </tr>
-        </tbody>
-    </table>
+        }
+    </tbody>
+</table>
 
     }
 

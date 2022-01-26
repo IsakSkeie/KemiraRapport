@@ -28,7 +28,7 @@ else
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
             @foreach(int b in DropContent.BatchDrop())
             {
-            <a class="dropdown-item" @onclick="() => dropChange()">@b</a>
+            <a class="dropdown-item" @onclick="() => { DropContent.btnBatchLabel(b); TableUpdate();}">@b</a>
             }
         </div>
     </div>
@@ -41,7 +41,7 @@ else
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
             @foreach(string d in DropContent.DatoDrop())
             {
-            <a class="dropdown-item" @onclick="() => DropContent.btnBatchLabel(d)">@d</a>
+            <a class="dropdown-item" @onclick="() => DropContent.btnDatoLabel(d)">@d</a>
             }
         </div>
     </div>
@@ -55,15 +55,15 @@ else
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink3">
             @foreach(int id in DropContent.IdDrop())
             {
-            <a class="dropdown-item">@id</a>
+            <a class="dropdown-item" @onclick ="() =>DropContent.btnIDLabel(id.ToString()) ">@id</a>
             }
         </div>
 
     </div>
 
+    </div>
 
 
-</div>
 <input placeholder="Søk" @bind-value="@value" class="m-2" />
 <table class="table table-striped">
     <thead>
@@ -104,7 +104,7 @@ else
     <tbody>
         @foreach (var recipe in RecipeRead.Table)
             {
-        <tr>
+        <tr @key ="recipe">
             <td>@recipe.BatchNr</td>
             <td>@recipe.Dato</td>
             <td>@recipe.SAP</td>
@@ -141,42 +141,58 @@ else
             }
     </tbody>
 </table>
+    
+    
+
 <button type="button" class="btn btn-success btn-lg pull-right">Eksporter til Excel</button>
-}
 
-
-
-@code {
-
-
-    private string value { get; set; }
-    private string batch { get; set; }
-
-    private List<RecipeModels> recipes;
-
-    public string dropBatch = "Batch";
-    private string dropDate = "Dato";
-    private string dropID = "ID";
-
-
-    Queries query = new Queries();
-
-    public void dropChange()
-    {
-        DropContent.btnBatch = "hello";
-
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-        string sql = query.pix318();
-
-
-        recipes = await _db.GetRecipes(sql);
-        RecipeRead.Table = recipes;
-
-
+<div class="btn-group  text-right" role="group" aria-label="Reset" >
+    <button type="button" class="btn btn-secondary btn-lg" @onclick="() => resetTable()">Reset Tabell</button>
+</div>
     }
 
 
-}
+
+    @code {
+
+
+        private string value { get; set; }
+        private string batch { get; set; }
+
+        private List<RecipeModels> recipes;
+
+        public string dropBatch = "Batch";
+        private string dropDate = "Dato";
+        private string dropID = "ID";
+
+
+
+        Queries query = new Queries();
+
+
+
+        protected override async Task OnInitializedAsync()
+        {
+            string sql = query.pix318();
+            recipes = await _db.GetRecipes(sql);
+            RecipeRead.Table = recipes;
+            TableUpdate();
+        }
+
+        public async void TableUpdate()
+        {
+
+            await InvokeAsync(StateHasChanged);
+        }
+
+        public async Task resetTable()
+        {
+
+            string sql = "SELECT top (7) * FROM recipe";
+            recipes =  await _db.GetRecipes(sql);
+            RecipeRead.Table = recipes;
+            Queries.TableLen = 7;
+        }
+
+
+    }
