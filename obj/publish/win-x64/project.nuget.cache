@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wSE8JJRACU2Dn0BSEkCVAtDLndOZnUXUgcLecEH0eSC6iU4O6fD0o5ETWX+nExEdN26HZgwLBh10cX71jHCV+g==",
+  "dgSpecHash": "Fz0+fdpap9oW4O4HTnAWdnr9O61tEdl7gY2v2fxDkXA0tpLQqRC08/sjEODh2ZnRPpxgAmiQnbdmXJJUc2r2Mg==",
   "success": true,
   "projectFilePath": "C:\\Users\\isak.skeie\\source\\repos\\KemiraRapportering\\KemiraRapportering.csproj",
   "expectedPackageFiles": [
@@ -16,7 +16,10 @@
     "C:\\Users\\isak.skeie\\.nuget\\packages\\system.data.sqlclient\\4.8.3\\system.data.sqlclient.4.8.3.nupkg.sha512",
     "C:\\Users\\isak.skeie\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.2-mauipre.1.22054.8\\system.runtime.compilerservices.unsafe.6.0.2-mauipre.1.22054.8.nupkg.sha512",
     "C:\\Users\\isak.skeie\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\isak.skeie\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+    "C:\\Users\\isak.skeie\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\isak.skeie\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.13\\microsoft.netcore.app.runtime.win-x64.5.0.13.nupkg.sha512",
+    "C:\\Users\\isak.skeie\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.13\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.13.nupkg.sha512",
+    "C:\\Users\\isak.skeie\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.13\\microsoft.aspnetcore.app.runtime.win-x64.5.0.13.nupkg.sha512"
   ],
   "logs": []
 }
