@@ -105,12 +105,15 @@ using DataAccesLib.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 156 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
+#line 163 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
            
 
 
         private string value { get; set; }
+    
         private string batch { get; set; }
+
+        private int TableLen = 7;
 
         private List<RecipeModels> recipes;
 
@@ -140,11 +143,17 @@ using DataAccesLib.Models;
 
         public async Task resetTable()
         {
+             
 
-            string sql = "SELECT top (7) * FROM recipe";
+            string sql = $"SELECT top (7) * FROM recipe";
             recipes =  await _db.GetRecipes(sql);
             RecipeRead.Table = recipes;
-            Queries.TableLen = 7;
+            Queries.TableLen = TableLen;
+        }
+
+        public void ResetDropDown()
+        {
+            StateHasChanged();
         }
 
 

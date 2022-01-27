@@ -19,13 +19,13 @@ else
 {
 
 
-<div class="btn-group" role="group" aria-label="Basic example">
+<div class="btn-group" role="group" aria-label="Basic example" >
     <div class="dropdown show">
-        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @onchange ="ResetDropDown">
             @DropContent.btnBatch
         </a>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink11">
             @foreach(int b in DropContent.BatchDrop())
             {
             <a class="dropdown-item" @onclick="() => { DropContent.btnBatchLabel(b); TableUpdate();}">@b</a>
@@ -34,11 +34,11 @@ else
     </div>
 
     <div class="dropdown show">
-        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="btn btn-primary dropdown-toggle mx-2" href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             @DropContent.btnDato
         </a>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink22">
             @foreach(string d in DropContent.DatoDrop())
             {
             <a class="dropdown-item" @onclick="() => DropContent.btnDatoLabel(d)">@d</a>
@@ -48,11 +48,11 @@ else
 
 
     <div class="dropdown show">
-        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             @DropContent.btnID
         </a>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink3">
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink33">
             @foreach(int id in DropContent.IdDrop())
             {
             <a class="dropdown-item" @onclick ="() =>DropContent.btnIDLabel(id.ToString()) ">@id</a>
@@ -144,11 +144,18 @@ else
     
     
 
-<button type="button" class="btn btn-success btn-lg pull-right">Eksporter til Excel</button>
 
-<div class="btn-group  text-right" role="group" aria-label="Reset" >
-    <button type="button" class="btn btn-secondary btn-lg" @onclick="() => resetTable()">Reset Tabell</button>
+
+
+
+
+<div class="btn-group  text-rt" role="group" aria-label="Reset">
+    <button type="button" class="btn btn-success btn-lg mx-3">Eksporter til Excel</button>
+    <button type="button" class="btn btn-secondary btn-lg text-right" @onclick="() => resetTable()">Reset Tabell</button>
+  
+
 </div>
+
     }
 
 
@@ -157,7 +164,10 @@ else
 
 
         private string value { get; set; }
+    
         private string batch { get; set; }
+
+        private int TableLen = 7;
 
         private List<RecipeModels> recipes;
 
@@ -187,11 +197,18 @@ else
 
         public async Task resetTable()
         {
+             
 
-            string sql = "SELECT top (7) * FROM recipe";
+            string sql = $"SELECT top (7) * FROM recipe";
             recipes =  await _db.GetRecipes(sql);
             RecipeRead.Table = recipes;
-            Queries.TableLen = 7;
+            Queries.TableLen = TableLen;
+            
+        }
+
+        public void ResetDropDown()
+        {
+            StateHasChanged();
         }
 
 
