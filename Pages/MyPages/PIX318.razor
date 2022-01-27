@@ -64,7 +64,7 @@ else
     </div>
 
 
-<input placeholder="Søk" @bind-value="@value" class="m-2" />
+<input placeholder="Søk" @bind-value="@value"  class="m-2" />
 <table class="table table-striped">
     <thead>
         <tr>
@@ -164,7 +164,7 @@ else
 
 
         private string value { get; set; }
-    
+        
         private string batch { get; set; }
 
         private int TableLen = 7;
@@ -178,9 +178,8 @@ else
 
 
         Queries query = new Queries();
-
-
-
+     
+   
         protected override async Task OnInitializedAsync()
         {
             string sql = query.pix318();
@@ -192,18 +191,20 @@ else
         public async void TableUpdate()
         {
 
+            string sql = $"SELECT top (1000) * FROM recipe";
+            RecipeSearch.Table = await _db.GetRecipes(sql);
             await InvokeAsync(StateHasChanged);
         }
 
         public async Task resetTable()
         {
-             
 
-            string sql = $"SELECT top (7) * FROM recipe";
+            
+            string sql = $"SELECT top ({ Queries.TableLen }) * FROM recipe";
             recipes =  await _db.GetRecipes(sql);
             RecipeRead.Table = recipes;
             Queries.TableLen = TableLen;
-            
+
         }
 
         public void ResetDropDown()
