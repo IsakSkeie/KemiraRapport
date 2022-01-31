@@ -90,7 +90,14 @@ using Microsoft.AspNetCore.Components.Web;
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX313.razor"
+#line 3 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX313.razor"
+using BlazorDateRangePicker;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX313.razor"
 using KemiraRapportering.Data;
 
 #line default
@@ -105,8 +112,8 @@ using KemiraRapportering.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 126 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX313.razor"
-           
+#line 129 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX313.razor"
+       
     public int batch = 1;
     public int SAP = 2;
     public int ID = 3;
@@ -130,7 +137,6 @@ using KemiraRapportering.Data;
     //    forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
     //}
 
-    
 
 #line default
 #line hidden

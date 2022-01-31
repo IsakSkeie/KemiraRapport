@@ -76,3 +76,4 @@ C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Debug\net5.0\Razor\Pages
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\PIX313.razor.g.cs
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\PIX318.razor.g.cs
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\Recipe.razor.g.cs
+C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Debug\net5.0\BlazorDateRangePicker.dll

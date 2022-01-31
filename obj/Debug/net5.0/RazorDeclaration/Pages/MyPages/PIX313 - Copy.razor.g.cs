@@ -48,13 +48,6 @@ using Microsoft.AspNetCore.Components.Routing;
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
-using Microsoft.AspNetCore.Components.Web;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 7 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
@@ -83,28 +76,28 @@ using KemiraRapportering.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
+#line 11 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
 using DataAccesLib;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
-using DataAccesLib.Models;
+#line 2 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX313 - Copy.razor"
+using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
-using BlazorDateRangePicker;
+#line 5 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX313 - Copy.razor"
+using KemiraRapportering.Data;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/PIX-318")]
-    public partial class PIX318 : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/PIX-313")]
+    public partial class PIX313___Copy : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -112,73 +105,37 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 168 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
-       
+#line 126 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX313 - Copy.razor"
+           
+    public int batch = 1;
+    public int SAP = 2;
+    public int ID = 3;
+    public int Reaktor = 4;
+    public double Satsv = 5.5;
+    public string dato = "20.01.22";
+    public double ForvFeKonm = 6.6;
+    public double OnskFeKons = 7.7;
 
 
-    private string value { get; set; }
-
-    private string batch { get; set; }
-
-    private int TableLen = 7;
-
-    private List<RecipeModels> recipes;
-
-    public string dropBatch = "Batch";
-    private string dropDate = "Dato";
-    private string dropID = "ID";
-
-    DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
-    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
+    public string BatchDrop = "Batch";
 
 
-    public void OnRangeSelect(DateRange range)
-        {
-        string start = range.Start.ToString();
-        
-        }
-
-    Queries query = new Queries();
 
 
-    protected override async Task OnInitializedAsync()
-    {
-        string sql = query.pix318();
-        recipes = await _db.GetRecipes(sql);
-        RecipeRead.Table = recipes;
-        TableUpdate();
-    }
 
-    public async void TableUpdate()
-    {
+    //private WeatherForecast[] forecasts;
 
-        string sql = $"SELECT top (1000) * FROM recipe";
-        RecipeSearch.Table = await _db.GetRecipes(sql);
-        await InvokeAsync(StateHasChanged);
-    }
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+    //}
 
-    public async Task resetTable()
-    {
-
-
-        string sql = $"SELECT top ({ Queries.TableLen }) * FROM recipe";
-        recipes = await _db.GetRecipes(sql);
-        RecipeRead.Table = recipes;
-        Queries.TableLen = TableLen;
-
-    }
-
-    public void ResetDropDown()
-    {
-        StateHasChanged();
-    }
-
-
+    
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IRecipeData _db { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private WeatherForecastService ForecastService { get; set; }
     }
 }
 #pragma warning restore 1591

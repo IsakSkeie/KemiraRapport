@@ -2,6 +2,7 @@
 
 @using DataAccesLib
 @using DataAccesLib.Models
+@using BlazorDateRangePicker;
 
 @inject IRecipeData _db
 
@@ -13,204 +14,216 @@
 
 @if (recipes is null)
 {
-<p><em>Loading....</em></p>
+    <p><em>Loading....</em></p>
 }
 else
 {
 
 
-<div class="btn-group" role="group" aria-label="Basic example" >
-    <div class="dropdown show">
-        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @onchange ="ResetDropDown">
-            @DropContent.btnBatch
-        </a>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <div class="dropdown show">
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @onchange="ResetDropDown">
+                @DropContent.btnBatch
+            </a>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink11">
-            @foreach(int b in DropContent.BatchDrop())
-            {
-            <a class="dropdown-item" @onclick="() => { DropContent.btnBatchLabel(b); TableUpdate();}">@b</a>
-            }
-        </div>
-    </div>
-
-    <div class="dropdown show">
-        <a class="btn btn-primary dropdown-toggle mx-2" href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            @DropContent.btnDato
-        </a>
-
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink22">
-            @foreach(string d in DropContent.DatoDrop())
-            {
-            <a class="dropdown-item" @onclick="() => DropContent.btnDatoLabel(d)">@d</a>
-            }
-        </div>
-    </div>
-
-
-    <div class="dropdown show">
-        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            @DropContent.btnID
-        </a>
-
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink33">
-            @foreach(int id in DropContent.IdDrop())
-            {
-            <a class="dropdown-item" @onclick ="() =>DropContent.btnIDLabel(id.ToString()) ">@id</a>
-            }
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink11">
+                @foreach (int b in DropContent.BatchDrop())
+                {
+                    <a class="dropdown-item" @onclick="() => { DropContent.btnBatchLabel(b); TableUpdate();}">@b</a>
+                }
+            </div>
         </div>
 
-    </div>
+        <div class="dropdown show">
+            <a class="btn btn-primary dropdown-toggle mx-2" href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                @DropContent.btnDato
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink22">
+                @foreach (string d in DropContent.DatoDrop())
+                {
+                    <a class="dropdown-item" @onclick="() => DropContent.btnDatoLabel(d)">@d</a>
+                }
+            </div>
+        </div>
+
+
+        <div class="dropdown show">
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                @DropContent.btnID
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink33">
+                @foreach (int id in DropContent.IdDrop())
+                {
+                    <a class="dropdown-item" @onclick="() =>DropContent.btnIDLabel(id.ToString()) ">@id</a>
+                }
+            </div>
+
+        </div>
 
     </div>
 
-
-<input placeholder="Søk" @bind-value="@value"  class="m-2" />
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>batch</th>
-            <th>Dato</th>
-            <th>SAP</th>
-            <th>ID</th>
-            <th>Reaktor</th>
-            <th>Satsvolum</th>
-            <th>Forventet Fe</th>
-            <th>Ønsket Fe</th>
-            <th>Ønsket Syre</th>
-            <th>Ønsket Fe2</th>
-            <th>HCL Type</th>
-            <th>Forv. Damp</th>
-            <th>Vann Overordnet</th>
-            <th>VarmtVann</th>
-            <th>SpillVann</th>
-            <th>ScrubberVæske</th>
-            <th>HCL</th>
-            <th>Jernsulfat</th>
-            <th>Temperatur</th>
-            <th>Modningstid</th>
-            <th>DampVentil</th>
-            <th>Etterspyling</th>
-            <th>O2 Trykk</th>
-            <th>O2 Reaksjonstid</th>
-            <th>DeltaTemp</th>
-            <th>Analysert Fe3</th>
-            <th>Analysert FeTot</th>
-            <th>VannSluttjustering</th>
-            <th>Virkelig mengde vann</th>
-            <th>Tot til Lager</th>
-
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var recipe in RecipeRead.Table)
-            {
-        <tr @key ="recipe">
-            <td>@recipe.BatchNr</td>
-            <td>@recipe.Dato</td>
-            <td>@recipe.SAP</td>
-            <td>@recipe.ID</td>
-            <td>@recipe.Reaktor</td>
-            <td>@recipe.SatsVolum</td>
-            <td>@recipe.ForvFe</td>
-            <td>@recipe.OnsketFe</td>
-            <td>@recipe.OnsketSyre</td>
-            <td>@recipe.OnsketFe2</td>
-            <td>@recipe.HCLType</td>
-            <td>@recipe.ForvDamp</td>
-            <td>@recipe.VannOverordnet</td>
-            <td>@recipe.VarmtVann</td>
-            <td>@recipe.SpillVann</td>
-            <td>@recipe.ScrubberVaeske</td>
-            <th>@recipe.HCL</th>
-            <th>@recipe.Jernsulfat</th>
-            <th>@recipe.Temp</th>
-            <th>@recipe.Modningstid</th>
-            <th>@recipe.DampVentil</th>
-            <th>@recipe.Etterspyling</th>
-            <th>@recipe.O2Trykk</th>
-            <th>@recipe.O2Reaksjonstid</th>
-            <th>@recipe.DeltaTemp</th>
-            <th>@recipe.AnalysertFe3</th>
-            <th>@recipe.AnalysertFeTot</th>
-            <th>@recipe.VannSluttJustering</th>
-            <th>@recipe.VirkeligMVann</th>
-            <th>@recipe.TotTilLager</th>
-
-
-        </tr>
-            }
-    </tbody>
-</table>
-    
-    
-
-
-
-
-
-
-<div class="btn-group  text-rt" role="group" aria-label="Reset">
-    <button type="button" class="btn btn-success btn-lg mx-3">Eksporter til Excel</button>
-    <button type="button" class="btn btn-secondary btn-lg text-right" @onclick="() => resetTable()">Reset Tabell</button>
-  
-
-</div>
-
-    }
-
-
-
-    @code {
-
-
-        private string value { get; set; }
+    <div class="btn-group mx-3">
+        <DateRangePicker placeholder ="Velg Dato" @bind-StartDate="StartDate" @bind-EndDate ="EndDate" OnRangeSelect="OnRangeSelect">
+      
+        </DateRangePicker> 
         
-        private string batch { get; set; }
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>batch</th>
+                <th>Dato</th>
+                <th>SAP</th>
+                <th>ID</th>
+                <th>Reaktor</th>
+                <th>Satsvolum</th>
+                <th>Forventet Fe</th>
+                <th>Ønsket Fe</th>
+                <th>Ønsket Syre</th>
+                <th>Ønsket Fe2</th>
+                <th>HCL Type</th>
+                <th>Forv. Damp</th>
+                <th>Vann Overordnet</th>
+                <th>VarmtVann</th>
+                <th>SpillVann</th>
+                <th>ScrubberVæske</th>
+                <th>HCL</th>
+                <th>Jernsulfat</th>
+                <th>Temperatur</th>
+                <th>Modningstid</th>
+                <th>DampVentil</th>
+                <th>Etterspyling</th>
+                <th>O2 Trykk</th>
+                <th>O2 Reaksjonstid</th>
+                <th>DeltaTemp</th>
+                <th>Analysert Fe3</th>
+                <th>Analysert FeTot</th>
+                <th>VannSluttjustering</th>
+                <th>Virkelig mengde vann</th>
+                <th>Tot til Lager</th>
 
-        private int TableLen = 7;
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var recipe in RecipeRead.Table)
+            {
+                <tr @key="recipe">
+                    <td>@recipe.BatchNr</td>
+                    <td>@recipe.Dato</td>
+                    <td>@recipe.SAP</td>
+                    <td>@recipe.ID</td>
+                    <td>@recipe.Reaktor</td>
+                    <td>@recipe.SatsVolum</td>
+                    <td>@recipe.ForvFe</td>
+                    <td>@recipe.OnsketFe</td>
+                    <td>@recipe.OnsketSyre</td>
+                    <td>@recipe.OnsketFe2</td>
+                    <td>@recipe.HCLType</td>
+                    <td>@recipe.ForvDamp</td>
+                    <td>@recipe.VannOverordnet</td>
+                    <td>@recipe.VarmtVann</td>
+                    <td>@recipe.SpillVann</td>
+                    <td>@recipe.ScrubberVaeske</td>
+                    <th>@recipe.HCL</th>
+                    <th>@recipe.Jernsulfat</th>
+                    <th>@recipe.Temp</th>
+                    <th>@recipe.Modningstid</th>
+                    <th>@recipe.DampVentil</th>
+                    <th>@recipe.Etterspyling</th>
+                    <th>@recipe.O2Trykk</th>
+                    <th>@recipe.O2Reaksjonstid</th>
+                    <th>@recipe.DeltaTemp</th>
+                    <th>@recipe.AnalysertFe3</th>
+                    <th>@recipe.AnalysertFeTot</th>
+                    <th>@recipe.VannSluttJustering</th>
+                    <th>@recipe.VirkeligMVann</th>
+                    <th>@recipe.TotTilLager</th>
 
-        private List<RecipeModels> recipes;
 
-        public string dropBatch = "Batch";
-        private string dropDate = "Dato";
-        private string dropID = "ID";
+                </tr>
+            }
+        </tbody>
+    </table>
 
 
 
-        Queries query = new Queries();
-     
-   
-        protected override async Task OnInitializedAsync()
+
+
+
+
+
+    <div class="btn-group  text-rt" role="group" aria-label="Reset">
+        <button type="button" class="btn btn-success btn-lg mx-3">Eksporter til Excel</button>
+        <button type="button" class="btn btn-secondary btn-lg text-right" @onclick="() => resetTable()">Reset Tabell</button>
+
+
+    </div>
+
+}
+
+
+
+@code {
+
+
+    private string value { get; set; }
+
+    private string batch { get; set; }
+
+    private int TableLen = 7;
+
+    private List<RecipeModels> recipes;
+
+    public string dropBatch = "Batch";
+    private string dropDate = "Dato";
+    private string dropID = "ID";
+
+    DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
+    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
+
+
+    public void OnRangeSelect(DateRange range)
         {
-            string sql = query.pix318();
-            recipes = await _db.GetRecipes(sql);
-            RecipeRead.Table = recipes;
-            TableUpdate();
+        string start = range.Start.ToString();
+        
         }
 
-        public async void TableUpdate()
-        {
+    Queries query = new Queries();
 
-            string sql = $"SELECT top (1000) * FROM recipe";
-            RecipeSearch.Table = await _db.GetRecipes(sql);
-            await InvokeAsync(StateHasChanged);
-        }
 
-        public async Task resetTable()
-        {
+    protected override async Task OnInitializedAsync()
+    {
+        string sql = query.pix318();
+        recipes = await _db.GetRecipes(sql);
+        RecipeRead.Table = recipes;
+        TableUpdate();
+    }
 
-            
-            string sql = $"SELECT top ({ Queries.TableLen }) * FROM recipe";
-            recipes =  await _db.GetRecipes(sql);
-            RecipeRead.Table = recipes;
-            Queries.TableLen = TableLen;
+    public async void TableUpdate()
+    {
 
-        }
+        string sql = $"SELECT top (1000) * FROM recipe";
+        RecipeSearch.Table = await _db.GetRecipes(sql);
+        await InvokeAsync(StateHasChanged);
+    }
 
-        public void ResetDropDown()
-        {
-            StateHasChanged();
-        }
+    public async Task resetTable()
+    {
 
+
+        string sql = $"SELECT top ({ Queries.TableLen }) * FROM recipe";
+        recipes = await _db.GetRecipes(sql);
+        RecipeRead.Table = recipes;
+        Queries.TableLen = TableLen;
 
     }
+
+    public void ResetDropDown()
+    {
+        StateHasChanged();
+    }
+
+
+}

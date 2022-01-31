@@ -1,5 +1,6 @@
 ﻿@page "/PIX-313"
 @using Microsoft.AspNetCore.Components.Web
+@using BlazorDateRangePicker
 
 
 @using KemiraRapportering.Data
@@ -17,113 +18,115 @@ else
 
 {
 
-<div class="btn-group" role="toolbar" aria-label="Basic example">
-    <div class="dropdown show">
-        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            @BatchDrop
-        </a>
+    <div class="btn-group" role="toolbar" aria-label="Basic example">
+        <div class="dropdown show">
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                @BatchDrop
+            </a>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item">Batch1</a>
-            <a class="dropdown-item" href="#">Batch2</a>
-            <a class="dropdown-item" href="#">Batch3</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item">Batch1</a>
+                <a class="dropdown-item" href="#">Batch2</a>
+                <a class="dropdown-item" href="#">Batch3</a>
+            </div>
+        </div>
+
+        <div class="dropdown show">
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dato
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item">23.01.2022</a>
+                <a class="dropdown-item">24.01.2022</a>
+                <a class="dropdown-item" href="#">25.01.2022</a>
+            </div>
+
         </div>
     </div>
 
-    <div class="dropdown show">
-        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dato
-        </a>
-
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item">23.01.2022</a>
-            <a class="dropdown-item">24.01.2022</a>
-            <a class="dropdown-item" href="#">25.01.2022</a>
-        </div>
-
-    </div>
-    </div>
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>batch</th>
-            <th>Dato</th>
-            <th>SAP</th>
-            <th>ID</th>
-            <th>Reaktor</th>
-            <th>Satsvolum</th>
-            <th>Forventet Fe</th>
-            <th>Ønsket Fe</th>
-            <th>Ønsket Syre</th>
-            <th>Ønsket Fe2</th>
-            <th>HCL Type</th>
-            <th>Forv. Damp</th>
-            <th>Vann Overordnet</th>
-            <th>VarmtVann</th>
-            <th>SpillVann</th>
-            <th>ScrubberVæske</th>
-            <th>HCL</th>
-            <th>Jernsulfat</th>
-            <th>Temperatur</th>
-            <th>Modningstid</th>
-            <th>DampVentil</th>
-            <th>Etterspyling</th>
-            <th>O2 Trykk</th>
-            <th>O2 Reaksjonstid</th>
-            <th>DeltaTemp</th>
-            <th>Analysert Fe3</th>
-            <th>Analysert FeTot</th>
-            <th>VannSluttjustering</th>
-            <th>Virkelig mengde vann</th>
-            <th>Tot til Lager</th>
-
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var recipe in RecipeRead.Table)
-        {
-            <tr @key="recipe">
-                <td>@recipe.BatchNr</td>
-                <td>@recipe.Dato</td>
-                <td>@recipe.SAP</td>
-                <td>@recipe.ID</td>
-                <td>@recipe.Reaktor</td>
-                <td>@recipe.SatsVolum</td>
-                <td>@recipe.ForvFe</td>
-                <td>@recipe.OnsketFe</td>
-                <td>@recipe.OnsketSyre</td>
-                <td>@recipe.OnsketFe2</td>
-                <td>@recipe.HCLType</td>
-                <td>@recipe.ForvDamp</td>
-                <td>@recipe.VannOverordnet</td>
-                <td>@recipe.VarmtVann</td>
-                <td>@recipe.SpillVann</td>
-                <td>@recipe.ScrubberVaeske</td>
-                <th>@recipe.HCL</th>
-                <th>@recipe.Jernsulfat</th>
-                <th>@recipe.Temp</th>
-                <th>@recipe.Modningstid</th>
-                <th>@recipe.DampVentil</th>
-                <th>@recipe.Etterspyling</th>
-                <th>@recipe.O2Trykk</th>
-                <th>@recipe.O2Reaksjonstid</th>
-                <th>@recipe.DeltaTemp</th>
-                <th>@recipe.AnalysertFe3</th>
-                <th>@recipe.AnalysertFeTot</th>
-                <th>@recipe.VannSluttJustering</th>
-                <th>@recipe.VirkeligMVann</th>
-                <th>@recipe.TotTilLager</th>
-
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>batch</th>
+                <th>Dato</th>
+                <th>SAP</th>
+                <th>ID</th>
+                <th>Reaktor</th>
+                <th>Satsvolum</th>
+                <th>Forventet Fe</th>
+                <th>Ønsket Fe</th>
+                <th>Ønsket Syre</th>
+                <th>Ønsket Fe2</th>
+                <th>HCL Type</th>
+                <th>Forv. Damp</th>
+                <th>Vann Overordnet</th>
+                <th>VarmtVann</th>
+                <th>SpillVann</th>
+                <th>ScrubberVæske</th>
+                <th>HCL</th>
+                <th>Jernsulfat</th>
+                <th>Temperatur</th>
+                <th>Modningstid</th>
+                <th>DampVentil</th>
+                <th>Etterspyling</th>
+                <th>O2 Trykk</th>
+                <th>O2 Reaksjonstid</th>
+                <th>DeltaTemp</th>
+                <th>Analysert Fe3</th>
+                <th>Analysert FeTot</th>
+                <th>VannSluttjustering</th>
+                <th>Virkelig mengde vann</th>
+                <th>Tot til Lager</th>
 
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var recipe in RecipeRead.Table)
+            {
+                <tr @key="recipe">
+                    <td>@recipe.BatchNr</td>
+                    <td>@recipe.Dato</td>
+                    <td>@recipe.SAP</td>
+                    <td>@recipe.ID</td>
+                    <td>@recipe.Reaktor</td>
+                    <td>@recipe.SatsVolum</td>
+                    <td>@recipe.ForvFe</td>
+                    <td>@recipe.OnsketFe</td>
+                    <td>@recipe.OnsketSyre</td>
+                    <td>@recipe.OnsketFe2</td>
+                    <td>@recipe.HCLType</td>
+                    <td>@recipe.ForvDamp</td>
+                    <td>@recipe.VannOverordnet</td>
+                    <td>@recipe.VarmtVann</td>
+                    <td>@recipe.SpillVann</td>
+                    <td>@recipe.ScrubberVaeske</td>
+                    <th>@recipe.HCL</th>
+                    <th>@recipe.Jernsulfat</th>
+                    <th>@recipe.Temp</th>
+                    <th>@recipe.Modningstid</th>
+                    <th>@recipe.DampVentil</th>
+                    <th>@recipe.Etterspyling</th>
+                    <th>@recipe.O2Trykk</th>
+                    <th>@recipe.O2Reaksjonstid</th>
+                    <th>@recipe.DeltaTemp</th>
+                    <th>@recipe.AnalysertFe3</th>
+                    <th>@recipe.AnalysertFeTot</th>
+                    <th>@recipe.VannSluttJustering</th>
+                    <th>@recipe.VirkeligMVann</th>
+                    <th>@recipe.TotTilLager</th>
 
-    }
 
-    @code {
+                </tr>
+            }
+        </tbody>
+        <DateRangePicker  SingleDatePicker="true"/>
+
+    </table>
+
+}
+
+@code {
     public int batch = 1;
     public int SAP = 2;
     public int ID = 3;
@@ -147,4 +150,4 @@ else
     //    forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
     //}
 
-    }
+}
