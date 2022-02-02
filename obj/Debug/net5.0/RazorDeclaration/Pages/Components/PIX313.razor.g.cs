@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace KemiraRapportering
+namespace KemiraRapportering.Pages.Components
 {
     #line hidden
     using System;
@@ -48,13 +48,6 @@ using Microsoft.AspNetCore.Components.Routing;
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
-using Microsoft.AspNetCore.Components.Web;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 7 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
@@ -89,13 +82,66 @@ using DataAccesLib;
 #line default
 #line hidden
 #nullable disable
-    public partial class _Imports : System.Object
+#nullable restore
+#line 2 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\Components\PIX313.razor"
+using Microsoft.AspNetCore.Components.Web;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\Components\PIX313.razor"
+using BlazorDateRangePicker;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\Components\PIX313.razor"
+using KemiraRapportering.Data;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/PIX-313")]
+    public partial class PIX313 : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
-        protected void Execute()
+        protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 129 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\Components\PIX313.razor"
+       
+    public int batch = 1;
+    public int SAP = 2;
+    public int ID = 3;
+    public int Reaktor = 4;
+    public double Satsv = 5.5;
+    public string dato = "20.01.22";
+    public double ForvFeKonm = 6.6;
+    public double OnskFeKons = 7.7;
+
+
+    public string BatchDrop = "Batch";
+
+
+
+
+
+    //private WeatherForecast[] forecasts;
+
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+    //}
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private WeatherForecastService ForecastService { get; set; }
     }
 }
 #pragma warning restore 1591

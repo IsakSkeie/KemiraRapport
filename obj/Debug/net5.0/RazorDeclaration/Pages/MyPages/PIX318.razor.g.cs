@@ -69,14 +69,14 @@ using Microsoft.JSInterop;
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+#line 10 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
 using KemiraRapportering;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+#line 11 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
 using KemiraRapportering.Shared;
 
 #line default
@@ -112,7 +112,7 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 168 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
+#line 170 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
        
 
 
@@ -124,21 +124,28 @@ using BlazorDateRangePicker;
 
     private List<RecipeModels> recipes;
 
+    public bool[] TableSort = new bool[26];
+
     public string dropBatch = "Batch";
     private string dropDate = "Dato";
     private string dropID = "ID";
+
+
 
     DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
     DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
 
 
-    public void OnRangeSelect(DateRange range)
-        {
-        string start = range.Start.ToString();
-        
-        }
-
     Queries query = new Queries();
+
+    public void OnRangeSelect(DateRange range)
+    {
+
+        string sql = query.DateQuery(range);
+        TableUpdate();
+    }
+
+
 
 
     protected override async Task OnInitializedAsync()
@@ -152,9 +159,11 @@ using BlazorDateRangePicker;
     public async void TableUpdate()
     {
 
-        string sql = $"SELECT top (1000) * FROM recipe";
-        RecipeSearch.Table = await _db.GetRecipes(sql);
-        await InvokeAsync(StateHasChanged);
+        //string sql = $"SELECT top (1000) * FROM recipe";
+
+        recipes = await _db.GetRecipes(Queries.sql);
+        RecipeRead.Table = recipes;
+        //await InvokeAsync(StateHasChanged);
     }
 
     public async Task resetTable()
@@ -173,6 +182,10 @@ using BlazorDateRangePicker;
         StateHasChanged();
     }
 
+    public void TableSortConf(int n)
+    {
+        TableSort[n] = !TableSort[n];
+    }
 
 
 #line default

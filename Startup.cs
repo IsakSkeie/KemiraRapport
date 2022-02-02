@@ -57,6 +57,7 @@ namespace KemiraRapportering
             {
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
+                endpoints.MapRazorPages();
             });
         }
     }

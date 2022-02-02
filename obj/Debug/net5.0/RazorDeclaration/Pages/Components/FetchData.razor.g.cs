@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace KemiraRapportering.Pages
+namespace KemiraRapportering.Pages.Components
 {
     #line hidden
     using System;
@@ -90,7 +90,7 @@ using DataAccesLib;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\FetchData.razor"
+#line 3 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\Components\FetchData.razor"
 using KemiraRapportering.Data;
 
 #line default
@@ -105,7 +105,7 @@ using KemiraRapportering.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\FetchData.razor"
+#line 39 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\Components\FetchData.razor"
        
     private WeatherForecast[] forecasts;
 

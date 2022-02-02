@@ -34,18 +34,7 @@ else
             </div>
         </div>
 
-        <div class="dropdown show">
-            <a class="btn btn-primary dropdown-toggle mx-2" href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                @DropContent.btnDato
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink22">
-                @foreach (string d in DropContent.DatoDrop())
-                {
-                    <a class="dropdown-item" @onclick="() => DropContent.btnDatoLabel(d)">@d</a>
-                }
-            </div>
-        </div>
+        
 
 
         <div class="dropdown show">
@@ -65,15 +54,17 @@ else
     </div>
 
     <div class="btn-group mx-3">
-        <DateRangePicker placeholder ="Velg Dato" @bind-StartDate="StartDate" @bind-EndDate ="EndDate" OnRangeSelect="OnRangeSelect">
-      
-        </DateRangePicker> 
-        
+        <DateRangePicker placeholder="Velg Dato" @bind-StartDate="StartDate" @bind-EndDate="EndDate" OnRangeSelect="OnRangeSelect">
+
+        </DateRangePicker>
+
     </div>
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>batch</th>
+                @if(!TableSort[0])
+                {<th>batch</th> }
+                
                 <th>Dato</th>
                 <th>SAP</th>
                 <th>ID</th>
@@ -110,7 +101,9 @@ else
             @foreach (var recipe in RecipeRead.Table)
             {
                 <tr @key="recipe">
-                    <td>@recipe.BatchNr</td>
+                    @if(!TableSort[0])
+                    {<td>@recipe.BatchNr</td> }
+                    
                     <td>@recipe.Dato</td>
                     <td>@recipe.SAP</td>
                     <td>@recipe.ID</td>
@@ -161,6 +154,14 @@ else
 
     </div>
 
+    <div class="my-5"></div>
+
+    <h4>Fjerne/Legge til kolonner</h4>
+    
+
+       
+    
+
 }
 
 
@@ -176,21 +177,28 @@ else
 
     private List<RecipeModels> recipes;
 
+    public bool[] TableSort = new bool[26];
+
     public string dropBatch = "Batch";
     private string dropDate = "Dato";
     private string dropID = "ID";
+
+
 
     DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
     DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
 
 
-    public void OnRangeSelect(DateRange range)
-        {
-        string start = range.Start.ToString();
-        
-        }
-
     Queries query = new Queries();
+
+    public void OnRangeSelect(DateRange range)
+    {
+
+        string sql = query.DateQuery(range);
+        TableUpdate();
+    }
+
+
 
 
     protected override async Task OnInitializedAsync()
@@ -204,9 +212,11 @@ else
     public async void TableUpdate()
     {
 
-        string sql = $"SELECT top (1000) * FROM recipe";
-        RecipeSearch.Table = await _db.GetRecipes(sql);
-        await InvokeAsync(StateHasChanged);
+        //string sql = $"SELECT top (1000) * FROM recipe";
+
+        recipes = await _db.GetRecipes(Queries.sql);
+        RecipeRead.Table = recipes;
+        //await InvokeAsync(StateHasChanged);
     }
 
     public async Task resetTable()
@@ -225,5 +235,9 @@ else
         StateHasChanged();
     }
 
+    public void TableSortConf(int n)
+    {
+        TableSort[n] = !TableSort[n];
+    }
 
 }

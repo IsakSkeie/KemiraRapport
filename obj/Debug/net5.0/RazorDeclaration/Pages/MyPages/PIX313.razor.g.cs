@@ -62,21 +62,21 @@ using Microsoft.JSInterop;
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+#line 10 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
 using KemiraRapportering;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+#line 11 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
 using KemiraRapportering.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+#line 12 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
 using DataAccesLib;
 
 #line default
