@@ -69,6 +69,13 @@ using Microsoft.JSInterop;
 #line hidden
 #nullable disable
 #nullable restore
+#line 9 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+using KemiraRapportering.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 10 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
 using KemiraRapportering;
 
@@ -112,7 +119,7 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 170 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
+#line 171 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
        
 
 
@@ -124,11 +131,19 @@ using BlazorDateRangePicker;
 
     private List<RecipeModels> recipes;
 
+    private List<string> RecipeVariables = new List<string>()
+    {
+
+    };
+
+
     public bool[] TableSort = new bool[26];
 
     public string dropBatch = "Batch";
     private string dropDate = "Dato";
     private string dropID = "ID";
+
+    
 
 
 

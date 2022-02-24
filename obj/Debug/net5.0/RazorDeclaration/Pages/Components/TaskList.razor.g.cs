@@ -69,6 +69,13 @@ using Microsoft.JSInterop;
 #line hidden
 #nullable disable
 #nullable restore
+#line 9 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+using KemiraRapportering.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 10 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
 using KemiraRapportering;
 
@@ -97,6 +104,21 @@ using DataAccesLib;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 9 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\Components\TaskList.razor"
+       
+    public List<TaskModel> taskList = new List<TaskModel>();
+    private TaskModel newTask = new TaskModel();
+
+    private void AddTask()
+    {
+        taskList.Add(newTask);
+        newTask = new TaskModel();
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

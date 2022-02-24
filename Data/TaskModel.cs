@@ -10,8 +10,18 @@ using System.Runtime.InteropServices;
 // components.  If you need to access a type in this assembly from COM, set the ComVisible
 // attribute to true on that type.
 
-[assembly: ComVisible(false)]
+[assembly: ComVisible(true)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM.
 
 [assembly: Guid("3f83d0f0-8cc2-4f6f-ae0c-c348f397abcf")]
+
+namespace KemiraRapportering.Data
+{
+    public class TaskModel
+    {
+    public string Task { get; set; }
+        public bool IsComplete { get; set; }
+
+    }
+}

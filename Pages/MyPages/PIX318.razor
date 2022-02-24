@@ -77,21 +77,21 @@ else
                 <th>HCL Type</th>
                 <th>Forv. Damp</th>
                 <th>Vann Overordnet</th>
-                <th>VarmtVann</th>
-                <th>SpillVann</th>
-                <th>ScrubberVæske</th>
+                <th>Varmt Vann</th>
+                <th>Spill Vann</th>
+                <th>Scrubber Væske</th>
                 <th>HCL</th>
                 <th>Jernsulfat</th>
-                <th>Temperatur</th>
-                <th>Modningstid</th>
-                <th>DampVentil</th>
-                <th>Etterspyling</th>
+                <th>Temp</th>
+                <th>Modnings tid</th>
+                <th>Damp Ventil</th>
+                <th>Etters pyling</th>
                 <th>O2 Trykk</th>
                 <th>O2 Reaksjonstid</th>
-                <th>DeltaTemp</th>
+                <th>Delta Temp</th>
                 <th>Analysert Fe3</th>
                 <th>Analysert FeTot</th>
-                <th>VannSluttjustering</th>
+                <th>VannSlutt justering</th>
                 <th>Virkelig mengde vann</th>
                 <th>Tot til Lager</th>
 
@@ -150,17 +150,19 @@ else
     <div class="btn-group  text-rt" role="group" aria-label="Reset">
         <button type="button" class="btn btn-success btn-lg mx-3">Eksporter til Excel</button>
         <button type="button" class="btn btn-secondary btn-lg text-right" @onclick="() => resetTable()">Reset Tabell</button>
-
-
     </div>
 
     <div class="my-5"></div>
 
     <h4>Fjerne/Legge til kolonner</h4>
-    
 
-       
-    
+
+   @foreach(bool sort in TableSort)
+    {
+        
+    }
+
+
 
 }
 
@@ -177,11 +179,50 @@ else
 
     private List<RecipeModels> recipes;
 
+    private List<string> RecipeVariables = new List<string>()
+    {
+        "Batch",
+        "Datot",
+        "SAP",
+        "ID",
+        "Reaktor",
+        "Satsvolum",
+        "Forventet Fe",
+        "SatsVolum",
+        "Forventet Fe",
+        "Onsket Fe",
+        "Onsket Syre",
+        "Onsket Fe2",
+        "HCL type",
+        "Forv. Damp",
+        "Vann Overordnet",
+        "Varmt Vann",
+        "Spill Vann",
+        "Scrubber Væske",
+        "HCL",
+        "Jernsulfat",
+        "Temp",
+        "Modningstid",
+        "Damp Ventil",
+        "Etter spyling",
+        "O2 Trykk",
+        "O2 Reaksjonstid",
+        "DeltaTemp",
+        "Analysert Fe3",
+        "Analysert FeTot",
+        "VannSlutt justering",
+        "Virkelig Mengde Vann",
+        "Tot til lager"
+    };
+
+
     public bool[] TableSort = new bool[26];
 
     public string dropBatch = "Batch";
     private string dropDate = "Dato";
     private string dropID = "ID";
+
+    
 
 
 
