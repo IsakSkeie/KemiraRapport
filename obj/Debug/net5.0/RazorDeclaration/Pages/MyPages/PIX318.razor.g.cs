@@ -119,7 +119,7 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 171 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
+#line 145 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
        
 
 
@@ -133,7 +133,36 @@ using BlazorDateRangePicker;
 
     private List<string> RecipeVariables = new List<string>()
     {
-
+        "Batch",
+        "Dato",
+        "SAP",
+        "ID",
+        "Reaktor",
+        "Satsvolum",
+        "Forventet Fe",
+        "Onsket Fe",
+        "Onsket Syre",
+        "Onsket Fe2",
+        "HCL type",
+        "Forv. Damp",
+        "Vann Overordnet",
+        "Varmt Vann",
+        "Spill Vann",
+        "Scrubber Væske",
+        "HCL",
+        "Jernsulfat",
+        "Temp",
+        "Modningstid",
+        "Damp Ventil",
+        "Etter spyling",
+        "O2 Trykk",
+        "O2 Reaksjonstid",
+        "DeltaTemp",
+        "Analysert Fe3",
+        "Analysert FeTot",
+        "VannSlutt justering",
+        "Virkelig Mengde Vann",
+        "Tot til lager"
     };
 
 

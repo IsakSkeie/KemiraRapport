@@ -63,37 +63,11 @@ else
         <thead>
             <tr>
                 @if(!TableSort[0])
-                {<th>batch</th> }
+                @foreach(string Var in RecipeVariables)
+                    {
+                       <th>@Var</th> 
+                    }
                 
-                <th>Dato</th>
-                <th>SAP</th>
-                <th>ID</th>
-                <th>Reaktor</th>
-                <th>Satsvolum</th>
-                <th>Forventet Fe</th>
-                <th>Ønsket Fe</th>
-                <th>Ønsket Syre</th>
-                <th>Ønsket Fe2</th>
-                <th>HCL Type</th>
-                <th>Forv. Damp</th>
-                <th>Vann Overordnet</th>
-                <th>Varmt Vann</th>
-                <th>Spill Vann</th>
-                <th>Scrubber Væske</th>
-                <th>HCL</th>
-                <th>Jernsulfat</th>
-                <th>Temp</th>
-                <th>Modnings tid</th>
-                <th>Damp Ventil</th>
-                <th>Etters pyling</th>
-                <th>O2 Trykk</th>
-                <th>O2 Reaksjonstid</th>
-                <th>Delta Temp</th>
-                <th>Analysert Fe3</th>
-                <th>Analysert FeTot</th>
-                <th>VannSlutt justering</th>
-                <th>Virkelig mengde vann</th>
-                <th>Tot til Lager</th>
 
             </tr>
         </thead>
@@ -101,8 +75,8 @@ else
             @foreach (var recipe in RecipeRead.Table)
             {
                 <tr @key="recipe">
-                    @if(!TableSort[0])
-                    {<td>@recipe.BatchNr</td> }
+                    
+                    <td>@recipe.BatchNr</td>
                     
                     <td>@recipe.Dato</td>
                     <td>@recipe.SAP</td>
@@ -182,13 +156,11 @@ else
     private List<string> RecipeVariables = new List<string>()
     {
         "Batch",
-        "Datot",
+        "Dato",
         "SAP",
         "ID",
         "Reaktor",
         "Satsvolum",
-        "Forventet Fe",
-        "SatsVolum",
         "Forventet Fe",
         "Onsket Fe",
         "Onsket Syre",
