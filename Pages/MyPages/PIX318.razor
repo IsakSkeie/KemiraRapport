@@ -62,7 +62,7 @@ else
     <table class="table table-striped">
         <thead>
             <tr>
-                @if(!TableSort[0])
+  
                 @foreach(string Var in RecipeVariables)
                     {
                        <th>@Var</th> 
@@ -130,13 +130,34 @@ else
 
     <h4>Fjerne/Legge til kolonner</h4>
 
-
-   @foreach(bool sort in TableSort)
+    <ul class="list-group d-inline-block">
+   @foreach(var variable in filter)
     {
-        
+
+
+            @if (!variable.sort)
+            {
+                <li class="list-group-item list-group-item-primary"
+              @onclick = "(() => {variable.sort = !variable.sort; StateHasChanged();})">
+             
+              @variable.variable
+            </li>
+            }
+        else
+            {
+             <li class="list-group-item list-group-item-secondary"
+              @onclick = "(() => {variable.sort = !variable.sort; StateHasChanged();})">
+             <del>@variable.variable</del> 
+            </li>   
+            }
     }
+            
 
 
+
+    
+
+</ul>
 
 }
 
@@ -149,12 +170,12 @@ else
 
     private string batch { get; set; }
 
-    private int TableLen = 7;
+    private int TableLen = Queries.TableLen;
 
     private List<RecipeModels> recipes;
 
-    private List<string> RecipeVariables = new List<string>()
-    {
+    public  List<string> RecipeVariables = new List<string>()
+        {
         "Batch",
         "Dato",
         "SAP",
@@ -188,16 +209,11 @@ else
     };
 
 
-    public bool[] TableSort = new bool[26];
 
-    public string dropBatch = "Batch";
-    private string dropDate = "Dato";
-    private string dropID = "ID";
+    filtering[] filter = new filtering[30];
 
-    
-
-
-
+   
+   
     DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
     DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
 
@@ -220,6 +236,12 @@ else
         recipes = await _db.GetRecipes(sql);
         RecipeRead.Table = recipes;
         TableUpdate();
+
+        for(int i = 0; i < 30; i++)
+        {
+            filter[i] = new filtering();
+            filter[i].variable = RecipeVariables[i];
+        }
     }
 
     public async void TableUpdate()
@@ -248,9 +270,9 @@ else
         StateHasChanged();
     }
 
-    public void TableSortConf(int n)
-    {
-        TableSort[n] = !TableSort[n];
-    }
+    
+    
+
+    
 
 }

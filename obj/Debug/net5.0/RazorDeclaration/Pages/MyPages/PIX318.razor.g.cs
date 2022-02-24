@@ -119,7 +119,7 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 145 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
+#line 166 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
        
 
 
@@ -127,12 +127,12 @@ using BlazorDateRangePicker;
 
     private string batch { get; set; }
 
-    private int TableLen = 7;
+    private int TableLen = Queries.TableLen;
 
     private List<RecipeModels> recipes;
 
-    private List<string> RecipeVariables = new List<string>()
-    {
+    public  List<string> RecipeVariables = new List<string>()
+        {
         "Batch",
         "Dato",
         "SAP",
@@ -166,16 +166,11 @@ using BlazorDateRangePicker;
     };
 
 
-    public bool[] TableSort = new bool[26];
 
-    public string dropBatch = "Batch";
-    private string dropDate = "Dato";
-    private string dropID = "ID";
+    filtering[] filter = new filtering[30];
 
-    
-
-
-
+   
+   
     DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
     DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
 
@@ -198,6 +193,12 @@ using BlazorDateRangePicker;
         recipes = await _db.GetRecipes(sql);
         RecipeRead.Table = recipes;
         TableUpdate();
+
+        for(int i = 0; i < 30; i++)
+        {
+            filter[i] = new filtering();
+            filter[i].variable = RecipeVariables[i];
+        }
     }
 
     public async void TableUpdate()
@@ -226,10 +227,10 @@ using BlazorDateRangePicker;
         StateHasChanged();
     }
 
-    public void TableSortConf(int n)
-    {
-        TableSort[n] = !TableSort[n];
-    }
+    
+    
+
+    
 
 
 #line default
