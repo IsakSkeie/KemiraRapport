@@ -119,7 +119,7 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 166 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
+#line 229 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
        
 
 
@@ -218,7 +218,7 @@ using BlazorDateRangePicker;
         string sql = $"SELECT top ({ Queries.TableLen }) * FROM recipe";
         recipes = await _db.GetRecipes(sql);
         RecipeRead.Table = recipes;
-        Queries.TableLen = TableLen;
+        //Queries.TableLen = TableLen;
 
     }
 
