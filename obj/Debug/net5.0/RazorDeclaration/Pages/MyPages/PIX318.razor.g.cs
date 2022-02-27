@@ -167,7 +167,7 @@ using BlazorDateRangePicker;
 
 
 
-    filtering[] filter = new filtering[30];
+    public filtering[] filter = new filtering[30];
 
    
    
@@ -204,8 +204,6 @@ using BlazorDateRangePicker;
     public async void TableUpdate()
     {
 
-        //string sql = $"SELECT top (1000) * FROM recipe";
-
         recipes = await _db.GetRecipes(Queries.sql);
         RecipeRead.Table = recipes;
         //await InvokeAsync(StateHasChanged);
@@ -213,12 +211,10 @@ using BlazorDateRangePicker;
 
     public async Task resetTable()
     {
-
-
         string sql = $"SELECT top ({ Queries.TableLen }) * FROM recipe";
         recipes = await _db.GetRecipes(sql);
         RecipeRead.Table = recipes;
-        //Queries.TableLen = TableLen;
+        
 
     }
 
