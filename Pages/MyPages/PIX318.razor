@@ -185,7 +185,7 @@ else
 
 
     <div class="btn-group  text-rt" role="group" aria-label="Reset">
-        <button type="button" class="btn btn-success btn-lg mx-3">Eksporter til Excel</button>
+        <button type="button" class="btn btn-success btn-lg mx-3" @onclick="() => WriteCSV(filter)">Eksporter til Excel</button>
         <button type="button" class="btn btn-secondary btn-lg text-right" @onclick="() => resetTable()">Reset Tabell</button>
     </div>
 
@@ -305,6 +305,9 @@ else
             filter[i] = new filtering();
             filter[i].variable = RecipeVariables[i];
         }
+
+        
+
     }
 
     public async void TableUpdate()
@@ -329,8 +332,17 @@ else
         StateHasChanged();
     }
 
+  
+
+
     
-    
+    public void WriteCSV(filtering[] filter)
+    {
+        DataWrite ToCSV = new DataWrite(filter);
+
+        ToCSV.dataWriteToCSV();
+
+    }
 
     
 

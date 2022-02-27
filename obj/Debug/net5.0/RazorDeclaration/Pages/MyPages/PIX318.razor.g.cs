@@ -199,6 +199,9 @@ using BlazorDateRangePicker;
             filter[i] = new filtering();
             filter[i].variable = RecipeVariables[i];
         }
+
+        
+
     }
 
     public async void TableUpdate()
@@ -223,8 +226,17 @@ using BlazorDateRangePicker;
         StateHasChanged();
     }
 
+  
+
+
     
-    
+    public void WriteCSV(filtering[] filter)
+    {
+        DataWrite ToCSV = new DataWrite(filter);
+
+        ToCSV.dataWriteToCSV();
+
+    }
 
     
 
