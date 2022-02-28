@@ -70,13 +70,20 @@ using Microsoft.JSInterop;
 #nullable disable
 #nullable restore
 #line 9 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
-using KemiraRapportering;
+using KemiraRapportering.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 10 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+using KemiraRapportering;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
 using KemiraRapportering.Shared;
 
 #line default
@@ -96,6 +103,13 @@ using DataAccesLib.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
+using BlazorDateRangePicker;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/PIX-318")]
     public partial class PIX318 : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -105,61 +119,127 @@ using DataAccesLib.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 163 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
-           
+#line 229 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
+       
 
 
-        private string value { get; set; }
-        
-        private string batch { get; set; }
+    private string value { get; set; }
 
-        private int TableLen = 7;
+    private string batch { get; set; }
 
-        private List<RecipeModels> recipes;
+    private int TableLen = Queries.TableLen;
 
-        public string dropBatch = "Batch";
-        private string dropDate = "Dato";
-        private string dropID = "ID";
+    private List<RecipeModels> recipes;
+
+    public  List<string> RecipeVariables = new List<string>()
+        {
+        "Batch",
+        "Dato",
+        "SAP",
+        "ID",
+        "Reaktor",
+        "Satsvolum",
+        "Forventet Fe",
+        "Onsket Fe",
+        "Onsket Syre",
+        "Onsket Fe2",
+        "HCL type",
+        "Forv. Damp",
+        "Vann Overordnet",
+        "Varmt Vann",
+        "Spill Vann",
+        "Scrubber Væske",
+        "HCL",
+        "Jernsulfat",
+        "Temp",
+        "Modningstid",
+        "Damp Ventil",
+        "Etter spyling",
+        "O2 Trykk",
+        "O2 Reaksjonstid",
+        "DeltaTemp",
+        "Analysert Fe3",
+        "Analysert FeTot",
+        "VannSlutt justering",
+        "Virkelig Mengde Vann",
+        "Tot til lager"
+    };
 
 
 
-        Queries query = new Queries();
-     
+    public filtering[] filter = new filtering[30];
+
    
-        protected override async Task OnInitializedAsync()
+   
+    DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
+    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
+
+
+    Queries query = new Queries();
+
+    public void OnRangeSelect(DateRange range)
+    {
+
+        string sql = query.DateQuery(range);
+        TableUpdate();
+    }
+
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        string sql = query.pix318();
+        recipes = await _db.GetRecipes(sql);
+        RecipeRead.Table = recipes;
+        TableUpdate();
+
+        for(int i = 0; i < 30; i++)
         {
-            string sql = query.pix318();
-            recipes = await _db.GetRecipes(sql);
-            RecipeRead.Table = recipes;
-            TableUpdate();
+            filter[i] = new filtering();
+            filter[i].variable = RecipeVariables[i];
         }
 
-        public async void TableUpdate()
-        {
+        
 
-            string sql = $"SELECT top (1000) * FROM recipe";
-            RecipeSearch.Table = await _db.GetRecipes(sql);
-            await InvokeAsync(StateHasChanged);
-        }
+    }
 
-        public async Task resetTable()
-        {
+    public async void TableUpdate()
+    {
 
-            
-            string sql = $"SELECT top ({ Queries.TableLen }) * FROM recipe";
-            recipes =  await _db.GetRecipes(sql);
-            RecipeRead.Table = recipes;
-            Queries.TableLen = TableLen;
+        recipes = await _db.GetRecipes(Queries.sql);
+        RecipeRead.Table = recipes;
+        //await InvokeAsync(StateHasChanged);
+    }
 
-        }
+    public async Task resetTable()
+    {
+        string sql = $"SELECT top ({ Queries.TableLen }) * FROM recipe";
+        recipes = await _db.GetRecipes(sql);
+        RecipeRead.Table = recipes;
+        
 
-        public void ResetDropDown()
-        {
-            StateHasChanged();
-        }
+    }
+
+    public void ResetDropDown()
+    {
+        StateHasChanged();
+    }
+
+  
 
 
     
+    public void WriteCSV(filtering[] filter)
+    {
+        DataWrite ToCSV = new DataWrite(filter);
+
+        ToCSV.dataWriteToCSV();
+
+    }
+
+    
+
 
 #line default
 #line hidden

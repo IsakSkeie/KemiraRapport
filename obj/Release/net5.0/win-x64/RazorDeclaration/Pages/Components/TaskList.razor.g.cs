@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace KemiraRapportering.Pages
+namespace KemiraRapportering.Pages.Components
 {
     #line hidden
     using System;
@@ -70,34 +70,34 @@ using Microsoft.JSInterop;
 #nullable disable
 #nullable restore
 #line 9 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
-using KemiraRapportering;
+using KemiraRapportering.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 10 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
-using KemiraRapportering.Shared;
+using KemiraRapportering;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 11 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
-using DataAccesLib;
+using KemiraRapportering.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\FetchData.razor"
-using KemiraRapportering.Data;
+#line 12 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+using DataAccesLib;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
-    public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/TaskList")]
+    public partial class TaskList : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -105,19 +105,20 @@ using KemiraRapportering.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\FetchData.razor"
+#line 9 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\Components\TaskList.razor"
        
-    private WeatherForecast[] forecasts;
+    public List<TaskModel> taskList = new List<TaskModel>();
+    private TaskModel newTask = new TaskModel();
 
-    protected override async Task OnInitializedAsync()
+    private void AddTask()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        taskList.Add(newTask);
+        newTask = new TaskModel();
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private WeatherForecastService ForecastService { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -361,11 +361,12 @@ C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\P
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\hostfxr.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\hostpolicy.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\mscordaccore.dll
-C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\mscordaccore_amd64_amd64_5.0.1321.56516.dll
+C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\mscordaccore_amd64_amd64_5.0.1422.5710.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\mscordbi.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\mscorrc.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\ucrtbase.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\aspnetcorev2_inprocess.dll
+C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\BlazorDateRangePicker.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\Dapper.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\Microsoft.Extensions.Primitives.dll
@@ -377,3 +378,7 @@ C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\P
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\KemiraRapportering.Views.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\KemiraRapportering.Views.pdb
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\KemiraRapportering.styles.css
+C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_content\BlazorDateRangePicker\clickAndPositionHandler.js
+C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_content\BlazorDateRangePicker\daterangepicker.css
+C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_content\BlazorDateRangePicker\daterangepicker.min.css
+C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_content\BlazorDateRangePicker\daterangepicker.scss

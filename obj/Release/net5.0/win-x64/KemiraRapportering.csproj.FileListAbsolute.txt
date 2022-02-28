@@ -26,7 +26,6 @@ C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\K
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\KemiraRapportering.RazorComponent.input.cache
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\RazorDeclaration\App.razor.g.cs
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\RazorDeclaration\Pages\Counter.razor.g.cs
-C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\RazorDeclaration\Pages\FetchData.razor.g.cs
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\RazorDeclaration\Pages\MyPages\PIX.razor.g.cs
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\RazorDeclaration\Pages\MyPages\PIX313.razor.g.cs
@@ -43,7 +42,6 @@ C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\K
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\KemiraRapportering.RazorCoreGenerate.cache
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\Razor\App.razor.g.cs
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\Razor\Pages\Counter.razor.g.cs
-C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\Razor\Pages\FetchData.razor.g.cs
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\Razor\Pages\Index.razor.g.cs
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\Razor\Pages\MyPages\PIX.razor.g.cs
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\Razor\Pages\MyPages\PIX313.razor.g.cs
@@ -414,8 +412,11 @@ C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\d
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\hostfxr.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\hostpolicy.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\mscordaccore.dll
-C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\mscordaccore_amd64_amd64_5.0.1321.56516.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\mscordbi.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\mscorrc.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\ucrtbase.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\aspnetcorev2_inprocess.dll
+C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\BlazorDateRangePicker.dll
+C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\mscordaccore_amd64_amd64_5.0.1422.5710.dll
+C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\RazorDeclaration\Pages\Components\TaskList.razor.g.cs
+C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\Razor\Pages\Components\TaskList.razor.g.cs
