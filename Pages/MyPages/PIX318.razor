@@ -320,7 +320,7 @@ else
 
     public async Task resetTable()
     {
-        string sql = $"SELECT top ({ Queries.TableLen }) * FROM recipe";
+        string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData";
         recipes = await _db.GetRecipes(sql);
         RecipeRead.Table = recipes;
         
