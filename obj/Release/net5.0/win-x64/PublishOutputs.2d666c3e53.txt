@@ -1,6 +1,7 @@
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\KemiraRapportering.exe
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\css\bootstrap\bootstrap.min.css
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\css\bootstrap\bootstrap.min.css.map
+C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\css\jquery.txt
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\css\open-iconic\FONT-LICENSE
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\css\open-iconic\font\fonts\open-iconic.eot

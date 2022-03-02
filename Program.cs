@@ -20,9 +20,9 @@ namespace KemiraRapportering
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseKestrel();
-                    webBuilder.UseIISIntegration();
-                    webBuilder.UseUrls("https://192.168.0.9:5002");
+                   
+          
+                    webBuilder.UseUrls("https://192.168.119.11:5001");
                     
                     webBuilder.UseStartup<Startup>();
                     

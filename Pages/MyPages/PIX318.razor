@@ -43,7 +43,7 @@ else
             </a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink33">
-                @foreach (int id in DropContent.IdDrop())
+                @foreach (string id in DropContent.IdDrop())
                 {
                     <a class="dropdown-item" @onclick="() => { DropContent.btnIDLabel(id); TableUpdate();}">@id</a>
                 }
@@ -296,7 +296,12 @@ else
     protected override async Task OnInitializedAsync()
     {
         string sql = query.pix318();
+        
+        
         recipes = await _db.GetRecipes(sql);
+        
+
+        
         RecipeRead.Table = recipes;
         TableUpdate();
 

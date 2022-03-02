@@ -190,7 +190,12 @@ using BlazorDateRangePicker;
     protected override async Task OnInitializedAsync()
     {
         string sql = query.pix318();
+        
+        
         recipes = await _db.GetRecipes(sql);
+        
+
+        
         RecipeRead.Table = recipes;
         TableUpdate();
 
@@ -214,7 +219,7 @@ using BlazorDateRangePicker;
 
     public async Task resetTable()
     {
-        string sql = $"SELECT top ({ Queries.TableLen }) * FROM recipe";
+        string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData";
         recipes = await _db.GetRecipes(sql);
         RecipeRead.Table = recipes;
         
