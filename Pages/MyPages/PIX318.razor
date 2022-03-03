@@ -10,7 +10,7 @@
 <h1>Resept: PIX-318</h1>
 
 
-<h4>Resepttabell for PIX</h4>
+<h5 class ="mx-5">&nbsp;&nbsp;&nbsp; Dato &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Antall Rader</h5>
 
 @if (recipes is null)
 {
@@ -20,40 +20,11 @@ else
 {
 
 
-    <div class="btn-group" role="group" aria-label="Basic example">
-        <div class="dropdown show">
-            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @onchange="ResetDropDown">
-                @DropContent.btnBatch
-            </a>
+    
 
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink11">
-                @foreach (int b in DropContent.BatchDrop())
-                {
-                    <a class="dropdown-item" @onclick="() => { DropContent.btnBatchLabel(b); TableUpdate();}">@b</a>
-                }
-            </div>
-        </div>
+   
 
-        
-
-
-        <div class="dropdown show">
-            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @onchange="ResetDropDown">
-                @DropContent.btnID
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink33">
-                @foreach (string id in DropContent.IdDrop())
-                {
-                    <a class="dropdown-item" @onclick="() => { DropContent.btnIDLabel(id); TableUpdate();}">@id</a>
-                }
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="btn-group mx-3">
+    <div class="btn-group">
         <DateRangePicker placeholder="Velg Dato" @bind-StartDate="StartDate" @bind-EndDate="EndDate" OnRangeSelect="OnRangeSelect">
 
         </DateRangePicker>

@@ -22,7 +22,7 @@ namespace KemiraRapportering
                 {
                    
           
-                    webBuilder.UseUrls("https://192.168.119.11:5001");
+                    webBuilder.UseUrls("https://192.168.120.7:5001");
                     
                     webBuilder.UseStartup<Startup>();
                     
