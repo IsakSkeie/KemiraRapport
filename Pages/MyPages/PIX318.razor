@@ -29,6 +29,7 @@ else
 
         </DateRangePicker>
     </div>
+
     <input type="number" @bind-value="Queries.TableLen" @bind-value:event="oninput" />
     
 
@@ -207,7 +208,7 @@ else
     private int TableLen = Queries.TableLen;
 
     private List<RecipeModels> recipes;
-
+    
     public  List<string> RecipeVariables = new List<string>()
         {
         "Batch",
@@ -300,6 +301,7 @@ else
         recipes = await _db.GetRecipes(Queries.sql);
         RecipeRead.Table = recipes;
         //await InvokeAsync(StateHasChanged);
+        StateHasChanged();
     }
 
     public async Task resetTable()
