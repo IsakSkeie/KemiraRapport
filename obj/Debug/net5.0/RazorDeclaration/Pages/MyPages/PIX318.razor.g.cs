@@ -205,6 +205,14 @@ using BlazorDateRangePicker;
             filter[i].variable = RecipeVariables[i];
         }
 
+        //Make this part of initialization
+        filter[5].sort = true;
+        filter[19].sort = true;
+        filter[20].sort = true;
+        filter[21].sort = true;
+        filter[22].sort = true;
+        filter[24].sort = true;
+
         
 
     }
@@ -219,8 +227,8 @@ using BlazorDateRangePicker;
 
     public async Task resetTable()
     {
-        string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData";
-        recipes = await _db.GetRecipes(sql);
+        
+        recipes = await _db.GetRecipes(Queries.sql);
         RecipeRead.Table = recipes;
         
 
