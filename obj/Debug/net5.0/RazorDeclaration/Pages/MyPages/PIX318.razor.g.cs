@@ -228,9 +228,10 @@ using BlazorDateRangePicker;
 
     public async Task resetTable()
     {
-        
-        recipes = await _db.GetRecipes(Queries.sql);
+        string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData ORDER BY BatchNr DESC";
+        recipes = await _db.GetRecipes(sql);
         RecipeRead.Table = recipes;
+        
         
 
     }

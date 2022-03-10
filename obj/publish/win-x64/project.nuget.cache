@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jo/1A/Qp3KweTK/zG6Dl5IXgWpSptGFLqA4mnABCWTB+4em5ht6Umbyc+JWYphK7D/3Flte4OsnsHvISDA92FA==",
+  "dgSpecHash": "25bMhuQdS25xDQkaMoh4M58fAO4kS8VxMZ6wvteBXg3ci5TxoEh5P+RApXXlm/Gx1JJvqWOhoxkqp0lWicDlhA==",
   "success": true,
   "projectFilePath": "C:\\Users\\isak.skeie\\source\\repos\\KemiraRapportering\\KemiraRapportering.csproj",
   "expectedPackageFiles": [
@@ -30,9 +30,9 @@
     "C:\\Users\\isak.skeie\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.2-mauipre.1.22054.8\\system.runtime.compilerservices.unsafe.6.0.2-mauipre.1.22054.8.nupkg.sha512",
     "C:\\Users\\isak.skeie\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\isak.skeie\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\isak.skeie\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.14\\microsoft.netcore.app.runtime.win-x64.5.0.14.nupkg.sha512",
-    "C:\\Users\\isak.skeie\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.14\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.14.nupkg.sha512",
-    "C:\\Users\\isak.skeie\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.14\\microsoft.aspnetcore.app.runtime.win-x64.5.0.14.nupkg.sha512"
+    "C:\\Users\\isak.skeie\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.15\\microsoft.netcore.app.runtime.win-x64.5.0.15.nupkg.sha512",
+    "C:\\Users\\isak.skeie\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.15\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.15.nupkg.sha512",
+    "C:\\Users\\isak.skeie\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.15\\microsoft.aspnetcore.app.runtime.win-x64.5.0.15.nupkg.sha512"
   ],
   "logs": []
 }

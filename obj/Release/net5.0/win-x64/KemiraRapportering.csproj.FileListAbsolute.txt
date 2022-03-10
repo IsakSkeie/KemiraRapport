@@ -417,6 +417,6 @@ C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\m
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\ucrtbase.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\aspnetcorev2_inprocess.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\BlazorDateRangePicker.dll
-C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\mscordaccore_amd64_amd64_5.0.1422.5710.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\RazorDeclaration\Pages\Components\TaskList.razor.g.cs
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\Razor\Pages\Components\TaskList.razor.g.cs
+C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Release\net5.0\win-x64\mscordaccore_amd64_amd64_5.0.1522.11506.dll

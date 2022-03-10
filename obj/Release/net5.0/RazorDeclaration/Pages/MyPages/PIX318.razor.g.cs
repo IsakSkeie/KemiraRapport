@@ -119,7 +119,7 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 200 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
+#line 201 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
        
 
 
@@ -130,7 +130,7 @@ using BlazorDateRangePicker;
     private int TableLen = Queries.TableLen;
 
     private List<RecipeModels> recipes;
-
+    
     public  List<string> RecipeVariables = new List<string>()
         {
         "Batch",
@@ -205,6 +205,14 @@ using BlazorDateRangePicker;
             filter[i].variable = RecipeVariables[i];
         }
 
+        //Make this part of initialization
+        filter[5].sort = true;
+        filter[19].sort = true;
+        filter[20].sort = true;
+        filter[21].sort = true;
+        filter[22].sort = true;
+        filter[24].sort = true;
+
         
 
     }
@@ -215,13 +223,15 @@ using BlazorDateRangePicker;
         recipes = await _db.GetRecipes(Queries.sql);
         RecipeRead.Table = recipes;
         //await InvokeAsync(StateHasChanged);
+        StateHasChanged();
     }
 
     public async Task resetTable()
     {
-        string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData";
+        string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData ORDER BY BatchNr DESC";
         recipes = await _db.GetRecipes(sql);
         RecipeRead.Table = recipes;
+        
         
 
     }

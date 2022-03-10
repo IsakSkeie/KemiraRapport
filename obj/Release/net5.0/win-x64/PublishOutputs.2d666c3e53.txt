@@ -362,7 +362,7 @@ C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\P
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\hostfxr.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\hostpolicy.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\mscordaccore.dll
-C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\mscordaccore_amd64_amd64_5.0.1422.5710.dll
+C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\mscordaccore_amd64_amd64_5.0.1522.11506.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\mscordbi.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\mscorrc.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Release\net5.0\win-x64\PubTmp\Out\ucrtbase.dll
