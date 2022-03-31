@@ -119,7 +119,7 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 271 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
+#line 500 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX318.razor"
        
 
 
@@ -130,6 +130,7 @@ using BlazorDateRangePicker;
     private int TableLen = Queries.TableLen;
 
     private List<RecipeModels> recipes;
+    private RecipeModels RecipeEdit = new RecipeModels();
 
 
 
