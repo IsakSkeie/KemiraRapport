@@ -21,7 +21,6 @@ C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Debug\net5.0\KemiraRappo
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Debug\net5.0\KemiraRapportering.runtimeconfig.json
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Debug\net5.0\KemiraRapportering.runtimeconfig.dev.json
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Debug\net5.0\KemiraRapportering.dll
-C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Debug\net5.0\ref\KemiraRapportering.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Debug\net5.0\KemiraRapportering.pdb
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Debug\net5.0\KemiraRapportering.Views.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Debug\net5.0\KemiraRapportering.Views.pdb
@@ -77,3 +76,4 @@ C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Debug\net5.0\Razor\Pages
 C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Debug\net5.0\BlazorDateRangePicker.dll
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\Components\TaskList.razor.g.cs
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\Components\TaskList.razor.g.cs
+C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Debug\net5.0\refint\KemiraRapportering.dll
