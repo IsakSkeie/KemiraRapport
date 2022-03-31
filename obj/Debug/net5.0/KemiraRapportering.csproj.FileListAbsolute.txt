@@ -77,3 +77,5 @@ C:\Users\isak.skeie\source\repos\KemiraRapportering\bin\Debug\net5.0\BlazorDateR
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\Components\TaskList.razor.g.cs
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\Components\TaskList.razor.g.cs
 C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Debug\net5.0\refint\KemiraRapportering.dll
+C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Shared\Table.razor.g.cs
+C:\Users\isak.skeie\source\repos\KemiraRapportering\obj\Debug\net5.0\Razor\Shared\Table.razor.g.cs

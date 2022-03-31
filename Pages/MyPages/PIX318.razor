@@ -35,7 +35,8 @@ else
 
 
 
-    <table class="table table-striped">
+  <div>
+      <table class="table table-striped">
         <thead>
             <tr>
   
@@ -50,116 +51,177 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var recipe in RecipeRead.Table)
+                
+
+                @foreach (var recipe in RecipeRead.Table)
             {
-                <tr @key="recipe">
-                    
-                    @if(!filter[0].sort)
-                    {<td>@recipe.BatchNr</td>}
-                    @if(!filter[1].sort)
-                    {<td>@recipe.Dato</td>}
-                    @if(!filter[2].sort)
-                    {<td>@recipe.SAP</td>}
-                    
-                    @if(!filter[3].sort)
-                    {<td>@recipe.ID</td>}
-                    
-                    @if(!filter[4].sort)
-                    {<td>@recipe.Reaktor</td>}
-                    
-                    @if(!filter[5].sort)
-                    {<td>@recipe.SatsVolum</td>}
-                    
-                    @if(!filter[6].sort)
-                    {<td>@recipe.ForvFe</td>}
-                    
-                    @if(!filter[7].sort)
-                    {<td>@recipe.OnsketFe</td>}
-                    
-                    @if(!filter[8].sort)
-                    {<td>@recipe.OnsketSyre</td>}
-                    
-                    @if(!filter[9].sort)
-                    {<td>@recipe.OnsketFe2</td>}
-                    
-                    @if(!filter[10].sort)
-                    {<td>@recipe.HCLType</td>}
-                    
-                    @if(!filter[11].sort)
-                    {<td>@recipe.ForvDamp</td>}
-                    
-                    @if(!filter[12].sort)
-                    {<td>@recipe.VannOverordnet</td>}
-                    
-                    @if(!filter[13].sort)
-                    {<td>@recipe.VarmtVann</td>}
-                    
-                    @if(!filter[14].sort)
-                    {<td>@recipe.SpillVann</td>}
-                    
-                    @if(!filter[15].sort)
-                    {<td>@recipe.ScrubberVaeske</td>}
-                    
-                    @if(!filter[16].sort)
-                    {<th>@recipe.HCL</th>}
-                    
-                    @if(!filter[17].sort)
-                    {<th>@recipe.Jernsulfat</th>}
-                    
-                    @if(!filter[18].sort)
-                    {<th>@recipe.Temp</th>}
-                    
-                    @if(!filter[19].sort)
-                    {<th>@recipe.Modningstid</th>}
-                    
-                    @if(!filter[20].sort)
-                    {<th>@recipe.DampVentil</th>}
-                    
-                    @if(!filter[21].sort)
-                    {<th>@recipe.Etterspyling</th>}
-                    
-                    @if(!filter[22].sort)
-                    {<th>@recipe.O2Trykk</th>}
-                    
-                    @if(!filter[23].sort)
-                    {<th>@recipe.O2Reaksjonstid</th>}
-                    
-                    @if(!filter[24].sort)
-                    {<th>@recipe.DeltaTemp</th>}
-                    
-                    @if(!filter[25].sort)
-                    {<th>@recipe.AnalysertFe3</th>}
-                    
-                    @if(!filter[26].sort)
-                    {<th>@recipe.AnalysertFeTot</th>}
-                    
-                    @if(!filter[27].sort)
-                    {<th>@recipe.VannSluttJustering</th>}
-                    
-                    @if(!filter[28].sort)
-                    {<th>@recipe.VirkeligMVann</th>}
-                    
-                    @if(!filter[29].sort)
-                    {<th>@recipe.TotTilLager</th>}
-                    
+
+                    @if (!recipe.edit)
+                    {
+                        <tr @key="recipe">
+
+                            @if (!filter[0].sort)
+                            {
+                                <td>@recipe.BatchNr</td>
+                            }
+                            @if (!filter[1].sort)
+                            {
+                                <td>@recipe.Dato</td>
+                            }
+                            @if (!filter[2].sort)
+                            {
+                                <td>@recipe.SAP</td>
+                            }
+
+                            @if (!filter[3].sort)
+                            {
+                                <td>@recipe.ID</td>
+                            }
+
+                            @if (!filter[4].sort)
+                            {
+                                <td>@recipe.Reaktor</td>
+                            }
+
+                            @if (!filter[5].sort)
+                            {
+                                <td>@recipe.SatsVolum</td>
+                            }
+
+                            @if (!filter[6].sort)
+                            {
+                                <td>@recipe.ForvFe</td>
+                            }
+
+                            @if (!filter[7].sort)
+                            {
+                                <td>@recipe.OnsketFe</td>
+                            }
+
+                            @if (!filter[8].sort)
+                            {
+                                <td>@recipe.OnsketSyre</td>
+                            }
+
+                            @if (!filter[9].sort)
+                            {
+                                <td>@recipe.OnsketFe2</td>
+                            }
+
+                            @if (!filter[10].sort)
+                            {
+                                <td>@recipe.HCLType</td>
+                            }
+
+                            @if (!filter[11].sort)
+                            {
+                                <td>@recipe.ForvDamp</td>
+                            }
+
+                            @if (!filter[12].sort)
+                            {
+                                <td>@recipe.VannOverordnet</td>
+                            }
+
+                            @if (!filter[13].sort)
+                            {
+                                <td>@recipe.VarmtVann</td>
+                            }
+
+                            @if (!filter[14].sort)
+                            {
+                                <td>@recipe.SpillVann</td>
+                            }
+
+                            @if (!filter[15].sort)
+                            {
+                                <td>@recipe.ScrubberVaeske</td>
+                            }
+
+                            @if (!filter[16].sort)
+                            {
+                                <th>@recipe.HCL</th>
+                            }
+
+                            @if (!filter[17].sort)
+                            {
+                                <th>@recipe.Jernsulfat</th>
+                            }
+
+                            @if (!filter[18].sort)
+                            {
+                                <th>@recipe.Temp</th>
+                            }
+
+                            @if (!filter[19].sort)
+                            {
+                                <th>@recipe.Modningstid</th>
+                            }
+
+                            @if (!filter[20].sort)
+                            {
+                                <th>@recipe.DampVentil</th>
+                            }
+
+                            @if (!filter[21].sort)
+                            {
+                                <th>@recipe.Etterspyling</th>
+                            }
+
+                            @if (!filter[22].sort)
+                            {
+                                <th>@recipe.O2Trykk</th>
+                            }
+
+                            @if (!filter[23].sort)
+                            {
+                                <th>@recipe.O2Reaksjonstid</th>
+                            }
+
+                            @if (!filter[24].sort)
+                            {
+                                <th>@recipe.DeltaTemp</th>
+                            }
+
+                            @if (!filter[25].sort)
+                            {
+                                <th>@recipe.AnalysertFe3</th>
+                            }
+
+                            @if (!filter[26].sort)
+                            {
+                                <th>@recipe.AnalysertFeTot</th>
+                            }
+
+                            @if (!filter[27].sort)
+                            {
+                                <th>@recipe.VannSluttJustering</th>
+                            }
+
+                            @if (!filter[28].sort)
+                            {
+                                <th>@recipe.VirkeligMVann</th>
+                            }
+
+                            @if (!filter[29].sort)
+                            {
+                                <th>@recipe.TotTilLager</th>
+                            }
+
 
 
                     <th>
                         <button type="button" class="btn btn-link">
-                        <span class="oi oi-pencil" aria-hidden="true"></span>
+                        <span class="oi oi-pencil" aria-hidden="true" @onclick="() => EnableEditing(true, recipe)"></span>
                         </button>
                     </th>
-                    
-
-
-                </tr>
+                        
+                    </tr>
+                    }
             }
         </tbody>
     </table>
-
-
-
-
+  </div>
 
 
 
@@ -216,7 +278,9 @@ else
     private int TableLen = Queries.TableLen;
 
     private List<RecipeModels> recipes;
-    
+
+
+
     public  List<string> RecipeVariables = new List<string>()
         {
         "Batch",
@@ -272,7 +336,7 @@ else
 
 
 
-
+    
     protected override async Task OnInitializedAsync()
     {
         string sql = query.pix318();
@@ -337,6 +401,11 @@ else
 
         ToCSV.dataWriteToCSV();
 
+    }
+
+     private void EnableEditing(bool flag, RecipeModels batch)
+    {
+       batch.edit = flag;
     }
 
     
