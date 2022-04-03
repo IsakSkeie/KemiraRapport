@@ -142,6 +142,7 @@ using BlazorDateRangePicker;
 
     Queries query = new Queries();
 
+
     public void OnRangeSelect(DateRange range)
     {
 

@@ -123,6 +123,7 @@ using BlazorDateRangePicker;
     public filtering[] filter = new filtering[30];
     private RecipeModels RecipeEdit = new RecipeModels();
     private List<RecipeModels> recipes;
+    Queries query = new Queries();
 
 
     protected override async Task OnInitializedAsync()
@@ -157,21 +158,31 @@ using BlazorDateRangePicker;
     private void EnableEditing(bool flag, RecipeModels batch)
     {
         batch.edit = flag;
-        RecipeEdit = batch;
+        if (flag)
+        {
+            RecipeEdit = batch;
+        }
+
+        StateHasChanged();
+
     }
 
 
     public void WriteCSV(filtering[] filter)
     {
         DataWrite ToCSV = new DataWrite(filter);
-
+        TableUpdate();
         ToCSV.dataWriteToCSV();
 
     }
 
-    private void BatchEdit(RecipeModels batch)
+    private async void BatchEdit(RecipeModels batch)
     {
-        
+        string sql = query.RecipeUpdate(batch);
+        recipes = await _db.GetRecipes(sql);
+
+        sql = query.pix318();
+        TableUpdate();
     }
 
     public async void TableUpdate()
@@ -181,6 +192,13 @@ using BlazorDateRangePicker;
         RecipeRead.Table = recipes;
         //await InvokeAsync(StateHasChanged);
         StateHasChanged();
+    }
+
+    public void OnRangeSelect(DateRange range)
+    {
+
+        string sql = query.DateQuery(range);
+        TableUpdate();
     }
 
 
