@@ -72,7 +72,7 @@ namespace DataAccesLib.Models
             sql = sql + $"O2Trykk = {Batch.O2Trykk}, O2Reaksjonstid = {Batch.O2Reaksjonstid}, DeltaTemp = {Batch.DeltaTemp}, AnalysertFe3 = {Batch.AnalysertFe3}, ";
             sql = sql + $"AnalysertFeTot = {Batch.AnalysertFeTot}, VannSluttjustering = {Batch.VannSluttJustering}, VirkeligMVann = {Batch.VirkeligMVann}, TotTilLager = {Batch.TotTilLager} ";
             sql = sql + $"where dato between '{SQLStartDate}' AND '{SQLEndDate}'; ";
-            Debug.WriteLine(sql + pix318());
+            Debug.WriteLine(sql);
 
             return sql;
         }

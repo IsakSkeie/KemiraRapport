@@ -44,9 +44,9 @@ namespace DataAccesLib
 
         }
 
-        public Task EditRecipe(string sql, RecipeModels recipe)
+        public Task EditRecipe(string sql)
         {
-            return _db.SaveData(sql, recipe);
+            return _db.SaveData(sql, new { });
         }
 
         

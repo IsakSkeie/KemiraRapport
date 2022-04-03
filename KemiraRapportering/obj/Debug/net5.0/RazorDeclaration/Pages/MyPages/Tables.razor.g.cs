@@ -179,7 +179,7 @@ using BlazorDateRangePicker;
     private async void BatchEdit(RecipeModels batch)
     {
         string sql = query.RecipeUpdate(batch);
-        recipes = await _db.GetRecipes(sql);
+        await _db.EditRecipe(sql);
 
         sql = query.pix318();
         TableUpdate();

@@ -8,5 +8,7 @@ namespace DataAccesLib
     {
         Task<List<RecipeModels>> GetRecipes(string sql);
         Task InsertRecipe(RecipeModels recipe);
+
+        Task EditRecipe(string sql);
     }
 }
