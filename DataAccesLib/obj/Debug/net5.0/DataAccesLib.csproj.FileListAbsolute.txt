@@ -1,0 +1,24 @@
+C:\Users\isak.skeie\OneDrive - Goodtech\Kemira\Blazor\DataAccesLib\bin\Debug\net5.0\DataAccesLib.deps.json
+C:\Users\isak.skeie\OneDrive - Goodtech\Kemira\Blazor\DataAccesLib\bin\Debug\net5.0\DataAccesLib.dll
+C:\Users\isak.skeie\OneDrive - Goodtech\Kemira\Blazor\DataAccesLib\bin\Debug\net5.0\ref\DataAccesLib.dll
+C:\Users\isak.skeie\OneDrive - Goodtech\Kemira\Blazor\DataAccesLib\bin\Debug\net5.0\DataAccesLib.pdb
+C:\Users\isak.skeie\OneDrive - Goodtech\Kemira\Blazor\DataAccesLib\obj\Debug\net5.0\DataAccesLib.csproj.AssemblyReference.cache
+C:\Users\isak.skeie\OneDrive - Goodtech\Kemira\Blazor\DataAccesLib\obj\Debug\net5.0\DataAccesLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\isak.skeie\OneDrive - Goodtech\Kemira\Blazor\DataAccesLib\obj\Debug\net5.0\DataAccesLib.AssemblyInfoInputs.cache
+C:\Users\isak.skeie\OneDrive - Goodtech\Kemira\Blazor\DataAccesLib\obj\Debug\net5.0\DataAccesLib.AssemblyInfo.cs
+C:\Users\isak.skeie\OneDrive - Goodtech\Kemira\Blazor\DataAccesLib\obj\Debug\net5.0\DataAccesLib.csproj.CoreCompileInputs.cache
+C:\Users\isak.skeie\OneDrive - Goodtech\Kemira\Blazor\DataAccesLib\obj\Debug\net5.0\DataAccesLib.dll
+C:\Users\isak.skeie\OneDrive - Goodtech\Kemira\Blazor\DataAccesLib\obj\Debug\net5.0\ref\DataAccesLib.dll
+C:\Users\isak.skeie\OneDrive - Goodtech\Kemira\Blazor\DataAccesLib\obj\Debug\net5.0\DataAccesLib.pdb
+C:\Users\isak.skeie\source\repos\DataAccesLib\bin\Debug\net5.0\DataAccesLib.deps.json
+C:\Users\isak.skeie\source\repos\DataAccesLib\bin\Debug\net5.0\DataAccesLib.dll
+C:\Users\isak.skeie\source\repos\DataAccesLib\bin\Debug\net5.0\DataAccesLib.pdb
+C:\Users\isak.skeie\source\repos\DataAccesLib\obj\Debug\net5.0\DataAccesLib.csproj.AssemblyReference.cache
+C:\Users\isak.skeie\source\repos\DataAccesLib\obj\Debug\net5.0\DataAccesLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\isak.skeie\source\repos\DataAccesLib\obj\Debug\net5.0\DataAccesLib.AssemblyInfoInputs.cache
+C:\Users\isak.skeie\source\repos\DataAccesLib\obj\Debug\net5.0\DataAccesLib.AssemblyInfo.cs
+C:\Users\isak.skeie\source\repos\DataAccesLib\obj\Debug\net5.0\DataAccesLib.csproj.CoreCompileInputs.cache
+C:\Users\isak.skeie\source\repos\DataAccesLib\obj\Debug\net5.0\DataAccesLib.dll
+C:\Users\isak.skeie\source\repos\DataAccesLib\obj\Debug\net5.0\ref\DataAccesLib.dll
+C:\Users\isak.skeie\source\repos\DataAccesLib\obj\Debug\net5.0\DataAccesLib.pdb
+C:\Users\isak.skeie\source\repos\DataAccesLib\obj\Debug\net5.0\refint\DataAccesLib.dll

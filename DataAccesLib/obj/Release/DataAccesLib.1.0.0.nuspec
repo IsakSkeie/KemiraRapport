@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>DataAccesLib</id>
+    <version>1.0.0</version>
+    <authors>DataAccesLib</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="BlazorDateRangePicker" version="4.1.0" exclude="Build,Analyzers" />
+        <dependency id="Dapper" version="2.0.123" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="6.0.2-mauipre.1.22054.8" exclude="Build,Analyzers" />
+        <dependency id="System.Data.SqlClient" version="4.8.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\isak.skeie\source\repos\DataAccesLib\bin\Release\net5.0\win-x64\DataAccesLib.dll" target="lib\net5.0\DataAccesLib.dll" />
+  </files>
+</package>

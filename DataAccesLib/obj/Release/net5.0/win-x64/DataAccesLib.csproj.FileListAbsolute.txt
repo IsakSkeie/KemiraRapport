@@ -1,0 +1,11 @@
+C:\Users\isak.skeie\source\repos\DataAccesLib\bin\Release\net5.0\win-x64\DataAccesLib.deps.json
+C:\Users\isak.skeie\source\repos\DataAccesLib\bin\Release\net5.0\win-x64\DataAccesLib.dll
+C:\Users\isak.skeie\source\repos\DataAccesLib\bin\Release\net5.0\win-x64\ref\DataAccesLib.dll
+C:\Users\isak.skeie\source\repos\DataAccesLib\bin\Release\net5.0\win-x64\DataAccesLib.pdb
+C:\Users\isak.skeie\source\repos\DataAccesLib\obj\Release\net5.0\win-x64\DataAccesLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\isak.skeie\source\repos\DataAccesLib\obj\Release\net5.0\win-x64\DataAccesLib.AssemblyInfoInputs.cache
+C:\Users\isak.skeie\source\repos\DataAccesLib\obj\Release\net5.0\win-x64\DataAccesLib.AssemblyInfo.cs
+C:\Users\isak.skeie\source\repos\DataAccesLib\obj\Release\net5.0\win-x64\DataAccesLib.csproj.CoreCompileInputs.cache
+C:\Users\isak.skeie\source\repos\DataAccesLib\obj\Release\net5.0\win-x64\DataAccesLib.dll
+C:\Users\isak.skeie\source\repos\DataAccesLib\obj\Release\net5.0\win-x64\ref\DataAccesLib.dll
+C:\Users\isak.skeie\source\repos\DataAccesLib\obj\Release\net5.0\win-x64\DataAccesLib.pdb
