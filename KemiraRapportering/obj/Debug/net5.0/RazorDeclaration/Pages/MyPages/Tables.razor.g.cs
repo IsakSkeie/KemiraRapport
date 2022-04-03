@@ -118,26 +118,16 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 407 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Tables.razor"
+#line 403 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Tables.razor"
        
-   public filtering[] filter = new filtering[30];
-   private RecipeModels RecipeEdit = new RecipeModels();
+    public filtering[] filter = new filtering[30];
+    private RecipeModels RecipeEdit = new RecipeModels();
 
-    private void EnableEditing(bool flag, RecipeModels batch)
-    {
-        batch.edit = flag;
-    }
-    public void WriteCSV(filtering[] filter)
-    {
-        DataWrite ToCSV = new DataWrite(filter);
 
-        ToCSV.dataWriteToCSV();
 
-    }
-     
     protected override async Task OnInitializedAsync()
     {
-        
+
 
         for(int i = 0; i < 30; i++)
         {
@@ -163,6 +153,23 @@ using BlazorDateRangePicker;
 
 
     }
+
+    private void EnableEditing(bool flag, RecipeModels batch)
+    {
+        batch.edit = flag;
+        RecipeEdit = batch;
+    }
+
+
+    public void WriteCSV(filtering[] filter)
+    {
+        DataWrite ToCSV = new DataWrite(filter);
+
+        ToCSV.dataWriteToCSV();
+
+    }
+
+
 
 #line default
 #line hidden

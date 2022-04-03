@@ -132,26 +132,26 @@
                              @if (!filter[0].sort)
                             {
                                 <td>
-                                <input type="number" class="form-control" placeholder="@recipe.BatchNr.ToString()" value="@RecipeEdit.BatchNr" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.BatchNr" @bind-value:event="oninput" />
 </td>
                             }
                             @if (!filter[1].sort)
                             {
                                 <td>
-                                <input type="number" class="form-control" placeholder="@recipe.Dato" value="" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.Dato" @bind-value:event="oninput" />
 </td>
                             }
                             @if (!filter[2].sort)
                             {
                                 <td>
-                                <input type="number" class="form-control" placeholder="@recipe.SAP.ToString()" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.SAP" @bind-value:event="oninput" />
                                 </td>
                             }
 
                             @if (!filter[3].sort)
                             {
                                 <td>
-                                <input type="text" class="form-control" placeholder="@recipe.ID" value="@RecipeEdit.ID" />
+                                <input type="text" class="form-control" @bind-value="RecipeEdit.ID" @bind-value:event="oninput" />
                                  </td>
                             }
 
@@ -159,23 +159,21 @@
                             {
                                 <td>
 
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.Reaktor" @bind-value:event="oninput" />
 </td>
                             }
-
-                            @if (!filter[5].sort)
+                             @if (!filter[5].sort)
                             {
-                                <td>
-
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
-</td>
+                                <th>
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.SatsVolum" @bind-value:event="oninput" />
+</th>
                             }
 
                             @if (!filter[6].sort)
                             {
                                 <td>
 
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.ForvFe" @bind-value:event="oninput" />
 </td>
                             }
 
@@ -183,7 +181,7 @@
                             {
                                 <td>
 
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.OnsketFe" @bind-value:event="oninput" />
 </td>
                             }
 
@@ -191,7 +189,7 @@
                             {
                                 <td>
 
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.OnsketSyre" @bind-value:event="oninput" />
 </td>
                             }
 
@@ -199,7 +197,7 @@
                             {
                                 <td>
 
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.OnsketFe2" @bind-value:event="oninput" />
 </td>
                             }
 
@@ -207,7 +205,7 @@
                             {
                                 <td>
 
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.HCLType" @bind-value:event="oninput" />
 </td>
                             }
 
@@ -215,7 +213,7 @@
                             {
                                 <td>
 
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.ForvDamp" @bind-value:event="oninput" />
 </td>
                             }
 
@@ -223,130 +221,128 @@
                             {
                                 <td>
 
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.VannOverordnet" @bind-value:event="oninput" />
 </td>
                             }
 
                             @if (!filter[13].sort)
                             {
                                 <td>
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.VarmtVann" @bind-value:event="oninput" />
 </td>
                             }
 
                             @if (!filter[14].sort)
                             {
                                 <td>
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.SpillVann" @bind-value:event="oninput" />
 </td>
                             }
 
                             @if (!filter[15].sort)
                             {
                                 <td>
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.ScrubberVaeske" @bind-value:event="oninput" />
 </td>
                             }
 
                             @if (!filter[16].sort)
                             {
-                                <th>
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
-</th>
+                                <td>
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.HCL" @bind-value:event="oninput" />
+</td>
                             }
 
                             @if (!filter[17].sort)
                             {
                                 <th>
-
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.Jernsulfat" @bind-value:event="oninput" />
 </th>
                             }
 
                             @if (!filter[18].sort)
                             {
                                 <th>
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.Temp" @bind-value:event="oninput" />
 </th>
                             }
-
-                            @if (!filter[19].sort)
+                             @if (!filter[19].sort)
                             {
                                 <th>
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.Modningstid" @bind-value:event="oninput" />
 </th>
                             }
-
-                            @if (!filter[20].sort)
+                             @if (!filter[20].sort)
                             {
                                 <th>
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.DampVentil" @bind-value:event="oninput" />
 </th>
                             }
-
-                            @if (!filter[21].sort)
+                             @if (!filter[21].sort)
                             {
                                 <th>
-
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.Etterspyling" @bind-value:event="oninput" />
 </th>
                             }
-
-                            @if (!filter[22].sort)
+                             @if (!filter[22].sort)
                             {
                                 <th>
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.O2Trykk" @bind-value:event="oninput" />
 </th>
                             }
 
                             @if (!filter[23].sort)
                             {
                                 <th>
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.O2Reaksjonstid" @bind-value:event="oninput" />
 </th>
                             }
-
-                            @if (!filter[24].sort)
+                             @if (!filter[24].sort)
                             {
                                 <th>
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.DeltaTemp" @bind-value:event="oninput" />
 </th>
                             }
 
                             @if (!filter[25].sort)
                             {
                                 <th>
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.AnalysertFe3" @bind-value:event="oninput" />
 </th>
                             }
 
                             @if (!filter[26].sort)
                             {
                                 <th>
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.AnalysertFeTot" @bind-value:event="oninput" />
 </th>
                             }
 
-                            @if (!filter[27].sort)
+                            @if (!filter[26].sort)
                             {
                                 <th>
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.VannSluttJustering" @bind-value:event="oninput" />
 </th>
                             }
 
                             @if (!filter[28].sort)
                             {
                                 <th>
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.VirkeligMVann" @bind-value:event="oninput"/>
 </th>
                             }
 
                             @if (!filter[29].sort)
                             {
                                 <th>
-                                <input type="number" class="form-control" placeholder="" value="@RecipeEdit.SAP" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.TotTilLager" @bind-value:event="oninput" />
 </th>
                             }
+
+                            
                             <td>
                     <button type="button" class="btn btn-link" @onclick="() => EnableEditing(false, recipe)">
                         <i class="oi oi-trash" />
@@ -405,24 +401,14 @@
 
 
 @code {
-   public filtering[] filter = new filtering[30];
-   private RecipeModels RecipeEdit = new RecipeModels();
+    public filtering[] filter = new filtering[30];
+    private RecipeModels RecipeEdit = new RecipeModels();
 
-    private void EnableEditing(bool flag, RecipeModels batch)
-    {
-        batch.edit = flag;
-    }
-    public void WriteCSV(filtering[] filter)
-    {
-        DataWrite ToCSV = new DataWrite(filter);
 
-        ToCSV.dataWriteToCSV();
 
-    }
-     
     protected override async Task OnInitializedAsync()
     {
-        
+
 
         for(int i = 0; i < 30; i++)
         {
@@ -448,4 +434,21 @@
 
 
     }
+
+    private void EnableEditing(bool flag, RecipeModels batch)
+    {
+        batch.edit = flag;
+        RecipeEdit = batch;
+    }
+
+
+    public void WriteCSV(filtering[] filter)
+    {
+        DataWrite ToCSV = new DataWrite(filter);
+
+        ToCSV.dataWriteToCSV();
+
+    }
+
+
 }
