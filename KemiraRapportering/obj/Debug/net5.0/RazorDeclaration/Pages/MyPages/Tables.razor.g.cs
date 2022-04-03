@@ -118,11 +118,11 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 403 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Tables.razor"
+#line 405 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Tables.razor"
        
     public filtering[] filter = new filtering[30];
     private RecipeModels RecipeEdit = new RecipeModels();
-
+    private List<RecipeModels> recipes;
 
 
     protected override async Task OnInitializedAsync()
@@ -169,11 +169,25 @@ using BlazorDateRangePicker;
 
     }
 
+    private void BatchEdit(RecipeModels batch)
+    {
+        
+    }
+
+    public async void TableUpdate()
+    {
+
+        recipes = await _db.GetRecipes(Queries.sql);
+        RecipeRead.Table = recipes;
+        //await InvokeAsync(StateHasChanged);
+        StateHasChanged();
+    }
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IRecipeData _db { get; set; }
     }
 }
 #pragma warning restore 1591

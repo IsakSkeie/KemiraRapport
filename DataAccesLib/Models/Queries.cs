@@ -50,6 +50,23 @@ namespace DataAccesLib.Models
             string sql = $"SELECT top ({ Len }) * FROM PIX318_ReseptData ORDER BY BatchNr DESC";
             return sql;
         }
+
+        public string RecipeUpdate(RecipeModels Batch)
+        {
+            //format '2022-03-02 11:53:22.000'
+            //string startTime = 
+            string sql = "UPDATE PIX318_ReseptData";
+            sql = sql + $" SET batchNr = {Batch.BatchNr}, SAP = {Batch.SAP}, Reaktor = {Batch.Reaktor}, Satsvolum = {Batch.SatsVolum},";
+            sql = sql + $" ForvFe = {Batch.ForvFe}, OnsketFe = {Batch.OnsketFe}, OnsketSyre = {Batch.OnsketSyre}, OnsketFe2 = {Batch.OnsketFe2}, ";
+            sql = sql + $"HCLType = {Batch.HCLType}, ForvDamp = {Batch.ForvDamp}, VannOverordnet = {Batch.VannOverordnet}, VarmtVann = {Batch.VarmtVann}, ";
+            sql = sql + $"SpillVann = {Batch.SpillVann}, ScrubberVaeske = {Batch.ScrubberVaeske}, HCL = {Batch.HCL}, JernSulfat = {Batch.Jernsulfat}, ";
+            sql = sql + $"Temp = {Batch.Temp}, Modningstid = {Batch.Modningstid}, DampVentil = {Batch.DampVentil}, Etterspyling = {Batch.Etterspyling}, ";
+            sql = sql + $"O2Trykk = {Batch.O2Trykk}, O2Reaksjonstid = {Batch.O2Reaksjonstid}, DeltaTemp = {Batch.DeltaTemp}, AnalysertFe3 = {Batch.AnalysertFe3}, ";
+            sql = sql + $"AnalysertFeTot = {Batch.AnalysertFeTot}, VannSluttjustering = {Batch.VannSluttJustering}, VirkeligMVann = {Batch.VirkeligMVann}, TotTilLager = {Batch.TotTilLager} ";
+            //sql = sql + $"where dato = '{}'; ";
+
+            return sql;
+        }
         
     }
 }
