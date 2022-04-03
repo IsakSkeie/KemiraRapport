@@ -51,7 +51,42 @@ namespace DataAccesLib.Models
 
     public static class FilterModel
     {
-        public static bool[] filter = new bool[30];
+        public static bool[] filter { get; set; } = new bool[30];
+        public static string[] StringFilter = new string[]
+        {
+
+        "BatchNr",
+
+         "Dato",
+         "SAP",
+         "ID",
+         "Reaktor",
+            "Satsvolum",
+            "ForvFe",
+            "OnsketFe",
+            "OnsketSyre",
+            "OnsketFe2",
+            "HCLType",
+            "ForvDamp",
+            "VannOverordnet",
+            "VarmtVann",
+            "SpillVann",
+            "ScrubberVaeske",
+            "HCL",
+            "Jernsulfat",
+            "Temp",
+            "Modningstid",
+            "Dampventil",
+            "Etterspyling",
+            "O2Trykk",
+            "O2Reaksjonstid",
+        "DeltaTemp",
+        "AnalysertFe3",
+        "AnalysertFeTot",
+        "VannSluttjustering",
+        "VirkeligMVann",
+        "TotTilLager",
+    };
        
 
     }

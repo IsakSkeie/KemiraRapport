@@ -119,7 +119,7 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 500 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318.razor"
+#line 506 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318.razor"
        
 
 
@@ -171,9 +171,9 @@ using BlazorDateRangePicker;
 
 
     public filtering[] filter = new filtering[30];
+    public bool FilterSet { get; set; }
 
-   
-   
+
     DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
     DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
 
@@ -189,16 +189,16 @@ using BlazorDateRangePicker;
 
 
 
-    
+
     protected override async Task OnInitializedAsync()
     {
         string sql = query.pix318();
-        
-        
-        recipes = await _db.GetRecipes(sql);
-        
 
-        
+
+        recipes = await _db.GetRecipes(sql);
+
+
+
         RecipeRead.Table = recipes;
         TableUpdate();
 
@@ -215,8 +215,15 @@ using BlazorDateRangePicker;
         filter[21].sort = true;
         filter[22].sort = true;
         filter[24].sort = true;
+        FilterModel.filter[5] = true;
+        FilterModel.filter[19] = true;
+        FilterModel.filter[20] = true;
+        FilterModel.filter[21] = true;
+        FilterModel.filter[22] = true;
+        FilterModel.filter[24] = true;
 
-        
+
+
 
     }
 
@@ -234,8 +241,8 @@ using BlazorDateRangePicker;
         string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData ORDER BY BatchNr DESC";
         recipes = await _db.GetRecipes(sql);
         RecipeRead.Table = recipes;
-        
-        
+
+
 
     }
 
@@ -244,10 +251,10 @@ using BlazorDateRangePicker;
         StateHasChanged();
     }
 
-  
 
 
-    
+
+
     public void WriteCSV(filtering[] filter)
     {
         DataWrite ToCSV = new DataWrite(filter);
@@ -256,12 +263,18 @@ using BlazorDateRangePicker;
 
     }
 
-     private void EnableEditing(bool flag, RecipeModels batch)
+    private void EnableEditing(bool flag, RecipeModels batch)
     {
-       batch.edit = flag;
+        batch.edit = flag;
     }
 
-    
+
+    private void FilterChange(bool flag, int index)
+    {
+        FilterModel.filter[index] = flag;
+        filter[index].sort = flag;
+        StateHasChanged();
+    }
 
 
 #line default

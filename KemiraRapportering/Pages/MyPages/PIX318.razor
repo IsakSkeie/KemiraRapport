@@ -39,13 +39,16 @@ else
       <table class="table table-striped">
         <thead>
             <tr>
-  
-                @foreach(var Var in filter)
-                    {
-                       @if(!Var.sort)
-                       {<th>@Var.variable</th>}
-                        
-                    }
+    
+                @for(int i = 0; i < 29; i++)
+                {
+
+                        @if (!FilterModel.filter[i])
+                        {
+                            <th>@FilterModel.StringFilter[i]</th>
+                        }
+
+                }
                 
 
             </tr>
@@ -56,154 +59,155 @@ else
                 @foreach (var recipe in RecipeRead.Table)
             {
 
+
                     @if (!recipe.edit)
                     {
                         <tr @key="recipe">
 
-                            @if (!filter[0].sort)
+                           @if (!FilterModel.filter[0])
                             {
                                 <td>@recipe.BatchNr</td>
                             }
-                            @if (!filter[1].sort)
+                            @if (!FilterModel.filter[1])
                             {
                                 <td>@recipe.Dato</td>
                             }
-                            @if (!filter[2].sort)
+                            @if (!FilterModel.filter[2])
                             {
                                 <td>@recipe.SAP</td>
                             }
 
-                            @if (!filter[3].sort)
+                            @if (!FilterModel.filter[3])
                             {
                                 <td>@recipe.ID</td>
                             }
 
-                            @if (!filter[4].sort)
+                            @if (!FilterModel.filter[4])
                             {
                                 <td>@recipe.Reaktor</td>
                             }
 
-                            @if (!filter[5].sort)
+                            @if (!FilterModel.filter[5])
                             {
                                 <td>@recipe.SatsVolum</td>
                             }
 
-                            @if (!filter[6].sort)
+                            @if (!FilterModel.filter[6])
                             {
                                 <td>@recipe.ForvFe</td>
                             }
 
-                            @if (!filter[7].sort)
+                            @if (!FilterModel.filter[7])
                             {
                                 <td>@recipe.OnsketFe</td>
                             }
 
-                            @if (!filter[8].sort)
+                            @if (!FilterModel.filter[8])
                             {
                                 <td>@recipe.OnsketSyre</td>
                             }
 
-                            @if (!filter[9].sort)
+                            @if (!FilterModel.filter[9])
                             {
                                 <td>@recipe.OnsketFe2</td>
                             }
 
-                            @if (!filter[10].sort)
+                            @if (!FilterModel.filter[10])
                             {
                                 <td>@recipe.HCLType</td>
                             }
 
-                            @if (!filter[11].sort)
+                            @if (!FilterModel.filter[11])
                             {
                                 <td>@recipe.ForvDamp</td>
                             }
 
-                            @if (!filter[12].sort)
+                            @if (!FilterModel.filter[12])
                             {
                                 <td>@recipe.VannOverordnet</td>
                             }
 
-                            @if (!filter[13].sort)
+                            @if (!FilterModel.filter[13])
                             {
                                 <td>@recipe.VarmtVann</td>
                             }
 
-                            @if (!filter[14].sort)
+                            @if (!FilterModel.filter[14])
                             {
                                 <td>@recipe.SpillVann</td>
                             }
 
-                            @if (!filter[15].sort)
+                            @if (!FilterModel.filter[15])
                             {
                                 <td>@recipe.ScrubberVaeske</td>
                             }
 
-                            @if (!filter[16].sort)
+                            @if (!FilterModel.filter[16])
                             {
                                 <th>@recipe.HCL</th>
                             }
 
-                            @if (!filter[17].sort)
+                            @if (!FilterModel.filter[17])
                             {
                                 <th>@recipe.Jernsulfat</th>
                             }
 
-                            @if (!filter[18].sort)
+                            @if (!FilterModel.filter[18])
                             {
                                 <th>@recipe.Temp</th>
                             }
 
-                            @if (!filter[19].sort)
+                            @if (!FilterModel.filter[19])
                             {
                                 <th>@recipe.Modningstid</th>
                             }
 
-                            @if (!filter[20].sort)
+                            @if (!FilterModel.filter[20])
                             {
                                 <th>@recipe.DampVentil</th>
                             }
 
-                            @if (!filter[21].sort)
+                            @if (!FilterModel.filter[21])
                             {
                                 <th>@recipe.Etterspyling</th>
                             }
 
-                            @if (!filter[22].sort)
+                            @if (!FilterModel.filter[22])
                             {
                                 <th>@recipe.O2Trykk</th>
                             }
 
-                            @if (!filter[23].sort)
+                            @if (!FilterModel.filter[23])
                             {
                                 <th>@recipe.O2Reaksjonstid</th>
                             }
 
-                            @if (!filter[24].sort)
+                            @if (!FilterModel.filter[24])
                             {
                                 <th>@recipe.DeltaTemp</th>
                             }
 
-                            @if (!filter[25].sort)
+                            @if (!FilterModel.filter[25])
                             {
                                 <th>@recipe.AnalysertFe3</th>
                             }
 
-                            @if (!filter[26].sort)
+                            @if (!FilterModel.filter[26])
                             {
                                 <th>@recipe.AnalysertFeTot</th>
                             }
 
-                            @if (!filter[27].sort)
+                            @if (!FilterModel.filter[27])
                             {
                                 <th>@recipe.VannSluttJustering</th>
                             }
 
-                            @if (!filter[28].sort)
+                            @if (!FilterModel.filter[28])
                             {
                                 <th>@recipe.VirkeligMVann</th>
                             }
 
-                            @if (!filter[29].sort)
+                            @if (!FilterModel.filter[29])
                             {
                                 <th>@recipe.TotTilLager</th>
                             }
@@ -465,23 +469,25 @@ else
     <h4>Fjerne/Legge til kolonner</h4>
 
     <ul class="list-group d-inline-block">
-   @foreach(var variable in filter)
+
+   @for(int j = 0; j < 29; j++)
     {
 
 
-            @if (!variable.sort)
+            @if (!filter[j].sort)
             {
                 <li class="list-group-item list-group-item-primary"
-              @onclick = "(() => {variable.sort = !variable.sort; StateHasChanged();})">
+                
+              @onclick = "(() => {FilterChange(true, j); StateHasChanged();})">
              
-              @variable.variable
+              @FilterModel.StringFilter[j]
             </li>
             }
         else
             {
              <li class="list-group-item list-group-item-secondary"
-              @onclick = "(() => {variable.sort = !variable.sort; StateHasChanged();})">
-             <del>@variable.variable</del> 
+              @onclick = "(() => {FilterModel.filter[j] = false; StateHasChanged();})">
+             <del>@FilterModel.StringFilter[j]</del> 
             </li>   
             }
     }
@@ -548,9 +554,9 @@ else
 
 
     public filtering[] filter = new filtering[30];
+    public bool FilterSet { get; set; }
 
-   
-   
+
     DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
     DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
 
@@ -566,16 +572,16 @@ else
 
 
 
-    
+
     protected override async Task OnInitializedAsync()
     {
         string sql = query.pix318();
-        
-        
-        recipes = await _db.GetRecipes(sql);
-        
 
-        
+
+        recipes = await _db.GetRecipes(sql);
+
+
+
         RecipeRead.Table = recipes;
         TableUpdate();
 
@@ -592,8 +598,15 @@ else
         filter[21].sort = true;
         filter[22].sort = true;
         filter[24].sort = true;
+        FilterModel.filter[5] = true;
+        FilterModel.filter[19] = true;
+        FilterModel.filter[20] = true;
+        FilterModel.filter[21] = true;
+        FilterModel.filter[22] = true;
+        FilterModel.filter[24] = true;
 
-        
+
+
 
     }
 
@@ -611,8 +624,8 @@ else
         string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData ORDER BY BatchNr DESC";
         recipes = await _db.GetRecipes(sql);
         RecipeRead.Table = recipes;
-        
-        
+
+
 
     }
 
@@ -621,10 +634,10 @@ else
         StateHasChanged();
     }
 
-  
 
 
-    
+
+
     public void WriteCSV(filtering[] filter)
     {
         DataWrite ToCSV = new DataWrite(filter);
@@ -633,11 +646,17 @@ else
 
     }
 
-     private void EnableEditing(bool flag, RecipeModels batch)
+    private void EnableEditing(bool flag, RecipeModels batch)
     {
-       batch.edit = flag;
+        batch.edit = flag;
     }
 
-    
+
+    private void FilterChange(bool flag, int index)
+    {
+        FilterModel.filter[index] = flag;
+        filter[index].sort = flag;
+        StateHasChanged();
+    }
 
 }
