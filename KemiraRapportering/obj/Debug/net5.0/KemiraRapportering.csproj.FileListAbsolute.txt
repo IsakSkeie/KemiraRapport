@@ -160,5 +160,5 @@ C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\refi
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\KemiraRapportering.pdb
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\KemiraRapportering.genruntimeconfig.cache
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\ref\KemiraRapportering.dll
-C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\Table.razor.g.cs
-C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\Table.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\Tables.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\Tables.razor.g.cs
