@@ -90,28 +90,27 @@ using KemiraRapportering.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318Analyse.razor"
-using DataAccesLib;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 5 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318Analyse.razor"
+#line 1 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Tables - Copy.razor"
 using DataAccesLib.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318Analyse.razor"
+#line 2 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Tables - Copy.razor"
+using DataAccesLib;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Tables - Copy.razor"
 using BlazorDateRangePicker;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/PIX318Analyse")]
-    public partial class PIX318Analyse : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class Tables___Copy : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -119,29 +118,86 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318Analyse.razor"
+#line 414 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Tables - Copy.razor"
        
-
-
-    private string value { get; set; }
-
-    private string batch { get; set; }
-
-    private int TableLen = Queries.TableLen;
-
-    private List<RecipeModels> recipes;
+    public filtering[] filter = new filtering[30];
     private RecipeModels RecipeEdit = new RecipeModels();
-
-
-
-
+    private List<RecipeModels> recipes;
+    Queries query = new Queries();
 
     DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
     DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
 
+    private int TableLen = 30;
 
-    Queries query = new Queries();
 
+    protected override async Task OnInitializedAsync()
+    {
+
+
+        for(int i = 0; i < TableLen; i++)
+        {
+            filter[i] = new filtering();
+            filter[i].variable = FilterModel.StringFilter[i];
+        }
+
+        //Make this part of initialization
+        filter[5].sort = true;
+        filter[19].sort = true;
+        filter[20].sort = true;
+        filter[21].sort = true;
+        filter[22].sort = true;
+        filter[24].sort = true;
+        FilterModel.filter[5] = true;
+        FilterModel.filter[19] = true;
+        FilterModel.filter[20] = true;
+        FilterModel.filter[21] = true;
+        FilterModel.filter[22] = true;
+        FilterModel.filter[24] = true;
+
+
+
+
+    }
+
+    private void EnableEditing(bool flag, RecipeModels batch)
+    {
+        batch.edit = flag;
+        if (flag)
+        {
+            RecipeEdit = batch;
+        }
+
+        StateHasChanged();
+
+    }
+
+
+    public void WriteCSV(filtering[] filter)
+    {
+        DataWrite ToCSV = new DataWrite(filter);
+        TableUpdate();
+        ToCSV.dataWriteToCSV();
+
+    }
+
+    private async void BatchEdit(RecipeModels batch)
+    {
+        string sql = query.RecipeUpdate(batch);
+        await _db.EditRecipe(sql);
+
+        sql = query.pix318();
+        TableUpdate();
+    }
+
+    public async void TableUpdate()
+    {
+
+        recipes = await _db.GetRecipes(Queries.sql);
+        RecipeRead.Table = recipes;
+        //await InvokeAsync(StateHasChanged);
+        StateHasChanged();
+    }
 
     public void OnRangeSelect(DateRange range)
     {
@@ -150,36 +206,14 @@ using BlazorDateRangePicker;
         TableUpdate();
     }
 
-
-
-
-    protected override async Task OnInitializedAsync()
+    public void FilterUpdate()
     {
-        string sql = query.pix318();
-        
-        
-        recipes = await _db.GetRecipes(sql);
-        
-
-        
-        RecipeRead.Table = recipes;
-        TableUpdate();
-        
-
-
-        recipes = await _db.GetRecipes(sql);
-
-
+        for(int n = 0; n < TableLen-1; n++)
+        {
+            FilterModel.filter[n] = filter[n].sort;
+        }
     }
 
-    public async void TableUpdate()
-    {
-
-        recipes = await _db.GetRecipes(Queries.sql);
-        RecipeRead.Table = recipes;
-        
-        //StateHasChanged();
-    }
 
     public async Task resetTable()
     {
@@ -187,25 +221,6 @@ using BlazorDateRangePicker;
         recipes = await _db.GetRecipes(sql);
         RecipeRead.Table = recipes;
     }
-
-    public void ResetDropDown()
-    {
-        StateHasChanged();
-    }
-
-
-
-
-
-    public void WriteCSV(filtering[] filter)
-    {
-        DataWrite ToCSV = new DataWrite(filter);
-
-        ToCSV.dataWriteToCSV();
-
-    }
-
-   
 
 
 

@@ -97,6 +97,15 @@ namespace DataAccesLib.Models
         "VannSluttjustering",
         "VirkeligMVann",
         "TotTilLager",
+        "TotalFe",
+        "Egenvekt",
+        "Verdi2Fe",
+        "ManuellVerdi2Fe",
+        "Verdi3EtterManuell2Fe",
+        "Verdi3Fe",
+        "FriSyre",
+
+
     };
        
 
