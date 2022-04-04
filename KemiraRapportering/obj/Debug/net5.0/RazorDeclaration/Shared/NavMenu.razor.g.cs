@@ -104,11 +104,13 @@ using DataAccesLib;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Shared\NavMenu.razor"
+#line 36 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private bool expandSubNav { get; set; }
 
     private void ToggleNavMenu()
     {

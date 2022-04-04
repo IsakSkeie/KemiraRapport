@@ -64,7 +64,7 @@ namespace DataAccesLib.Models
             //format '2022-03-02 11:53:22.000'
             //string startTime = 
             sql = "UPDATE PIX318_ReseptData";
-            sql = sql + $" SET batchNr = {Batch.BatchNr}, SAP = {Batch.SAP}, Reaktor = {Batch.Reaktor}, Satsvolum = {Batch.SatsVolum},";
+            sql = sql + $" SET batchNr = {Batch.BatchNr}, ID = '{Batch.ID}', SAP = {Batch.SAP}, Reaktor = {Batch.Reaktor}, Satsvolum = {Batch.SatsVolum},";
             sql = sql + $" ForvFe = {Batch.ForvFe}, OnsketFe = {Batch.OnsketFe}, OnsketSyre = {Batch.OnsketSyre}, OnsketFe2 = {Batch.OnsketFe2}, ";
             sql = sql + $"HCLType = {Batch.HCLType}, ForvDamp = {Batch.ForvDamp}, VannOverordnet = {Batch.VannOverordnet}, VarmtVann = {Batch.VarmtVann}, ";
             sql = sql + $"SpillVann = {Batch.SpillVann}, ScrubberVaeske = {Batch.ScrubberVaeske}, HCL = {Batch.HCL}, JernSulfat = {Batch.Jernsulfat}, ";

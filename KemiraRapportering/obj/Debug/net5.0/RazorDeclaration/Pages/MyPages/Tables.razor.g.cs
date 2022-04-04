@@ -118,19 +118,24 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 405 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Tables.razor"
+#line 414 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Tables.razor"
        
     public filtering[] filter = new filtering[30];
     private RecipeModels RecipeEdit = new RecipeModels();
     private List<RecipeModels> recipes;
     Queries query = new Queries();
 
+    DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
+    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
+
+    private int TableLen = 30;
+
 
     protected override async Task OnInitializedAsync()
     {
 
 
-        for(int i = 0; i < 30; i++)
+        for(int i = 0; i < TableLen; i++)
         {
             filter[i] = new filtering();
             filter[i].variable = FilterModel.StringFilter[i];
@@ -200,6 +205,23 @@ using BlazorDateRangePicker;
         string sql = query.DateQuery(range);
         TableUpdate();
     }
+
+    public void FilterUpdate()
+    {
+        for(int n = 0; n < TableLen-1; n++)
+        {
+            FilterModel.filter[n] = filter[n].sort;
+        }
+    }
+
+
+    public async Task resetTable()
+    {
+        string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData ORDER BY BatchNr DESC";
+        recipes = await _db.GetRecipes(sql);
+        RecipeRead.Table = recipes;
+    }
+
 
 
 #line default

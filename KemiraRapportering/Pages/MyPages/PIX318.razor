@@ -24,15 +24,6 @@ else
 
    
 
-    <div class="btn-group">
-        <DateRangePicker placeholder="Velg Dato" @bind-StartDate="StartDate" @bind-EndDate="EndDate" OnRangeSelect="OnRangeSelect">
-
-        </DateRangePicker>
-    </div>
-
-    <input type="number" @bind-value="Queries.TableLen" @bind-value:event="oninput" />
-    
-
 
 
  
@@ -128,10 +119,7 @@ else
 
     }
 
-    private void EnableEditing(bool flag, RecipeModels batch)
-    {
-        batch.edit = flag;
-    }
+   
 
 
 }

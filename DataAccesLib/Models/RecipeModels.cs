@@ -40,6 +40,17 @@ namespace DataAccesLib.Models
         public double VirkeligMVann { get; set; }
         public double TotTilLager { get; set; }
 
+        //Analysis
+        public double TotalFe { get; set; }
+        public double Egenvekt { get; set; }
+        public double Verdi2Fe { get; set; }
+        public double ManuellVerdi2Fe { get; set; }
+        public double Verdi3EtterManuell2Fe { get; set; }
+        public double Verdi3Fe { get; set; }
+        public double FriSyre { get; set; }
+
+
+
         public bool filter { get; set; }
         public bool edit { get; set; }
 
