@@ -4,7 +4,13 @@
 
 @inject IRecipeData _db
 
+<div class="btn-group">
+        <DateRangePicker placeholder="Velg Dato" @bind-StartDate="StartDate" @bind-EndDate="EndDate" OnRangeSelect="OnRangeSelect">
 
+        </DateRangePicker>
+    </div>
+
+    <input type="number" @bind-value="Queries.TableLen" @bind-value:event="oninput" />
   <div>
       <table class="table table-striped">
         <thead>
@@ -373,6 +379,9 @@
 
     <ul class="list-group d-inline-block">
 
+
+
+
 @foreach(var variable in filter)
     {
 
@@ -380,7 +389,7 @@
             @if (!variable.sort)
             {
                 <li class="list-group-item list-group-item-primary"
-              @onclick = "(() => {variable.sort = !variable.sort; StateHasChanged();})">
+              @onclick = "(() => {variable.sort = !variable.sort; FilterUpdate(); StateHasChanged();})">
              
               @variable.variable
             </li>
@@ -388,7 +397,7 @@
         else
             {
              <li class="list-group-item list-group-item-secondary"
-              @onclick = "(() => {variable.sort = !variable.sort; StateHasChanged();})">
+              @onclick = "(() => {variable.sort = !variable.sort; FilterUpdate(); StateHasChanged();})">
              <del>@variable.variable</del> 
             </li>   
             }
@@ -408,12 +417,17 @@
     private List<RecipeModels> recipes;
     Queries query = new Queries();
 
+    DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
+    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
+
+    private int TableLen = 30;
+
 
     protected override async Task OnInitializedAsync()
     {
 
 
-        for(int i = 0; i < 30; i++)
+        for(int i = 0; i < TableLen; i++)
         {
             filter[i] = new filtering();
             filter[i].variable = FilterModel.StringFilter[i];
@@ -483,5 +497,22 @@
         string sql = query.DateQuery(range);
         TableUpdate();
     }
+
+    public void FilterUpdate()
+    {
+        for(int n = 0; n < TableLen-1; n++)
+        {
+            FilterModel.filter[n] = filter[n].sort;
+        }
+    }
+
+
+    public async Task resetTable()
+    {
+        string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData ORDER BY BatchNr DESC";
+        recipes = await _db.GetRecipes(sql);
+        RecipeRead.Table = recipes;
+    }
+
 
 }

@@ -1,4 +1,5 @@
-﻿@page "/PIX-318"
+﻿@page "/PIX318Analyse"
+
 
 @using DataAccesLib
 @using DataAccesLib.Models
@@ -7,7 +8,7 @@
 @inject IRecipeData _db
 
 
-<h1>Resept: PIX-318</h1>
+<h1>Resept: PIX-318 Analyse</h1>
 
 
 <h5 class ="mx-5">&nbsp;&nbsp;&nbsp; Dato &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Antall Rader</h5>
@@ -28,7 +29,7 @@ else
 
  
 
-<Tables></Tables>
+<AnalyseTables></AnalyseTables>
 
 }
 
@@ -91,8 +92,8 @@ else
 
         recipes = await _db.GetRecipes(Queries.sql);
         RecipeRead.Table = recipes;
-        //await InvokeAsync(StateHasChanged);
-        StateHasChanged();
+        
+        //StateHasChanged();
     }
 
     public async Task resetTable()

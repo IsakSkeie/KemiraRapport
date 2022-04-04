@@ -162,3 +162,7 @@ C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Kemi
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\ref\KemiraRapportering.dll
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\Tables.razor.g.cs
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\Tables.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\PIX318Analyse.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\PIX318Analyse.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\AnalyseTables.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\AnalyseTables.razor.g.cs
