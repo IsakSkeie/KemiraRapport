@@ -132,8 +132,14 @@ using System.Diagnostics;
     private List<RecipeModels> recipes;
     Queries query = new Queries();
 
+    [Parameter] 
+    public filtering[] FilterSort { get; set; }
+
+
+
+
     DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
-    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
+    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(1).AddTicks(-1);
 
     private int TableAnalysisLen = 30;
 
@@ -142,35 +148,35 @@ using System.Diagnostics;
     {
 
         //Shorten this down
-        filter[0] = new filtering();
-        filter[0].variable = FilterModel.StringFilter[0];
+        //filter[0] = new filtering();
+        //filter[0].variable = FilterModel.StringFilter[0];
 
-        filter[1] = new filtering();
-        filter[1].variable = FilterModel.StringFilter[1];
+        //filter[1] = new filtering();
+        //filter[1].variable = FilterModel.StringFilter[1];
 
-        filter[2] = new filtering();
-        filter[2].variable = FilterModel.StringFilter[3];
+        //filter[2] = new filtering();
+        //filter[2].variable = FilterModel.StringFilter[3];
 
-        filter[3] = new filtering();
-        filter[3].variable = FilterModel.StringFilter[30];
+        //filter[3] = new filtering();
+        //filter[3].variable = FilterModel.StringFilter[30];
 
-        filter[4] = new filtering();
-        filter[4].variable = FilterModel.StringFilter[31];
+        //filter[4] = new filtering();
+        //filter[4].variable = FilterModel.StringFilter[31];
 
-        filter[5] = new filtering();
-        filter[5].variable = FilterModel.StringFilter[32];
+        //filter[5] = new filtering();
+        //filter[5].variable = FilterModel.StringFilter[32];
 
-        filter[6] = new filtering();
-        filter[6].variable = FilterModel.StringFilter[33];
+        //filter[6] = new filtering();
+        //filter[6].variable = FilterModel.StringFilter[33];
 
-        filter[7] = new filtering();
-        filter[7].variable = FilterModel.StringFilter[34];
+        //filter[7] = new filtering();
+        //filter[7].variable = FilterModel.StringFilter[34];
 
-        filter[8] = new filtering();
-        filter[8].variable = FilterModel.StringFilter[35];
+        //filter[8] = new filtering();
+        //filter[8].variable = FilterModel.StringFilter[35];
 
-        filter[9] = new filtering();
-        filter[9].variable = FilterModel.StringFilter[36];
+        //filter[9] = new filtering();
+        //filter[9].variable = FilterModel.StringFilter[36];
 
           
             
@@ -227,7 +233,7 @@ using System.Diagnostics;
     {
         for(int n = 0; n < 10; n++)
         {
-            FilterModel.filter[n] = filter[n].sort;
+            FilterModel.filter[n] = FilterSort[n].sort;
         }
     }
 
