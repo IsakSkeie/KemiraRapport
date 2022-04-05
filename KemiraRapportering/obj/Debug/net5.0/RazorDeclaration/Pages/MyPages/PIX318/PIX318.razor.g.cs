@@ -136,20 +136,7 @@ using BlazorDateRangePicker;
 
 
 
-
-    //DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
-    //DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
-
-
     Queries query = new Queries();
-
-
-    //public void OnRangeSelect(DateRange range)
-    //{
-
-    //    string sql = query.DateQuery(range);
-    //    TableUpdate();
-    //}
 
 
 

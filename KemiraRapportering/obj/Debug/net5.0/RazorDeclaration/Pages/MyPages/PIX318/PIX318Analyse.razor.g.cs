@@ -209,7 +209,7 @@ using BlazorDateRangePicker;
         recipes = await _db.GetRecipes(Queries.sql);
         RecipeRead.Table = recipes;
         
-        //StateHasChanged();
+        StateHasChanged();
     }
 
     public async Task resetTable()
@@ -241,7 +241,10 @@ using BlazorDateRangePicker;
     {
         filter = _filter;
     }
-
+     private void UpdateDateRange(string sql)
+    {
+        TableUpdate();
+    }
 
 #line default
 #line hidden

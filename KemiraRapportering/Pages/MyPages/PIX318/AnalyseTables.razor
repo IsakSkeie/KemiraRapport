@@ -5,13 +5,6 @@
 
 @inject IRecipeData _db
 
-<div class="btn-group">
-        <DateRangePicker placeholder="Velg Dato" @bind-StartDate="StartDate" @bind-EndDate="EndDate" OnRangeSelect="OnRangeSelect">
-
-        </DateRangePicker>
-    </div>
-
-    <input type="number" @bind-value="Queries.TableLen" @bind-value:event="oninput" />
   <div>
       <table class="table table-striped">
         <thead>
@@ -255,14 +248,7 @@
         TableUpdate();
     }
 
-    //public void FilterUpdate()
-    //{
-    //    for(int n = 0; n < 10; n++)
-    //    {
-    //        FilterModel.filter[n] = FilterSort[n].sort;
-    //    }
-    //}
-
+  
 
     public async Task resetTable()
     {

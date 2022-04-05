@@ -28,7 +28,7 @@ else
 
 
  
-
+<TableSortComp rangeQuery="@UpdateDateRange"></TableSortComp>
 <AnalyseTables FilterSort="@filter"></AnalyseTables>
 <FilterButtons FilterSort="filter" FilterSortUpdate="UpdateFilter"></FilterButtons>
 
@@ -127,7 +127,7 @@ else
         recipes = await _db.GetRecipes(Queries.sql);
         RecipeRead.Table = recipes;
         
-        //StateHasChanged();
+        StateHasChanged();
     }
 
     public async Task resetTable()
@@ -159,5 +159,8 @@ else
     {
         filter = _filter;
     }
-
+     private void UpdateDateRange(string sql)
+    {
+        TableUpdate();
+    }
 }

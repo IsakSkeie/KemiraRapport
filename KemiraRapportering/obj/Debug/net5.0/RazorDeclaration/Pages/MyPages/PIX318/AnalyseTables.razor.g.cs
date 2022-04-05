@@ -125,7 +125,7 @@ using System.Diagnostics;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 188 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
+#line 181 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
        
     public filtering[] filter = new filtering[10];
     private RecipeModels RecipeEdit = new RecipeModels();
@@ -196,14 +196,7 @@ using System.Diagnostics;
         TableUpdate();
     }
 
-    //public void FilterUpdate()
-    //{
-    //    for(int n = 0; n < 10; n++)
-    //    {
-    //        FilterModel.filter[n] = FilterSort[n].sort;
-    //    }
-    //}
-
+  
 
     public async Task resetTable()
     {

@@ -118,29 +118,19 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 385 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
+#line 379 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
        
     //public filtering[] filter = new filtering[30];
     private RecipeModels RecipeEdit = new RecipeModels();
     private List<RecipeModels> recipes;
     Queries query = new Queries();
-
-    DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
-    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(1).AddTicks(-1);
-
     private int TableLen = 30;
 
     [Parameter]
     public filtering[] filter {get;set;}
 
-   
 
-
-    //protected override async Task OnInitializedAsync()
-    //{
-
-    //}
-
+    
     private void EnableEditing(bool flag, RecipeModels batch)
     {
         batch.edit = flag;
@@ -180,12 +170,7 @@ using BlazorDateRangePicker;
         StateHasChanged();
     }
 
-    //public void OnRangeSelect(DateRange range)
-    //{
-
-    //    string sql = query.DateQuery(range);
-    //    TableUpdate();
-    //}
+ 
 
     public void FilterUpdate()
     {
