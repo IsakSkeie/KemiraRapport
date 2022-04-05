@@ -20,16 +20,13 @@
 else
 {
 
-
-    
-
-   
-
-
-
  
 <TableSortComp rangeQuery="@UpdateDateRange"></TableSortComp>
+
 <AnalyseTables FilterSort="@filter"></AnalyseTables>
+
+<CsvAndResetComponent TableRestart="@UpdateResetTable"></CsvAndResetComponent>
+
 <FilterButtons FilterSort="filter" FilterSortUpdate="UpdateFilter"></FilterButtons>
 
 
@@ -52,11 +49,6 @@ else
 
      public filtering[] filter = new filtering[10];
 
-
-
-
-    DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
-    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(1).AddTicks(-1);
 
 
     Queries query = new Queries();
@@ -160,6 +152,10 @@ else
         filter = _filter;
     }
      private void UpdateDateRange(string sql)
+    {
+        TableUpdate();
+    }
+    private void UpdateResetTable(string sql)
     {
         TableUpdate();
     }

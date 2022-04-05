@@ -90,34 +90,20 @@ using KemiraRapportering.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
-using DataAccesLib.Models;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 2 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
+#line 12 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\_Imports.razor"
 using DataAccesLib;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
-using BlazorDateRangePicker;
+#line 1 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\CsvAndResetComponent.razor"
+using DataAccesLib.Models;
 
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 4 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
-using System.Diagnostics;
-
-#line default
-#line hidden
-#nullable disable
-    public partial class AnalyseTables : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class CsvAndResetComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -125,66 +111,32 @@ using System.Diagnostics;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 165 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
+#line 10 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\CsvAndResetComponent.razor"
        
-    public filtering[] filter = new filtering[10];
-    private RecipeModels RecipeEdit = new RecipeModels();
-    private List<RecipeModels> recipes;
+
     Queries query = new Queries();
-
-    [Parameter] 
-    public filtering[] FilterSort { get; set; }
-
+    [Parameter]
+    public EventCallback<string> TableRestart { get; set; }
 
 
-    private int TableAnalysisLen = 30;
-
-
- 
-
-    private void EnableEditing(bool flag, RecipeModels batch)
+    public void WriteCSV(filtering[] filter)
     {
-        batch.edit = flag;
-        if (flag)
-        {
-            RecipeEdit = batch;
-        }
-
-        StateHasChanged();
+        //DataWrite ToCSV = new DataWrite(filter);
+        //TableUpdate();
+        //ToCSV.dataWriteToCSV();
 
     }
 
 
-    private async void BatchEdit(RecipeModels batch)
+    public async Task resetTable()
     {
-        string sql = query.RecipeUpdate(batch);
-        await _db.EditRecipe(sql);
-
-        sql = query.pix318();
-        TableUpdate();
+        string sql = query.TableReset();
+        await TableRestart.InvokeAsync(sql);
     }
-
-    public async void TableUpdate()
-    {
-
-        recipes = await _db.GetRecipes(Queries.sql);
-        RecipeRead.Table = recipes;
-        //await InvokeAsync(StateHasChanged);
-        StateHasChanged();
-    }
-
-    public void OnRangeSelect(DateRange range)
-    {
-
-        string sql = query.DateQuery(range);
-        TableUpdate();
-    }
-
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IRecipeData _db { get; set; }
     }
 }
 #pragma warning restore 1591

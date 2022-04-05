@@ -119,7 +119,7 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\PIX318.razor"
+#line 42 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\PIX318.razor"
        
 
 
@@ -200,17 +200,6 @@ using BlazorDateRangePicker;
     }
 
 
-
-
-
-    public void WriteCSV(filtering[] filter)
-    {
-        DataWrite ToCSV = new DataWrite(filter);
-
-        ToCSV.dataWriteToCSV();
-
-    }
-
     private void UpdateFilter(filtering[] _filter)
     {
         filter = _filter;
@@ -218,6 +207,11 @@ using BlazorDateRangePicker;
 
 
     private void UpdateDateRange(string sql)
+    {
+        TableUpdate();
+    }
+
+    private void UpdateResetTable(string sql)
     {
         TableUpdate();
     }

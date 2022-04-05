@@ -119,7 +119,7 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 41 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\PIX318Analyse.razor"
+#line 38 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\PIX318Analyse.razor"
        
 
 
@@ -134,11 +134,6 @@ using BlazorDateRangePicker;
 
      public filtering[] filter = new filtering[10];
 
-
-
-
-    DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
-    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(1).AddTicks(-1);
 
 
     Queries query = new Queries();
@@ -242,6 +237,10 @@ using BlazorDateRangePicker;
         filter = _filter;
     }
      private void UpdateDateRange(string sql)
+    {
+        TableUpdate();
+    }
+    private void UpdateResetTable(string sql)
     {
         TableUpdate();
     }

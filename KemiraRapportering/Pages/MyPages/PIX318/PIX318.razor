@@ -29,7 +29,11 @@ else
  <TableSortComp rangeQuery="@UpdateDateRange"></TableSortComp>
 
 <Tables filter="@filter"></Tables>
+<CsvAndResetComponent TableRestart="@UpdateResetTable"></CsvAndResetComponent>
+
 <FilterButtons FilterSort="@filter" FilterSortUpdate="@UpdateFilter"></FilterButtons>
+
+
 
 }
 
@@ -115,17 +119,6 @@ else
     }
 
 
-
-
-
-    public void WriteCSV(filtering[] filter)
-    {
-        DataWrite ToCSV = new DataWrite(filter);
-
-        ToCSV.dataWriteToCSV();
-
-    }
-
     private void UpdateFilter(filtering[] _filter)
     {
         filter = _filter;
@@ -133,6 +126,11 @@ else
 
 
     private void UpdateDateRange(string sql)
+    {
+        TableUpdate();
+    }
+
+    private void UpdateResetTable(string sql)
     {
         TableUpdate();
     }

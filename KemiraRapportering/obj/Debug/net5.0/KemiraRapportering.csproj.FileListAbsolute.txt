@@ -166,3 +166,5 @@ C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razo
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\PIX318\FilterButtons.razor.g.cs
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\PIX318\TableSortComp.razor.g.cs
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\PIX318\TableSortComp.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\PIX318\CsvAndResetComponent.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\PIX318\CsvAndResetComponent.razor.g.cs

@@ -101,5 +101,10 @@ namespace DataAccesLib.Models
             Debug.WriteLine(sql);
             return sql;
         }
+        public string TableReset()
+        {
+            sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData ORDER BY BatchNr DESC";
+            return sql;
+        }
     }
 }

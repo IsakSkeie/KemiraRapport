@@ -11,9 +11,7 @@
             <tr>
     
                 @foreach(var Var in FilterSort)
-                    {
-
-                    Debug.WriteLine(Var.variable);
+                    { 
                     @if(!Var.sort)
                        {<th>@Var.variable</th>}
                         
@@ -164,20 +162,6 @@
 
 
 
-    <div class="btn-group  text-rt" role="group" aria-label="Reset">
-        <button type="button" class="btn btn-success btn-lg mx-3" @onclick="() => WriteCSV(filter)">Eksporter til Excel</button>
-        <button type="button" class="btn btn-secondary btn-lg text-right" >Reset Tabell</button>
-    </div>
-
-    <div class="my-5"></div>
-
-    <h4>Fjerne/Legge til kolonner</h4>
-
-   
-
-
-
-
 @code {
     public filtering[] filter = new filtering[10];
     private RecipeModels RecipeEdit = new RecipeModels();
@@ -189,18 +173,10 @@
 
 
 
-
-    DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
-    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(1).AddTicks(-1);
-
     private int TableAnalysisLen = 30;
 
 
-    protected override async Task OnInitializedAsync()
-    {
-
-
-    }
+ 
 
     private void EnableEditing(bool flag, RecipeModels batch)
     {
@@ -214,14 +190,6 @@
 
     }
 
-
-    public void WriteCSV(filtering[] filter)
-    {
-        DataWrite ToCSV = new DataWrite(filter);
-        TableUpdate();
-        ToCSV.dataWriteToCSV();
-
-    }
 
     private async void BatchEdit(RecipeModels batch)
     {
@@ -247,16 +215,5 @@
         string sql = query.DateQuery(range);
         TableUpdate();
     }
-
-  
-
-    public async Task resetTable()
-    {
-        string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData ORDER BY BatchNr DESC";
-        recipes = await _db.GetRecipes(sql);
-        RecipeRead.Table = recipes;
-    }
-
-    
 
 }

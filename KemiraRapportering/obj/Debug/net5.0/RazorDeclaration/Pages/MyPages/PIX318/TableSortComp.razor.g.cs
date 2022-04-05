@@ -133,7 +133,7 @@ using BlazorDateRangePicker;
 
         string sql = query.DateQuery(_range);
         await rangeQuery.InvokeAsync(sql);
-        //TableUpdate(); remove 
+        
     }
 
 #line default

@@ -118,9 +118,9 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 379 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
+#line 364 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
        
-    //public filtering[] filter = new filtering[30];
+    
     private RecipeModels RecipeEdit = new RecipeModels();
     private List<RecipeModels> recipes;
     Queries query = new Queries();
@@ -143,14 +143,6 @@ using BlazorDateRangePicker;
 
     }
 
-
-    public void WriteCSV(filtering[] filter)
-    {
-        DataWrite ToCSV = new DataWrite(filter);
-        TableUpdate();
-        ToCSV.dataWriteToCSV();
-
-    }
 
     private async void BatchEdit(RecipeModels batch)
     {
@@ -180,13 +172,6 @@ using BlazorDateRangePicker;
         }
     }
 
-
-    public async Task resetTable()
-    {
-        string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData ORDER BY BatchNr DESC";
-        recipes = await _db.GetRecipes(sql);
-        RecipeRead.Table = recipes;
-    }
 
 
 

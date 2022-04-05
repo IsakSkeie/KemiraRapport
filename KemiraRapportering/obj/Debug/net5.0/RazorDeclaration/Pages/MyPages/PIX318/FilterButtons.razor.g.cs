@@ -111,7 +111,7 @@ using DataAccesLib.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 30 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\FilterButtons.razor"
+#line 32 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\FilterButtons.razor"
        
     [Parameter]
     public filtering[] FilterSort { get; set; }
