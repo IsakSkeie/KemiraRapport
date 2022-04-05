@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace KemiraRapportering.Pages.MyPages
+namespace KemiraRapportering.Pages.MyPages.PIX318
 {
     #line hidden
     using System;
@@ -90,21 +90,27 @@ using KemiraRapportering.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Recipe.razor"
+#line 12 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\_Imports.razor"
 using DataAccesLib;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Recipe.razor"
+#line 1 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\TableSortComp.razor"
 using DataAccesLib.Models;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Recipes")]
-    public partial class Recipe : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 2 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\TableSortComp.razor"
+using BlazorDateRangePicker;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class TableSortComp : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -112,23 +118,27 @@ using DataAccesLib.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 46 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Recipe.razor"
+#line 12 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\TableSortComp.razor"
        
+    DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
+    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(1).AddTicks(-1);
+    Queries query = new Queries();
 
-    private string value { get; set; }
-    private List<RecipeModels> recipes;
+    [Parameter]
+    public EventCallback<string> rangeQuery { get; set; }
 
-    protected override async Task OnInitializedAsync()
+
+    private async Task OnRangeSelect(DateRange _range)
     {
-        string sql = "select * from recipe";
-        recipes = await _db.GetRecipes(sql);
 
+        string sql = query.DateQuery(_range);
+        await rangeQuery.InvokeAsync(sql);
+        
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IRecipeData _db { get; set; }
     }
 }
 #pragma warning restore 1591

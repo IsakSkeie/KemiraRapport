@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace KemiraRapportering.Pages.MyPages
+namespace KemiraRapportering.Pages.MyPages.PIX318
 {
     #line hidden
     using System;
@@ -90,28 +90,34 @@ using KemiraRapportering.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318.razor"
-using DataAccesLib;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318.razor"
+#line 1 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
 using DataAccesLib.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318.razor"
+#line 2 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
+using DataAccesLib;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
 using BlazorDateRangePicker;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/PIX-318")]
-    public partial class PIX318 : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 4 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
+using System.Diagnostics;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class AnalyseTables : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -119,57 +125,41 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318.razor"
+#line 165 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
        
-
-
-    private string value { get; set; }
-
-    private string batch { get; set; }
-
-    private int TableLen = Queries.TableLen;
-
-    private List<RecipeModels> recipes;
+    public filtering[] filter = new filtering[10];
     private RecipeModels RecipeEdit = new RecipeModels();
-
-
-
-
-
-    DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
-    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
-
-
+    private List<RecipeModels> recipes;
     Queries query = new Queries();
 
+    [Parameter] 
+    public filtering[] FilterSort { get; set; }
 
-    public void OnRangeSelect(DateRange range)
+    private int TableAnalysisLen = 30;
+
+
+ 
+
+    private void EnableEditing(bool flag, RecipeModels batch)
     {
+        batch.edit = flag;
+        if (flag)
+        {
+            RecipeEdit = batch;
+        }
 
-        string sql = query.DateQuery(range);
-        TableUpdate();
+        StateHasChanged();
+
     }
 
 
-
-
-    protected override async Task OnInitializedAsync()
+    private async void BatchEdit(RecipeModels batch)
     {
-        string sql = query.pix318();
-        
-        
-        recipes = await _db.GetRecipes(sql);
-        
+        string sql = query.RecipeUpdate(batch);
+        await _db.EditRecipe(sql);
 
-        
-        RecipeRead.Table = recipes;
+        sql = query.pix318();
         TableUpdate();
-        
-
-
-        recipes = await _db.GetRecipes(sql);
-
-
     }
 
     public async void TableUpdate()
@@ -181,32 +171,12 @@ using BlazorDateRangePicker;
         StateHasChanged();
     }
 
-    public async Task resetTable()
+    public void OnRangeSelect(DateRange range)
     {
-        string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData ORDER BY BatchNr DESC";
-        recipes = await _db.GetRecipes(sql);
-        RecipeRead.Table = recipes;
+
+        string sql = query.DateQuery(range);
+        TableUpdate();
     }
-
-    public void ResetDropDown()
-    {
-        StateHasChanged();
-    }
-
-
-
-
-
-    public void WriteCSV(filtering[] filter)
-    {
-        DataWrite ToCSV = new DataWrite(filter);
-
-        ToCSV.dataWriteToCSV();
-
-    }
-
-   
-
 
 
 #line default

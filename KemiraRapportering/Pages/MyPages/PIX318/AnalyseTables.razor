@@ -5,22 +5,13 @@
 
 @inject IRecipeData _db
 
-<div class="btn-group">
-        <DateRangePicker placeholder="Velg Dato" @bind-StartDate="StartDate" @bind-EndDate="EndDate" OnRangeSelect="OnRangeSelect">
-
-        </DateRangePicker>
-    </div>
-
-    <input type="number" @bind-value="Queries.TableLen" @bind-value:event="oninput" />
   <div>
       <table class="table table-striped">
         <thead>
             <tr>
     
-                @foreach(var Var in filter)
-                    {
-
-                    Debug.WriteLine(Var.variable);
+                @foreach(var Var in FilterSort)
+                    { 
                     @if(!Var.sort)
                        {<th>@Var.variable</th>}
                         
@@ -40,32 +31,32 @@
                     {
                         <tr @key="recipe">
 
-                           @if(!filter[0].sort)
+                           @if(!FilterSort[0].sort)
                     {<td>@recipe.BatchNr</td>}
-                    @if(!filter[1].sort)
+                    @if(!FilterSort[1].sort)
                     {<td>@recipe.Dato</td>}
-                    @if(!filter[2].sort)
+                    @if(!FilterSort[2].sort)
                     {<td>@recipe.ID</td>}
                     
-                    @if(!filter[3].sort)
+                    @if(!FilterSort[3].sort)
                     {<td>@recipe.TotalFe</td>}
                     
-                    @if(!filter[4].sort)
+                    @if(!FilterSort[4].sort)
                     {<td>@recipe.Egenvekt</td>}
                     
-                    @if(!filter[5].sort)
+                    @if(!FilterSort[5].sort)
                     {<td>@recipe.Verdi2Fe</td>}
                     
-                    @if(!filter[6].sort)
+                    @if(!FilterSort[6].sort)
                     {<td>@recipe.ManuellVerdi2Fe</td>}
                     
-                    @if(!filter[7].sort)
+                    @if(!FilterSort[7].sort)
                     {<td>@recipe.Verdi3EtterManuell2Fe</td>}
 
-                    @if(!filter[8].sort)
+                    @if(!FilterSort[8].sort)
                     {<td>@recipe.Verdi3Fe</td>}
 
-                    @if(!filter[9].sort)
+                    @if(!FilterSort[9].sort)
                     {<td>@recipe.FriSyre</td>}
                     
                    
@@ -82,47 +73,47 @@
                     }
                     else
                     {
-                             @if (!filter[0].sort)
+                             @if (!FilterSort[0].sort)
                             {
                                 <td>
                                 <input type="number" class="form-control" @bind-value="RecipeEdit.BatchNr" @bind-value:event="oninput" />
 </td>
                             }
-                            @if (!filter[1].sort)
+                            @if (!FilterSort[1].sort)
                             {
                                 <td>
                                 <input type="text" class="form-control" @bind-value="RecipeEdit.Dato" @bind-value:event="oninput" />
 </td>
                             }
-                            @if (!filter[2].sort)
+                            @if (!FilterSort[2].sort)
                             {
                                 <td>
                                 <input type="number" class="form-control" @bind-value="RecipeEdit.ID" @bind-value:event="oninput" />
                                 </td>
                             }
 
-                            @if (!filter[3].sort)
+                            @if (!FilterSort[3].sort)
                             {
                                 <td>
                                 <input type="text" class="form-control" @bind-value="RecipeEdit.TotalFe" @bind-value:event="oninput" />
                                  </td>
                             }
 
-                            @if (!filter[4].sort)
+                            @if (!FilterSort[4].sort)
                             {
                                 <td>
 
                                 <input type="number" class="form-control" @bind-value="RecipeEdit.Egenvekt" @bind-value:event="oninput" />
 </td>
                             }
-                             @if (!filter[5].sort)
+                             @if (!FilterSort[5].sort)
                             {
                                 <th>
                                 <input type="number" class="form-control" @bind-value="RecipeEdit.Verdi2Fe" @bind-value:event="oninput" />
 </th>
                             }
 
-                            @if (!filter[6].sort)
+                            @if (!FilterSort[6].sort)
                             {
                                 <td>
 
@@ -130,7 +121,7 @@
 </td>
                             }
 
-                            @if (!filter[7].sort)
+                            @if (!FilterSort[7].sort)
                             {
                                 <td>
 
@@ -138,14 +129,14 @@
 </td>
                             }
 
-                             @if (!filter[8].sort)
+                             @if (!FilterSort[8].sort)
                             {
                                 <td>
 
                                 <input type="number" class="form-control" @bind-value="RecipeEdit.Verdi3Fe" @bind-value:event="oninput" />
 </td>
                             }
-                             @if (!filter[9].sort)
+                             @if (!FilterSort[9].sort)
                             {
                                 <td>
 
@@ -171,99 +162,19 @@
 
 
 
-    <div class="btn-group  text-rt" role="group" aria-label="Reset">
-        <button type="button" class="btn btn-success btn-lg mx-3" @onclick="() => WriteCSV(filter)">Eksporter til Excel</button>
-        <button type="button" class="btn btn-secondary btn-lg text-right" >Reset Tabell</button>
-    </div>
-
-    <div class="my-5"></div>
-
-    <h4>Fjerne/Legge til kolonner</h4>
-
-    <ul class="list-group d-inline-block">
-
-
-
-
-@foreach(var variable in filter)
-    {
-
-
-            @if (!variable.sort)
-            {
-                <li class="list-group-item list-group-item-primary"
-              @onclick = "(() => {variable.sort = !variable.sort; FilterUpdate(); StateHasChanged();})">
-             
-              @variable.variable
-            </li>
-            }
-        else
-            {
-             <li class="list-group-item list-group-item-secondary"
-              @onclick = "(() => {variable.sort = !variable.sort; FilterUpdate(); StateHasChanged();})">
-             <del>@variable.variable</del> 
-            </li>   
-            }
-
-    } 
-
-
-
-</ul>
-
-
-
-
 @code {
     public filtering[] filter = new filtering[10];
     private RecipeModels RecipeEdit = new RecipeModels();
     private List<RecipeModels> recipes;
     Queries query = new Queries();
 
-    DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
-    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(1).AddTicks(-1);
+    [Parameter] 
+    public filtering[] FilterSort { get; set; }
 
     private int TableAnalysisLen = 30;
 
 
-    protected override async Task OnInitializedAsync()
-    {
-
-        //Shorten this down
-        filter[0] = new filtering();
-        filter[0].variable = FilterModel.StringFilter[0];
-
-        filter[1] = new filtering();
-        filter[1].variable = FilterModel.StringFilter[1];
-
-        filter[2] = new filtering();
-        filter[2].variable = FilterModel.StringFilter[3];
-
-        filter[3] = new filtering();
-        filter[3].variable = FilterModel.StringFilter[30];
-
-        filter[4] = new filtering();
-        filter[4].variable = FilterModel.StringFilter[31];
-
-        filter[5] = new filtering();
-        filter[5].variable = FilterModel.StringFilter[32];
-
-        filter[6] = new filtering();
-        filter[6].variable = FilterModel.StringFilter[33];
-
-        filter[7] = new filtering();
-        filter[7].variable = FilterModel.StringFilter[34];
-
-        filter[8] = new filtering();
-        filter[8].variable = FilterModel.StringFilter[35];
-
-        filter[9] = new filtering();
-        filter[9].variable = FilterModel.StringFilter[36];
-
-          
-            
-        
-    }
+ 
 
     private void EnableEditing(bool flag, RecipeModels batch)
     {
@@ -277,14 +188,6 @@
 
     }
 
-
-    public void WriteCSV(filtering[] filter)
-    {
-        DataWrite ToCSV = new DataWrite(filter);
-        TableUpdate();
-        ToCSV.dataWriteToCSV();
-
-    }
 
     private async void BatchEdit(RecipeModels batch)
     {
@@ -310,22 +213,5 @@
         string sql = query.DateQuery(range);
         TableUpdate();
     }
-
-    public void FilterUpdate()
-    {
-        for(int n = 0; n < 10; n++)
-        {
-            FilterModel.filter[n] = filter[n].sort;
-        }
-    }
-
-
-    public async Task resetTable()
-    {
-        string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData ORDER BY BatchNr DESC";
-        recipes = await _db.GetRecipes(sql);
-        RecipeRead.Table = recipes;
-    }
-
 
 }

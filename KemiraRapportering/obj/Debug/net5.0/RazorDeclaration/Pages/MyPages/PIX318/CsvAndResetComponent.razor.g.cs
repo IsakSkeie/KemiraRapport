@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace KemiraRapportering.Pages.MyPages
+namespace KemiraRapportering.Pages.MyPages.PIX318
 {
     #line hidden
     using System;
@@ -96,8 +96,14 @@ using DataAccesLib;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/count")]
-    public partial class PIX : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 1 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\CsvAndResetComponent.razor"
+using DataAccesLib.Models;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class CsvAndResetComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -105,13 +111,27 @@ using DataAccesLib;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 11 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX.razor"
+#line 10 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\CsvAndResetComponent.razor"
        
-    private int currentCount = 0;
 
-    private void IncrementCount()
+    Queries query = new Queries();
+    [Parameter]
+    public EventCallback<string> TableRestart { get; set; }
+
+
+    public void WriteCSV(filtering[] filter)
     {
-        currentCount++;
+        //DataWrite ToCSV = new DataWrite(filter);
+        //TableUpdate();
+        //ToCSV.dataWriteToCSV();
+
+    }
+
+
+    public async Task resetTable()
+    {
+        string sql = query.TableReset();
+        await TableRestart.InvokeAsync(sql);
     }
 
 #line default
