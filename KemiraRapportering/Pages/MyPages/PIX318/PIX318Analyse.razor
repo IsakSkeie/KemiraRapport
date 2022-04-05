@@ -37,13 +37,7 @@ else
 
 @code {
 
-
-    private string value { get; set; }
-
-    private string batch { get; set; }
-
     private int TableLen = Queries.TableLen;
-
     private List<RecipeModels> recipes;
     private RecipeModels RecipeEdit = new RecipeModels();
 
@@ -122,31 +116,8 @@ else
         StateHasChanged();
     }
 
-    public async Task resetTable()
-    {
-        string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData ORDER BY BatchNr DESC";
-        recipes = await _db.GetRecipes(sql);
-        RecipeRead.Table = recipes;
-    }
-
-    public void ResetDropDown()
-    {
-        StateHasChanged();
-    }
 
 
-
-
-
-    public void WriteCSV(filtering[] filter)
-    {
-        DataWrite ToCSV = new DataWrite(filter);
-
-        ToCSV.dataWriteToCSV();
-
-    }
-
-   
     private void UpdateFilter(filtering[] _filter)
     {
         filter = _filter;
