@@ -137,19 +137,19 @@ using BlazorDateRangePicker;
 
 
 
-    DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
-    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
+    //DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
+    //DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
 
 
     Queries query = new Queries();
 
 
-    public void OnRangeSelect(DateRange range)
-    {
+    //public void OnRangeSelect(DateRange range)
+    //{
 
-        string sql = query.DateQuery(range);
-        TableUpdate();
-    }
+    //    string sql = query.DateQuery(range);
+    //    TableUpdate();
+    //}
 
 
 
@@ -157,7 +157,7 @@ using BlazorDateRangePicker;
     protected override async Task OnInitializedAsync()
     {
         string sql = query.pix318();
-         for(int i = 0; i < ParameterLen; i++)
+        for(int i = 0; i < ParameterLen; i++)
         {
             filter[i] = new filtering();
             filter[i].variable = FilterModel.StringFilter[i];
@@ -176,14 +176,14 @@ using BlazorDateRangePicker;
         FilterModel.filter[21] = true;
         FilterModel.filter[22] = true;
         FilterModel.filter[24] = true;
-        
-        recipes = await _db.GetRecipes(sql);
-        
 
-        
+        recipes = await _db.GetRecipes(sql);
+
+
+
         RecipeRead.Table = recipes;
         TableUpdate();
-        
+
 
 
         recipes = await _db.GetRecipes(sql);
@@ -224,12 +224,16 @@ using BlazorDateRangePicker;
 
     }
 
-   private void UpdateFilter(filtering[] _filter)
+    private void UpdateFilter(filtering[] _filter)
     {
         filter = _filter;
     }
 
 
+    private void UpdateDateRange(string sql)
+    {
+        TableUpdate();
+    }
 
 #line default
 #line hidden

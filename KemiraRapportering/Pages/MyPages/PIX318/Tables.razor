@@ -4,13 +4,13 @@
 
 @inject IRecipeData _db
 
-<div class="btn-group">
+@*<div class="btn-group">
         <DateRangePicker placeholder="Velg Dato" @bind-StartDate="StartDate" @bind-EndDate="EndDate" OnRangeSelect="OnRangeSelect">
 
         </DateRangePicker>
     </div>
 
-    <input type="number" @bind-value="Queries.TableLen" @bind-value:event="oninput" />
+    <input type="number" @bind-value="Queries.TableLen" @bind-value:event="oninput" />*@
   <div>
       <table class="table table-striped">
         <thead>
@@ -443,12 +443,12 @@
         StateHasChanged();
     }
 
-    public void OnRangeSelect(DateRange range)
-    {
+    //public void OnRangeSelect(DateRange range)
+    //{
 
-        string sql = query.DateQuery(range);
-        TableUpdate();
-    }
+    //    string sql = query.DateQuery(range);
+    //    TableUpdate();
+    //}
 
     public void FilterUpdate()
     {

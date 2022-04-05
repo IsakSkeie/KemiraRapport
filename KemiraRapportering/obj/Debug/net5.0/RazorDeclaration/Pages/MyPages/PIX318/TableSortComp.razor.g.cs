@@ -90,27 +90,27 @@ using KemiraRapportering.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
-using DataAccesLib.Models;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 2 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
+#line 12 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\_Imports.razor"
 using DataAccesLib;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
+#line 1 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\TableSortComp.razor"
+using DataAccesLib.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\TableSortComp.razor"
 using BlazorDateRangePicker;
 
 #line default
 #line hidden
 #nullable disable
-    public partial class Tables : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class TableSortComp : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -118,97 +118,27 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 385 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
+#line 12 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\TableSortComp.razor"
        
-    //public filtering[] filter = new filtering[30];
-    private RecipeModels RecipeEdit = new RecipeModels();
-    private List<RecipeModels> recipes;
-    Queries query = new Queries();
-
     DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
     DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(1).AddTicks(-1);
-
-    private int TableLen = 30;
+    Queries query = new Queries();
 
     [Parameter]
-    public filtering[] filter {get;set;}
-
-   
+    public EventCallback<string> rangeQuery { get; set; }
 
 
-    //protected override async Task OnInitializedAsync()
-    //{
-
-    //}
-
-    private void EnableEditing(bool flag, RecipeModels batch)
-    {
-        batch.edit = flag;
-        if (flag)
-        {
-            RecipeEdit = batch;
-        }
-
-        StateHasChanged();
-
-    }
-
-
-    public void WriteCSV(filtering[] filter)
-    {
-        DataWrite ToCSV = new DataWrite(filter);
-        TableUpdate();
-        ToCSV.dataWriteToCSV();
-
-    }
-
-    private async void BatchEdit(RecipeModels batch)
-    {
-        string sql = query.RecipeUpdate(batch);
-        await _db.EditRecipe(sql);
-
-        sql = query.pix318();
-        TableUpdate();
-    }
-
-    public async void TableUpdate()
+    private async Task OnRangeSelect(DateRange _range)
     {
 
-        recipes = await _db.GetRecipes(Queries.sql);
-        RecipeRead.Table = recipes;
-        //await InvokeAsync(StateHasChanged);
-        StateHasChanged();
+        string sql = query.DateQuery(_range);
+        await rangeQuery.InvokeAsync(sql);
+        //TableUpdate(); remove 
     }
-
-    //public void OnRangeSelect(DateRange range)
-    //{
-
-    //    string sql = query.DateQuery(range);
-    //    TableUpdate();
-    //}
-
-    public void FilterUpdate()
-    {
-        for(int n = 0; n < TableLen-1; n++)
-        {
-            FilterModel.filter[n] = filter[n].sort;
-        }
-    }
-
-
-    public async Task resetTable()
-    {
-        string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData ORDER BY BatchNr DESC";
-        recipes = await _db.GetRecipes(sql);
-        RecipeRead.Table = recipes;
-    }
-
-
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IRecipeData _db { get; set; }
     }
 }
 #pragma warning restore 1591
