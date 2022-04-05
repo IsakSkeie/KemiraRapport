@@ -116,7 +116,6 @@ C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razo
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\PIX.razor.g.cs
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\PIX313.razor.g.cs
-C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\PIX318.razor.g.cs
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\Recipe.razor.g.cs
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Shared\Table.razor.g.cs
@@ -134,7 +133,6 @@ C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razo
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\PIX.razor.g.cs
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\PIX313.razor.g.cs
-C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\PIX318.razor.g.cs
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\Recipe.razor.g.cs
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Shared\Table.razor.g.cs
@@ -160,9 +158,13 @@ C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\refi
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\KemiraRapportering.pdb
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\KemiraRapportering.genruntimeconfig.cache
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\ref\KemiraRapportering.dll
-C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\Tables.razor.g.cs
-C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\Tables.razor.g.cs
-C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\PIX318Analyse.razor.g.cs
-C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\PIX318Analyse.razor.g.cs
-C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\AnalyseTables.razor.g.cs
-C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\AnalyseTables.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\PIX318\AnalyseTables.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\PIX318\PIX318.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\PIX318\PIX318Analyse.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\PIX318\Tables.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\PIX318\AnalyseTables.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\PIX318\PIX318.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\PIX318\PIX318Analyse.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\PIX318\Tables.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\RazorDeclaration\Pages\MyPages\FilterButtons.razor.g.cs
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Debug\net5.0\Razor\Pages\MyPages\FilterButtons.razor.g.cs

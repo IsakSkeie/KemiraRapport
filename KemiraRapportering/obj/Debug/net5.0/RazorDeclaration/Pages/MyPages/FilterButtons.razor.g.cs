@@ -90,28 +90,20 @@ using KemiraRapportering.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318.razor"
+#line 12 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\_Imports.razor"
 using DataAccesLib;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318.razor"
+#line 1 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\FilterButtons.razor"
 using DataAccesLib.Models;
 
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 5 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318.razor"
-using BlazorDateRangePicker;
-
-#line default
-#line hidden
-#nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/PIX-318")]
-    public partial class PIX318 : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class FilterButtons : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -119,100 +111,31 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318.razor"
+#line 30 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\FilterButtons.razor"
        
+    [Parameter]
+    public filtering[] FilterSort { get; set; }
+
+    [Parameter]
+    public EventCallback<filtering[]> FilterSortUpdate {get; set;}
 
 
-    private string value { get; set; }
-
-    private string batch { get; set; }
-
-    private int TableLen = Queries.TableLen;
-
-    private List<RecipeModels> recipes;
-    private RecipeModels RecipeEdit = new RecipeModels();
-
-
-
-
-
-    DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
-    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
-
-
-    Queries query = new Queries();
-
-
-    public void OnRangeSelect(DateRange range)
+    public void FilterUpdate()
     {
-
-        string sql = query.DateQuery(range);
-        TableUpdate();
+        for(int n = 0; n < 10; n++)
+        {
+            FilterModel.filter[n] = FilterSort[n].sort;
+        }
     }
 
-
-
-
-    protected override async Task OnInitializedAsync()
+    private async Task FilterCallBack()
     {
-        string sql = query.pix318();
-        
-        
-        recipes = await _db.GetRecipes(sql);
-        
-
-        
-        RecipeRead.Table = recipes;
-        TableUpdate();
-        
-
-
-        recipes = await _db.GetRecipes(sql);
-
-
+        await FilterSortUpdate.InvokeAsync(FilterSort);
     }
-
-    public async void TableUpdate()
-    {
-
-        recipes = await _db.GetRecipes(Queries.sql);
-        RecipeRead.Table = recipes;
-        //await InvokeAsync(StateHasChanged);
-        StateHasChanged();
-    }
-
-    public async Task resetTable()
-    {
-        string sql = $"SELECT top ({ Queries.TableLen }) * FROM PIX318_ReseptData ORDER BY BatchNr DESC";
-        recipes = await _db.GetRecipes(sql);
-        RecipeRead.Table = recipes;
-    }
-
-    public void ResetDropDown()
-    {
-        StateHasChanged();
-    }
-
-
-
-
-
-    public void WriteCSV(filtering[] filter)
-    {
-        DataWrite ToCSV = new DataWrite(filter);
-
-        ToCSV.dataWriteToCSV();
-
-    }
-
-   
-
-
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IRecipeData _db { get; set; }
     }
 }
 #pragma warning restore 1591

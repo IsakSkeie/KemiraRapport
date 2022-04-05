@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace KemiraRapportering.Pages.MyPages
+namespace KemiraRapportering.Pages.MyPages.PIX318
 {
     #line hidden
     using System;
@@ -90,27 +90,34 @@ using KemiraRapportering.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Tables.razor"
+#line 1 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
 using DataAccesLib.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Tables.razor"
+#line 2 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
 using DataAccesLib;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Tables.razor"
+#line 3 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
 using BlazorDateRangePicker;
 
 #line default
 #line hidden
 #nullable disable
-    public partial class Tables : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 4 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
+using System.Diagnostics;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class AnalyseTables : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -118,44 +125,27 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 414 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\Tables.razor"
+#line 188 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\AnalyseTables.razor"
        
-    public filtering[] filter = new filtering[30];
+    public filtering[] filter = new filtering[10];
     private RecipeModels RecipeEdit = new RecipeModels();
     private List<RecipeModels> recipes;
     Queries query = new Queries();
 
+    [Parameter] 
+    public filtering[] FilterSort { get; set; }
+
+
+
+
     DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
     DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(1).AddTicks(-1);
 
-    private int TableLen = 30;
+    private int TableAnalysisLen = 30;
 
 
     protected override async Task OnInitializedAsync()
     {
-
-
-        for(int i = 0; i < TableLen; i++)
-        {
-            filter[i] = new filtering();
-            filter[i].variable = FilterModel.StringFilter[i];
-        }
-
-        //Make this part of initialization
-        filter[5].sort = true;
-        filter[19].sort = true;
-        filter[20].sort = true;
-        filter[21].sort = true;
-        filter[22].sort = true;
-        filter[24].sort = true;
-        FilterModel.filter[5] = true;
-        FilterModel.filter[19] = true;
-        FilterModel.filter[20] = true;
-        FilterModel.filter[21] = true;
-        FilterModel.filter[22] = true;
-        FilterModel.filter[24] = true;
-
-
 
 
     }
@@ -208,9 +198,9 @@ using BlazorDateRangePicker;
 
     public void FilterUpdate()
     {
-        for(int n = 0; n < TableLen-1; n++)
+        for(int n = 0; n < 10; n++)
         {
-            FilterModel.filter[n] = filter[n].sort;
+            FilterModel.filter[n] = FilterSort[n].sort;
         }
     }
 
@@ -222,6 +212,7 @@ using BlazorDateRangePicker;
         RecipeRead.Table = recipes;
     }
 
+    
 
 
 #line default

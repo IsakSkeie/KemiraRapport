@@ -30,6 +30,8 @@ else
  
 
 <AnalyseTables FilterSort="@filter"></AnalyseTables>
+<FilterButtons FilterSort="filter" FilterSortUpdate="UpdateFilter"></FilterButtons>
+
 
 
 }
@@ -54,7 +56,7 @@ else
 
 
     DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
-    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
+    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(1).AddTicks(-1);
 
 
     Queries query = new Queries();
@@ -153,6 +155,9 @@ else
     }
 
    
-
+    private void UpdateFilter(filtering[] _filter)
+    {
+        filter = _filter;
+    }
 
 }

@@ -1,0 +1,50 @@
+﻿@using DataAccesLib.Models
+
+ <ul class="list-group d-inline-block">
+
+
+@foreach(var variable in FilterSort)
+    {
+
+
+            @if (!variable.sort)
+            {
+                <li class="list-group-item list-group-item-primary"
+              @onclick = "(() => {variable.sort = !variable.sort; FilterUpdate(); FilterCallBack();})">
+             
+              @variable.variable
+            </li>
+            }
+        else
+            {
+             <li class="list-group-item list-group-item-secondary"
+              @onclick = "(() => {variable.sort = !variable.sort; FilterUpdate(); FilterCallBack();})">
+             <del>@variable.variable</del> 
+            </li>   
+            }
+
+    } 
+
+</ul>
+
+@code {
+    [Parameter]
+    public filtering[] FilterSort { get; set; }
+
+    [Parameter]
+    public EventCallback<filtering[]> FilterSortUpdate {get; set;}
+
+
+    public void FilterUpdate()
+    {
+        for(int n = 0; n < 10; n++)
+        {
+            FilterModel.filter[n] = FilterSort[n].sort;
+        }
+    }
+
+    private async Task FilterCallBack()
+    {
+        await FilterSortUpdate.InvokeAsync(FilterSort);
+    }
+}
