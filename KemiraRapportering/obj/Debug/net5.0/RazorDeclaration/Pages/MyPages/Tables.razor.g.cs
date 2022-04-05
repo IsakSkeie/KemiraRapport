@@ -126,7 +126,7 @@ using BlazorDateRangePicker;
     Queries query = new Queries();
 
     DateTimeOffset? StartDate { get; set; } = DateTime.Today.AddDays(-7);
-    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(0).AddTicks(-1);
+    DateTimeOffset? EndDate { get; set; } = DateTime.Today.AddDays(1).AddTicks(-1);
 
     private int TableLen = 30;
 

@@ -72,10 +72,34 @@ namespace DataAccesLib.Models
             sql = sql + $"O2Trykk = {Batch.O2Trykk}, O2Reaksjonstid = {Batch.O2Reaksjonstid}, DeltaTemp = {Batch.DeltaTemp}, AnalysertFe3 = {Batch.AnalysertFe3}, ";
             sql = sql + $"AnalysertFeTot = {Batch.AnalysertFeTot}, VannSluttjustering = {Batch.VannSluttJustering}, VirkeligMVann = {Batch.VirkeligMVann}, TotTilLager = {Batch.TotTilLager} ";
             sql = sql + $"where dato between '{SQLStartDate}' AND '{SQLEndDate}'; ";
-            Debug.WriteLine(sql);
+            
 
             return sql;
         }
 
+        public string AnalysisRecipeUpdate(RecipeModels Batch)
+        {
+            string[] date = Batch.Dato.Split('/');
+            string[] time = date[2].Split(' ');
+            int etterspyling = 0;
+            if (Batch.Etterspyling) { etterspyling = 1; }
+
+            string SQLStartDate = time[0] + "-" + date[0] + "-" + date[1] + " " + time[1] + ".000";
+            string SQLEndDate = time[0] + "-" + date[0] + "-" + date[1] + " " + time[1] + ".999";
+
+
+
+
+            //format blazor mm/dd/yyyy hh:mm:ss.ms
+            //format '2022-03-02 11:53:22.000'
+            //string startTime = 
+            sql = "UPDATE PIX318_ReseptData";
+            sql = sql + $" SET batchNr = {Batch.BatchNr}, ID = '{Batch.ID}', TotalFe = {Batch.TotalFe}, Egenvekt = {Batch.Egenvekt},";
+            sql = sql + $" Verdi2Fe = {Batch.Verdi2Fe}, ManuellVerdi2Fe = {Batch.ManuellVerdi2Fe}, ";
+            sql = sql + $" Verdi3EtterManuell2Fe = {Batch.Verdi3EtterManuell2Fe}, Verdi3Fe = {Batch.Verdi3Fe}, FriSyre = {Batch.FriSyre} ";
+            sql = sql + $"where dato between '{SQLStartDate}' AND '{SQLEndDate}'; ";
+            Debug.WriteLine(sql);
+            return sql;
+        }
     }
 }
