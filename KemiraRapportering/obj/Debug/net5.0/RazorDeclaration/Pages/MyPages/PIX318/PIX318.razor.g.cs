@@ -119,7 +119,7 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\PIX318.razor"
+#line 38 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\PIX318.razor"
        
 
 
@@ -128,10 +128,11 @@ using BlazorDateRangePicker;
     private string batch { get; set; }
 
     private int TableLen = Queries.TableLen;
+    private int ParameterLen = 30;
 
     private List<RecipeModels> recipes;
     private RecipeModels RecipeEdit = new RecipeModels();
-
+    public filtering[] filter = new filtering[30];
 
 
 
@@ -156,7 +157,25 @@ using BlazorDateRangePicker;
     protected override async Task OnInitializedAsync()
     {
         string sql = query.pix318();
-        
+         for(int i = 0; i < ParameterLen; i++)
+        {
+            filter[i] = new filtering();
+            filter[i].variable = FilterModel.StringFilter[i];
+        }
+
+        //Make this part of initialization
+        filter[5].sort = true;
+        filter[19].sort = true;
+        filter[20].sort = true;
+        filter[21].sort = true;
+        filter[22].sort = true;
+        filter[24].sort = true;
+        FilterModel.filter[5] = true;
+        FilterModel.filter[19] = true;
+        FilterModel.filter[20] = true;
+        FilterModel.filter[21] = true;
+        FilterModel.filter[22] = true;
+        FilterModel.filter[24] = true;
         
         recipes = await _db.GetRecipes(sql);
         
@@ -205,7 +224,10 @@ using BlazorDateRangePicker;
 
     }
 
-   
+   private void UpdateFilter(filtering[] _filter)
+    {
+        filter = _filter;
+    }
 
 
 

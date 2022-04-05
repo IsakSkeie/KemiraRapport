@@ -196,13 +196,13 @@ using System.Diagnostics;
         TableUpdate();
     }
 
-    public void FilterUpdate()
-    {
-        for(int n = 0; n < 10; n++)
-        {
-            FilterModel.filter[n] = FilterSort[n].sort;
-        }
-    }
+    //public void FilterUpdate()
+    //{
+    //    for(int n = 0; n < 10; n++)
+    //    {
+    //        FilterModel.filter[n] = FilterSort[n].sort;
+    //    }
+    //}
 
 
     public async Task resetTable()

@@ -155,7 +155,7 @@ else
             ));
             __builder.CloseComponent();
             __builder.AddMarkupContent(5, "\r\n");
-            __builder.OpenComponent<KemiraRapportering.Pages.MyPages.FilterButtons>(6);
+            __builder.OpenComponent<KemiraRapportering.Pages.MyPages.PIX318.FilterButtons>(6);
             __builder.AddAttribute(7, "FilterSort", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<DataAccesLib.Models.filtering[]>(
 #nullable restore
 #line 33 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\PIX318Analyse.razor"

@@ -377,42 +377,13 @@
 
     <h4>Fjerne/Legge til kolonner</h4>
 
-    <ul class="list-group d-inline-block">
 
-
-
-
-@foreach(var variable in filter)
-    {
-
-
-            @if (!variable.sort)
-            {
-                <li class="list-group-item list-group-item-primary"
-              @onclick = "(() => {variable.sort = !variable.sort; FilterUpdate(); StateHasChanged();})">
-             
-              @variable.variable
-            </li>
-            }
-        else
-            {
-             <li class="list-group-item list-group-item-secondary"
-              @onclick = "(() => {variable.sort = !variable.sort; FilterUpdate(); StateHasChanged();})">
-             <del>@variable.variable</del> 
-            </li>   
-            }
-
-    } 
-
-
-
-</ul>
 
 
 
 
 @code {
-    public filtering[] filter = new filtering[30];
+    //public filtering[] filter = new filtering[30];
     private RecipeModels RecipeEdit = new RecipeModels();
     private List<RecipeModels> recipes;
     Queries query = new Queries();
@@ -422,35 +393,16 @@
 
     private int TableLen = 30;
 
+    [Parameter]
+    public filtering[] filter {get;set;}
 
-    protected override async Task OnInitializedAsync()
-    {
-
-
-        for(int i = 0; i < TableLen; i++)
-        {
-            filter[i] = new filtering();
-            filter[i].variable = FilterModel.StringFilter[i];
-        }
-
-        //Make this part of initialization
-        filter[5].sort = true;
-        filter[19].sort = true;
-        filter[20].sort = true;
-        filter[21].sort = true;
-        filter[22].sort = true;
-        filter[24].sort = true;
-        FilterModel.filter[5] = true;
-        FilterModel.filter[19] = true;
-        FilterModel.filter[20] = true;
-        FilterModel.filter[21] = true;
-        FilterModel.filter[22] = true;
-        FilterModel.filter[24] = true;
+   
 
 
+    //protected override async Task OnInitializedAsync()
+    //{
 
-
-    }
+    //}
 
     private void EnableEditing(bool flag, RecipeModels batch)
     {

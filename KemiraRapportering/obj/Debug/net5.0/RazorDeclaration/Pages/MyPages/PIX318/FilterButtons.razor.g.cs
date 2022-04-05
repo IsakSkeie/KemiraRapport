@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace KemiraRapportering.Pages.MyPages
+namespace KemiraRapportering.Pages.MyPages.PIX318
 {
     #line hidden
     using System;
@@ -97,7 +97,7 @@ using DataAccesLib;
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\FilterButtons.razor"
+#line 1 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\FilterButtons.razor"
 using DataAccesLib.Models;
 
 #line default
@@ -111,7 +111,7 @@ using DataAccesLib.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 30 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\FilterButtons.razor"
+#line 30 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\FilterButtons.razor"
        
     [Parameter]
     public filtering[] FilterSort { get; set; }

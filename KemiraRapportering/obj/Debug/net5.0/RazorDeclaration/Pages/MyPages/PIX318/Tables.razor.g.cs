@@ -118,9 +118,9 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 414 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
+#line 385 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
        
-    public filtering[] filter = new filtering[30];
+    //public filtering[] filter = new filtering[30];
     private RecipeModels RecipeEdit = new RecipeModels();
     private List<RecipeModels> recipes;
     Queries query = new Queries();
@@ -130,35 +130,16 @@ using BlazorDateRangePicker;
 
     private int TableLen = 30;
 
+    [Parameter]
+    public filtering[] filter {get;set;}
 
-    protected override async Task OnInitializedAsync()
-    {
-
-
-        for(int i = 0; i < TableLen; i++)
-        {
-            filter[i] = new filtering();
-            filter[i].variable = FilterModel.StringFilter[i];
-        }
-
-        //Make this part of initialization
-        filter[5].sort = true;
-        filter[19].sort = true;
-        filter[20].sort = true;
-        filter[21].sort = true;
-        filter[22].sort = true;
-        filter[24].sort = true;
-        FilterModel.filter[5] = true;
-        FilterModel.filter[19] = true;
-        FilterModel.filter[20] = true;
-        FilterModel.filter[21] = true;
-        FilterModel.filter[22] = true;
-        FilterModel.filter[24] = true;
+   
 
 
+    //protected override async Task OnInitializedAsync()
+    //{
 
-
-    }
+    //}
 
     private void EnableEditing(bool flag, RecipeModels batch)
     {
