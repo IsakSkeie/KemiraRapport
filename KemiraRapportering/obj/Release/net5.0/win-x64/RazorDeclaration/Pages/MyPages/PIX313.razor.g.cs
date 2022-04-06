@@ -13,91 +13,91 @@ namespace KemiraRapportering.Pages.MyPages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+#line 1 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+#line 2 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+#line 3 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+#line 4 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+#line 5 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+#line 7 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+#line 8 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+#line 10 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\_Imports.razor"
 using KemiraRapportering;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+#line 11 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\_Imports.razor"
 using KemiraRapportering.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\isak.skeie\source\repos\KemiraRapportering\_Imports.razor"
+#line 12 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\_Imports.razor"
 using DataAccesLib;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX313.razor"
+#line 2 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX313.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX313.razor"
+#line 3 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX313.razor"
 using BlazorDateRangePicker;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX313.razor"
+#line 6 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX313.razor"
 using KemiraRapportering.Data;
 
 #line default
@@ -112,7 +112,7 @@ using KemiraRapportering.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 129 "C:\Users\isak.skeie\source\repos\KemiraRapportering\Pages\MyPages\PIX313.razor"
+#line 129 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX313.razor"
        
     public int batch = 1;
     public int SAP = 2;

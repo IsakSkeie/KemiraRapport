@@ -15,6 +15,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\isak.skeie\source\repos\DataAccesLib\bin\Release\net5.0\win-x64\DataAccesLib.dll" target="lib\net5.0\DataAccesLib.dll" />
+    <file src="C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\bin\Release\net5.0\win-x86\DataAccesLib.dll" target="lib\net5.0\DataAccesLib.dll" />
   </files>
 </package>

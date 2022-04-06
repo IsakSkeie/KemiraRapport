@@ -1,0 +1,12 @@
+C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\bin\Release\net5.0\win-x86\DataAccesLib.deps.json
+C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\bin\Release\net5.0\win-x86\DataAccesLib.dll
+C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\bin\Release\net5.0\win-x86\DataAccesLib.pdb
+C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\obj\Release\net5.0\win-x86\DataAccesLib.csproj.AssemblyReference.cache
+C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\obj\Release\net5.0\win-x86\DataAccesLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\obj\Release\net5.0\win-x86\DataAccesLib.AssemblyInfoInputs.cache
+C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\obj\Release\net5.0\win-x86\DataAccesLib.AssemblyInfo.cs
+C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\obj\Release\net5.0\win-x86\DataAccesLib.csproj.CoreCompileInputs.cache
+C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\obj\Release\net5.0\win-x86\DataAccesLib.dll
+C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\obj\Release\net5.0\win-x86\refint\DataAccesLib.dll
+C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\obj\Release\net5.0\win-x86\DataAccesLib.pdb
+C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\obj\Release\net5.0\win-x86\ref\DataAccesLib.dll
