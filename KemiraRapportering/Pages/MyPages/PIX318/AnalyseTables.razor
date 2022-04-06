@@ -88,14 +88,14 @@
                             @if (!FilterSort[2].sort)
                             {
                                 <td>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.ID" @bind-value:event="oninput" />
+                                <input type="text" class="form-control" @bind-value="RecipeEdit.ID" @bind-value:event="oninput" />
                                 </td>
                             }
 
                             @if (!FilterSort[3].sort)
                             {
                                 <td>
-                                <input type="text" class="form-control" @bind-value="RecipeEdit.TotalFe" @bind-value:event="oninput" />
+                                <input type="number" class="form-control" @bind-value="RecipeEdit.TotalFe" @bind-value:event="oninput" />
                                  </td>
                             }
 
@@ -174,7 +174,7 @@
     private int TableAnalysisLen = 30;
 
 
- 
+
 
     private void EnableEditing(bool flag, RecipeModels batch)
     {
@@ -191,7 +191,8 @@
 
     private async void BatchEdit(RecipeModels batch)
     {
-        string sql = query.RecipeUpdate(batch);
+        string sql = query.AnalysisRecipeUpdate(batch);
+        Debug.WriteLine(sql);
         await _db.EditRecipe(sql);
 
         sql = query.pix318();

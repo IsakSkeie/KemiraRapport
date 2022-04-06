@@ -82,7 +82,15 @@ else
         recipes = await _db.GetRecipes(Queries.sql);
         RecipeRead.Table = recipes;
         //await InvokeAsync(StateHasChanged);
-        StateHasChanged();
+        try
+        {
+            StateHasChanged();
+        }
+        catch
+        {
+            
+        }
+
     }
 
     private void UpdateFilter(filtering[] _filter)
