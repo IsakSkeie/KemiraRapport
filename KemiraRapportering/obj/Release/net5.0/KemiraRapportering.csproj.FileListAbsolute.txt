@@ -162,7 +162,7 @@ C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Release\net5.0\Ke
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Release\net5.0\KemiraRapportering.Views.pdb
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Release\net5.0\KemiraRapportering.csproj.CopyComplete
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Release\net5.0\KemiraRapportering.dll
-C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Release\net5.0\refint\KemiraRapportering.dll
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Release\net5.0\KemiraRapportering.pdb
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Release\net5.0\KemiraRapportering.genruntimeconfig.cache
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Release\net5.0\ref\KemiraRapportering.dll
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\bin\Release\net5.0\ref\KemiraRapportering.dll

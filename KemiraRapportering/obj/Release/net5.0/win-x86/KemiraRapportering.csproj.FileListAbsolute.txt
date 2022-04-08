@@ -79,7 +79,6 @@ C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Release\net5.0\wi
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Release\net5.0\win-x86\KemiraRapportering.Views.pdb
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Release\net5.0\win-x86\KemiraRapportering.csproj.CopyComplete
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Release\net5.0\win-x86\KemiraRapportering.dll
-C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Release\net5.0\win-x86\refint\KemiraRapportering.dll
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Release\net5.0\win-x86\KemiraRapportering.pdb
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Release\net5.0\win-x86\KemiraRapportering.genruntimeconfig.cache
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\obj\Release\net5.0\win-x86\ref\KemiraRapportering.dll
@@ -432,3 +431,4 @@ C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\bin\Release\net5.0\wi
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\bin\Release\net5.0\win-x86\mscorrc.dll
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\bin\Release\net5.0\win-x86\ucrtbase.dll
 C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\bin\Release\net5.0\win-x86\aspnetcorev2_inprocess.dll
+C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\bin\Release\net5.0\win-x86\ref\KemiraRapportering.dll

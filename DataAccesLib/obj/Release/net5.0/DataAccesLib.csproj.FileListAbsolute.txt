@@ -31,6 +31,6 @@ C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\obj\Release\net5.0\DataAcce
 C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\obj\Release\net5.0\DataAccesLib.AssemblyInfo.cs
 C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\obj\Release\net5.0\DataAccesLib.csproj.CoreCompileInputs.cache
 C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\obj\Release\net5.0\DataAccesLib.dll
-C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\obj\Release\net5.0\refint\DataAccesLib.dll
 C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\obj\Release\net5.0\DataAccesLib.pdb
 C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\obj\Release\net5.0\ref\DataAccesLib.dll
+C:\Users\isak.skeie\source\repos\Kemira\DataAccesLib\bin\Release\net5.0\ref\DataAccesLib.dll

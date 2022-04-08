@@ -57,17 +57,18 @@ else
 
         //Make this part of initialization
         filter[5].sort = true;
+        filter[9].sort = true;
+        filter[18].sort = true;
         filter[19].sort = true;
         filter[20].sort = true;
         filter[21].sort = true;
         filter[22].sort = true;
         filter[24].sort = true;
-        FilterModel.filter[5] = true;
-        FilterModel.filter[19] = true;
-        FilterModel.filter[20] = true;
-        FilterModel.filter[21] = true;
-        FilterModel.filter[22] = true;
-        FilterModel.filter[24] = true;
+        filter[25].sort = true;
+        filter[26].sort = true;
+
+
+ 
 
         recipes = await _db.GetRecipes(sql);
 
