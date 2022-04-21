@@ -125,19 +125,25 @@ using System.Diagnostics;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 90 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
+#line 98 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
        
-
-    private List<string> RecipeEdit = new List<string>();
+    public List<string> RecipeEdit;
     private List<RecipeModels> recipes;
     Queries query = new Queries();
     private int TableLen = 30;
     public DataFormatter format = new DataFormatter();
     public List<List<string>> TableList = new List<List<string>>();
-    public List<string> List = new List<string>(30);
+
+    //public List<string> List = new List<string>();
+    //public string Edit { get; set; }
+    private int N = 0;
+
+    EditRow TableEdit = new EditRow { Edits = new List<EditInstance>() };
 
 
-    
+
+
+
 
 
     [Parameter]
@@ -156,51 +162,76 @@ using System.Diagnostics;
         if(flag)
         {
             batch[31] = "True";
-        }
-        else
-        {
-            batch[31] = "False";
+            RecipeEdit = batch;
+            flag = !flag;
+
+            List<EditInstance> _EditInstance = new List<EditInstance>();
+
+            for(int n = 0; n < 30; n++)
+            {
+                EditInstance _Entry = new EditInstance(){Name = batch[n], filter = filter[n].sort};
+
+                TableEdit.Edits.Add(_Entry);
+            }
+
+
+
+
         }
 
-        if (flag)
-        {
-            RecipeEdit = batch;
-       
-            flag = !flag;
-        }
 
         StateHasChanged();
 
     }
 
 
-    private async void BatchEdit(List<string> batch)
+
+    private async void BatchEdit()
     {
+
+        List<string> batch = new List<string>();
+
+        foreach(var variable in TableEdit.Edits)
+        {
+            batch.Add(variable.Name);
+        }
+
+
         string sql = query.RecipeUpdate(batch);
         Debug.WriteLine(sql);
         await _db.EditRecipe(sql);
 
         sql = query.pix318();
         TableUpdate();
+
+        batch.Clear();
+        TableEdit.Edits.Clear();
     }
 
     public async void TableUpdate()
     {
-   
+
 
         recipes = await _db.GetRecipes(Queries.sql);
         RecipeRead.Table = recipes;
 
         TableList = format.Pix318Model(recipes);
         RecipeRead.TableList = TableList;
-        Debug.WriteLine(RecipeRead.TableList[0][31]);
 
-       
 
-        StateHasChanged();
+
+
+        try
+        {
+            StateHasChanged();
+        }
+        catch
+        {
+            
+        }StateHasChanged();
     }
 
- 
+
 
     public void FilterUpdate()
     {
@@ -210,8 +241,22 @@ using System.Diagnostics;
         }
     }
 
+    public void EditUpdate(List<string> batch)
+    {
 
+    }
 
+    //private void CheckInput(KeyboardEventArgs keyEvent)
+    //{
+    //    if(keyEvent.Key == "Enter")
+    //    {
+    //        Debug.WriteLine(N);
+    //        RecipeEdit.Insert(N, Edit);
+    //    }
+
+    //}
+
+   
 
 #line default
 #line hidden

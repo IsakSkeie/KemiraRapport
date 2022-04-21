@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DataAccesLib.Models
 {
@@ -55,7 +51,7 @@ namespace DataAccesLib.Models
         public bool edit { get; set; }
 
 
-    }   
+    }
 
 
 
@@ -107,7 +103,7 @@ namespace DataAccesLib.Models
 
 
     };
-       
+
 
     }
     public class filtering
@@ -116,4 +112,17 @@ namespace DataAccesLib.Models
         public string variable { get; set; }
     }
 
+    public class EditRow
+    {
+        public List<EditInstance> Edits { get; set; }
+        
+    }
+
+    public class EditInstance
+    {
+        public string Name { get; set; }
+        public bool filter { get; set; }
+    }
+
+   
 }
