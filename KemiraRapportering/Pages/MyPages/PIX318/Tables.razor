@@ -44,248 +44,41 @@ else
                                 }
                             }
                             
-                        </tr>
-                    }
-                    
-                   
-           
-
+                       
                    
 
-                 @*   <th>
+                    <th>
                         <button type="button" class="btn btn-link">
                         <span class="oi oi-pencil" aria-hidden="true" @onclick="() => EnableEditing(true, recipe)"></span>
                         </button>
                     </th>
-*@
-                    
-                     
+
+                        </tr>
+
                     }
                     else
                     {
-@*
-                             @if (!filter[0].sort)
+                        for(int n = 0; n < 30; n++)
+                        {
+                            @if(!filter[n].sort)
                             {
                                 <td>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.BatchNr" @bind-value:event="oninput" />
-</td>
-                            }
-                            @if (!filter[1].sort)
-                            {
-                                <td>
-                                <input type="text" class="form-control" @bind-value="RecipeEdit.Dato" @bind-value:event="oninput" />
-</td>
-                            }
-                            @if (!filter[2].sort)
-                            {
-                                <td>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.SAP" @bind-value:event="oninput" />
+                                <input type="text" class="form-control" @bind="List[n]" />
                                 </td>
                             }
+                        }
+                        
 
-                            @if (!filter[3].sort)
-                            {
-                                <td>
-                                <input type="text" class="form-control" @bind-value="RecipeEdit.ID" @bind-value:event="oninput" />
-                                 </td>
-                            }
-
-                            @if (!filter[4].sort)
-                            {
-                                <td>
-
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.Reaktor" @bind-value:event="oninput" />
-</td>
-                            }
-                             @if (!filter[5].sort)
-                            {
-                                <th>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.SatsVolum" @bind-value:event="oninput" />
-</th>
-                            }
-
-                            @if (!filter[6].sort)
-                            {
-                                <td>
-
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.ForvFe" @bind-value:event="oninput" />
-</td>
-                            }
-
-                            @if (!filter[7].sort)
-                            {
-                                <td>
-
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.OnsketFe" @bind-value:event="oninput" />
-</td>
-                            }
-
-                            @if (!filter[8].sort)
-                            {
-                                <td>
-
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.OnsketSyre" @bind-value:event="oninput" />
-</td>
-                            }
-
-                            @if (!filter[9].sort)
-                            {
-                                <td>
-
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.OnsketFe2" @bind-value:event="oninput" />
-</td>
-                            }
-
-                            @if (!filter[10].sort)
-                            {
-                                <td>
-
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.HCLType" @bind-value:event="oninput" />
-</td>
-                            }
-
-                            @if (!filter[11].sort)
-                            {
-                                <td>
-
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.ForvDamp" @bind-value:event="oninput" />
-</td>
-                            }
-
-                            @if (!filter[12].sort)
-                            {
-                                <td>
-
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.VannOverordnet" @bind-value:event="oninput" />
-</td>
-                            }
-
-                            @if (!filter[13].sort)
-                            {
-                                <td>
-
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.VarmtVann" @bind-value:event="oninput" />
-</td>
-                            }
-
-                            @if (!filter[14].sort)
-                            {
-                                <td>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.SpillVann" @bind-value:event="oninput" />
-</td>
-                            }
-
-                            @if (!filter[15].sort)
-                            {
-                                <td>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.ScrubberVaeske" @bind-value:event="oninput" />
-</td>
-                            }
-
-                            @if (!filter[16].sort)
-                            {
-                                <td>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.HCL" @bind-value:event="oninput" />
-</td>
-                            }
-
-                            @if (!filter[17].sort)
-                            {
-                                <th>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.Jernsulfat" @bind-value:event="oninput" />
-</th>
-                            }
-
-                            @if (!filter[18].sort)
-                            {
-                                <th>
-
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.Temp" @bind-value:event="oninput" />
-</th>
-                            }
-                             @if (!filter[19].sort)
-                            {
-                                <th>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.Modningstid" @bind-value:event="oninput" />
-</th>
-                            }
-                             @if (!filter[20].sort)
-                            {
-                                <th>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.DampVentil" @bind-value:event="oninput" />
-</th>
-                            }
-                             @if (!filter[21].sort)
-                            {
-                                <th>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.Etterspyling" @bind-value:event="oninput" />
-</th>
-                            }
-                             @if (!filter[22].sort)
-                            {
-                                <th>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.O2Trykk" @bind-value:event="oninput" />
-</th>
-                            }
-
-                            @if (!filter[23].sort)
-                            {
-                                <th>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.O2Reaksjonstid" @bind-value:event="oninput" />
-</th>
-                            }
-                             @if (!filter[24].sort)
-                            {
-                                <th>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.DeltaTemp" @bind-value:event="oninput" />
-</th>
-                            }
-
-                            @if (!filter[25].sort)
-                            {
-                                <th>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.AnalysertFe3" @bind-value:event="oninput" />
-</th>
-                            }
-
-                            @if (!filter[26].sort)
-                            {
-                                <th>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.AnalysertFeTot" @bind-value:event="oninput" />
-</th>
-                            }
-
-                            @if (!filter[26].sort)
-                            {
-                                <th>
-
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.VannSluttJustering" @bind-value:event="oninput" />
-</th>
-                            }
-
-                            @if (!filter[28].sort)
-                            {
-                                <th>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.VirkeligMVann" @bind-value:event="oninput"/>
-</th>
-                            }
-
-                            @if (!filter[29].sort)
-                            {
-                                <th>
-                                <input type="number" class="form-control" @bind-value="RecipeEdit.TotTilLager" @bind-value:event="oninput" />
-</th>
-                            }
 
                             
                             <td>
                     <button type="button" class="btn btn-link" @onclick="() => EnableEditing(false, recipe)">
                         <i class="oi oi-trash" />
                     </button>
-                    <button type="button" class="btn btn-link" @onclick="() => {BatchEdit(recipe); EnableEditing(false, recipe);}">
+                    <button type="button" class="btn btn-link" @onclick="() => {BatchEdit(RecipeEdit); EnableEditing(false, recipe);}">
                         <i class="oi oi-check" />
                     </button>
-                </td>*@
+                </td>
                     }
             }
         </tbody>
@@ -296,12 +89,17 @@ else
 
 @code {
 
-    private List<string> RecipeEdit = new List<string>();
+    private List<string> RecipeEdit { get; set; }
     private List<RecipeModels> recipes;
     Queries query = new Queries();
     private int TableLen = 30;
     public DataFormatter format = new DataFormatter();
     public List<List<string>> TableList = new List<List<string>>();
+    public List<string> List = new List<string>(30);
+
+
+    
+
 
     [Parameter]
     public filtering[] filter {get;set;}
@@ -328,6 +126,8 @@ else
         if (flag)
         {
             RecipeEdit = batch;
+       
+            flag = !flag;
         }
 
         StateHasChanged();
@@ -335,9 +135,10 @@ else
     }
 
 
-    private async void BatchEdit(RecipeModels batch)
+    private async void BatchEdit(List<string> batch)
     {
         string sql = query.RecipeUpdate(batch);
+        Debug.WriteLine(sql);
         await _db.EditRecipe(sql);
 
         sql = query.pix318();
@@ -346,6 +147,7 @@ else
 
     public async void TableUpdate()
     {
+   
 
         recipes = await _db.GetRecipes(Queries.sql);
         RecipeRead.Table = recipes;

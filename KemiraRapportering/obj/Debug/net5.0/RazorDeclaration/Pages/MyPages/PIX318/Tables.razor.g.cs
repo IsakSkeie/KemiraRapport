@@ -125,7 +125,7 @@ using System.Diagnostics;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 297 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
+#line 90 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
        
 
     private List<string> RecipeEdit = new List<string>();
@@ -134,6 +134,11 @@ using System.Diagnostics;
     private int TableLen = 30;
     public DataFormatter format = new DataFormatter();
     public List<List<string>> TableList = new List<List<string>>();
+    public List<string> List = new List<string>(30);
+
+
+    
+
 
     [Parameter]
     public filtering[] filter {get;set;}
@@ -160,6 +165,8 @@ using System.Diagnostics;
         if (flag)
         {
             RecipeEdit = batch;
+       
+            flag = !flag;
         }
 
         StateHasChanged();
@@ -167,9 +174,10 @@ using System.Diagnostics;
     }
 
 
-    private async void BatchEdit(RecipeModels batch)
+    private async void BatchEdit(List<string> batch)
     {
         string sql = query.RecipeUpdate(batch);
+        Debug.WriteLine(sql);
         await _db.EditRecipe(sql);
 
         sql = query.pix318();
@@ -178,6 +186,7 @@ using System.Diagnostics;
 
     public async void TableUpdate()
     {
+   
 
         recipes = await _db.GetRecipes(Queries.sql);
         RecipeRead.Table = recipes;
