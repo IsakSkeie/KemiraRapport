@@ -118,7 +118,7 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 364 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
+#line 370 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
        
     
     private RecipeModels RecipeEdit = new RecipeModels();
@@ -130,6 +130,16 @@ using BlazorDateRangePicker;
     public filtering[] filter {get;set;}
 
 
+    protected override async Task OnInitializedAsync()
+    {
+        string sql = query.pix318();
+
+        recipes = await _db.GetRecipes(sql);
+
+        RecipeRead.Table = recipes;
+        TableUpdate();
+
+    }
     
     private void EnableEditing(bool flag, RecipeModels batch)
     {

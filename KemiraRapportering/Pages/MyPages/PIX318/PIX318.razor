@@ -12,12 +12,7 @@
 
 <h5 class ="mx-5">&nbsp;&nbsp;&nbsp; Dato &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Antall Rader</h5>
 
-@if (recipes is null)
-{
-    <p><em>Loading....</em></p>
-}
-else
-{
+
 
  <TableSortComp rangeQuery="@UpdateDateRange"></TableSortComp>
 
@@ -66,14 +61,6 @@ else
         filter[24].sort = true;
         filter[25].sort = true;
         filter[26].sort = true;
-
-
- 
-
-        recipes = await _db.GetRecipes(sql);
-
-        RecipeRead.Table = recipes;
-        TableUpdate();
 
     }
 

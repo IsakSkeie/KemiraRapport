@@ -119,7 +119,7 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\PIX318.razor"
+#line 29 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\PIX318.razor"
        
 
     private int TableLen = Queries.TableLen;
@@ -156,32 +156,24 @@ using BlazorDateRangePicker;
         filter[25].sort = true;
         filter[26].sort = true;
 
-
- 
-
-        recipes = await _db.GetRecipes(sql);
-
-        RecipeRead.Table = recipes;
-        TableUpdate();
-
     }
 
-    public async void TableUpdate()
-    {
+    //public async void TableUpdate()
+    //{
 
-        recipes = await _db.GetRecipes(Queries.sql);
-        RecipeRead.Table = recipes;
-        //await InvokeAsync(StateHasChanged);
-        try
-        {
-            StateHasChanged();
-        }
-        catch
-        {
+    //    recipes = await _db.GetRecipes(Queries.sql);
+    //    RecipeRead.Table = recipes;
+    //    //await InvokeAsync(StateHasChanged);
+    //    try
+    //    {
+    //        StateHasChanged();
+    //    }
+    //    catch
+    //    {
             
-        }
+    //    }
 
-    }
+    //}
 
     private void UpdateFilter(filtering[] _filter)
     {

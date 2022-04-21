@@ -4,6 +4,12 @@
 
 @inject IRecipeData _db
 
+@if (recipes is null)
+{
+    <p><em>Loading....</em></p>
+}
+else
+{
 
   <div>
       <table class="table table-striped">
@@ -359,7 +365,7 @@
     </table>
   </div>
 
-
+}
 
 @code {
     
@@ -372,6 +378,16 @@
     public filtering[] filter {get;set;}
 
 
+    protected override async Task OnInitializedAsync()
+    {
+        string sql = query.pix318();
+
+        recipes = await _db.GetRecipes(sql);
+
+        RecipeRead.Table = recipes;
+        TableUpdate();
+
+    }
     
     private void EnableEditing(bool flag, RecipeModels batch)
     {
