@@ -118,7 +118,11 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
+<<<<<<< Updated upstream
 #line 370 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
+=======
+#line 288 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
+>>>>>>> Stashed changes
        
     
     private RecipeModels RecipeEdit = new RecipeModels();
@@ -133,11 +137,21 @@ using BlazorDateRangePicker;
     protected override async Task OnInitializedAsync()
     {
         string sql = query.pix318();
+<<<<<<< Updated upstream
 
         recipes = await _db.GetRecipes(sql);
 
         RecipeRead.Table = recipes;
         TableUpdate();
+=======
+      
+    
+        
+    
+        TableUpdate();
+
+    }
+>>>>>>> Stashed changes
 
     }
     

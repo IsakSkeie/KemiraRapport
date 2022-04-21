@@ -12,7 +12,16 @@
 
 <h5 class ="mx-5">&nbsp;&nbsp;&nbsp; Dato &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Antall Rader</h5>
 
+<<<<<<< Updated upstream
 
+=======
+@*@if (recipes is null)
+{
+    <p><em>Loading....</em></p>
+}
+else
+{*@
+>>>>>>> Stashed changes
 
  <TableSortComp rangeQuery="@UpdateDateRange"></TableSortComp>
 
@@ -62,13 +71,33 @@
         filter[25].sort = true;
         filter[26].sort = true;
 
+<<<<<<< Updated upstream
+=======
+
+
+
+        recipes = await _db.GetRecipes(sql);
+
+        //Debug.WriteLine("Test" + recipes[0].BatchNr);
+        //TableList = format.Pix318Model(recipes);
+
+
+        //RecipeRead.TableList = TableList;
+        //RecipeRead.Table = recipes;
+        //TableUpdate();
+
+>>>>>>> Stashed changes
     }
 
     public async void TableUpdate()
     {
 
         recipes = await _db.GetRecipes(Queries.sql);
+        TableList = format.Pix318Model(recipes);
+
         RecipeRead.Table = recipes;
+        RecipeRead.TableList = TableList;
+
         //await InvokeAsync(StateHasChanged);
         try
         {

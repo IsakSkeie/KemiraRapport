@@ -4,7 +4,11 @@
 
 @inject IRecipeData _db
 
+<<<<<<< Updated upstream
 @if (recipes is null)
+=======
+@if (RecipeRead.TableList is null)
+>>>>>>> Stashed changes
 {
     <p><em>Loading....</em></p>
 }
@@ -33,7 +37,11 @@ else
             {
 
 
+<<<<<<< Updated upstream
                     @if (!recipe.edit)
+=======
+                    @if (recipe[32] != "False")
+>>>>>>> Stashed changes
                     {
                         <tr @key="recipe">
 
@@ -365,7 +373,11 @@ else
     </table>
   </div>
 
+<<<<<<< Updated upstream
 }
+=======
+  }
+>>>>>>> Stashed changes
 
 @code {
     
@@ -381,8 +393,18 @@ else
     protected override async Task OnInitializedAsync()
     {
         string sql = query.pix318();
+<<<<<<< Updated upstream
 
         recipes = await _db.GetRecipes(sql);
+=======
+      
+    
+        
+    
+        TableUpdate();
+
+    }
+>>>>>>> Stashed changes
 
         RecipeRead.Table = recipes;
         TableUpdate();

@@ -156,6 +156,7 @@ using BlazorDateRangePicker;
         filter[25].sort = true;
         filter[26].sort = true;
 
+<<<<<<< Updated upstream
     }
 
     //public async void TableUpdate()
@@ -170,6 +171,39 @@ using BlazorDateRangePicker;
     //    }
     //    catch
     //    {
+=======
+
+
+
+        recipes = await _db.GetRecipes(sql);
+
+        //Debug.WriteLine("Test" + recipes[0].BatchNr);
+        //TableList = format.Pix318Model(recipes);
+
+
+        //RecipeRead.TableList = TableList;
+        //RecipeRead.Table = recipes;
+        //TableUpdate();
+
+    }
+
+    public async void TableUpdate()
+    {
+
+        recipes = await _db.GetRecipes(Queries.sql);
+        TableList = format.Pix318Model(recipes);
+
+        RecipeRead.Table = recipes;
+        RecipeRead.TableList = TableList;
+
+        //await InvokeAsync(StateHasChanged);
+        try
+        {
+            StateHasChanged();
+        }
+        catch
+        {
+>>>>>>> Stashed changes
             
     //    }
 
