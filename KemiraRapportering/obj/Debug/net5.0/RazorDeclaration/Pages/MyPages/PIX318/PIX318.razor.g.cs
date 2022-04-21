@@ -157,12 +157,7 @@ using BlazorDateRangePicker;
         filter[26].sort = true;
 
 
-        //FilterModel.filter[5] = true;
-        //FilterModel.filter[19] = true;
-        //FilterModel.filter[20] = true;
-        //FilterModel.filter[21] = true;
-        //FilterModel.filter[22] = true;
-        //FilterModel.filter[24] = true;
+ 
 
         recipes = await _db.GetRecipes(sql);
 
