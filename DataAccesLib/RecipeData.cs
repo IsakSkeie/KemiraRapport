@@ -11,6 +11,7 @@ namespace DataAccesLib
    public static class RecipeRead
     {
         public static List<RecipeModels> Table;
+        public static List<List<string>> TableList;
         
         
     }
@@ -18,6 +19,7 @@ namespace DataAccesLib
   public static class RecipeSearch
     {
         public static List<RecipeModels> Table;
+        public static List<List<string>> TableList;
     }
 
     public class RecipeData : IRecipeData

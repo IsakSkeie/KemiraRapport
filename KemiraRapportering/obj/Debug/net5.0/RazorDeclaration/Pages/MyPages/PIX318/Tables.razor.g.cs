@@ -110,6 +110,13 @@ using BlazorDateRangePicker;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
+using System.Diagnostics;
+
+#line default
+#line hidden
+#nullable disable
     public partial class Tables : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -118,13 +125,15 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 370 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
+#line 297 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
        
-    
-    private RecipeModels RecipeEdit = new RecipeModels();
+
+    private List<string> RecipeEdit = new List<string>();
     private List<RecipeModels> recipes;
     Queries query = new Queries();
     private int TableLen = 30;
+    public DataFormatter format = new DataFormatter();
+    public List<List<string>> TableList = new List<List<string>>();
 
     [Parameter]
     public filtering[] filter {get;set;}
@@ -132,18 +141,22 @@ using BlazorDateRangePicker;
 
     protected override async Task OnInitializedAsync()
     {
-        string sql = query.pix318();
 
-        recipes = await _db.GetRecipes(sql);
-
-        RecipeRead.Table = recipes;
         TableUpdate();
 
     }
-    
-    private void EnableEditing(bool flag, RecipeModels batch)
+
+    private void EnableEditing(bool flag, List<string> batch)
     {
-        batch.edit = flag;
+        if(flag)
+        {
+            batch[31] = "True";
+        }
+        else
+        {
+            batch[31] = "False";
+        }
+
         if (flag)
         {
             RecipeEdit = batch;
@@ -168,7 +181,13 @@ using BlazorDateRangePicker;
 
         recipes = await _db.GetRecipes(Queries.sql);
         RecipeRead.Table = recipes;
-        //await InvokeAsync(StateHasChanged);
+
+        TableList = format.Pix318Model(recipes);
+        RecipeRead.TableList = TableList;
+        Debug.WriteLine(RecipeRead.TableList[0][31]);
+
+       
+
         StateHasChanged();
     }
 
