@@ -1,4 +1,5 @@
 ﻿using BlazorDateRangePicker;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 
@@ -46,13 +47,13 @@ namespace DataAccesLib.Models
             return sql;
         }
 
-        public string RecipeUpdate(RecipeModels Batch)
+        public string RecipeUpdate(List<string> Batch)
         {
 
-            string[] date = Batch.Dato.Split('/');
+            string[] date = Batch[1].Split('/');
             string[] time = date[2].Split(' ');
             int etterspyling = 0;
-            if (Batch.Etterspyling) { etterspyling = 1; }
+            if (Batch[21] == "True") { etterspyling = 1; }
 
             string SQLStartDate = time[0] + "-" + date[0] + "-" + date[1] + " " + time[1] + ".000";
             string SQLEndDate = time[0] + "-" + date[0] + "-" + date[1] + " " + time[1] + ".999";
@@ -77,13 +78,13 @@ namespace DataAccesLib.Models
 
 
             sql = "UPDATE PIX318_ReseptData";
-            sql = sql + $" SET batchNr = {Batch.BatchNr}, ID = '{Batch.ID}', SAP = {Batch.SAP}, Reaktor = {Batch.Reaktor}, Satsvolum = {Batch.SatsVolum.ToString().Replace(',','.')}, ";
-            sql = sql + $" ForvFe = {Batch.ForvFe.ToString().Replace(',', '.')}, OnsketFe = {Batch.OnsketFe.ToString().Replace(',', '.')}, OnsketSyre = {Batch.OnsketSyre.ToString().Replace(',', '.')}, OnsketFe2 = {Batch.OnsketFe2.ToString().Replace(',', '.')}, ";
-            sql = sql + $"HCLType = {Batch.HCLType.ToString().Replace(',', '.')}, ForvDamp = {Batch.ForvDamp.ToString().Replace(',', '.')}, VannOverordnet = {Batch.VannOverordnet.ToString().Replace(',', '.')}, VarmtVann = {Batch.VarmtVann.ToString().Replace(',', '.')}, ";
-            sql = sql + $"SpillVann = {Batch.SpillVann.ToString().Replace(',', '.')}, ScrubberVaeske = {Batch.ScrubberVaeske.ToString().Replace(',', '.')}, HCL = {Batch.HCL.ToString().Replace(',', '.')}, JernSulfat = {Batch.Jernsulfat.ToString().Replace(',', '.')}, ";
-            sql = sql + $"Temp = {Batch.Temp.ToString().Replace(',', '.')}, Modningstid = {Batch.Modningstid.ToString().Replace(',', '.')}, DampVentil = {Batch.DampVentil.ToString().Replace(',', '.')}, ";
-            sql = sql + $"O2Trykk = {Batch.O2Trykk.ToString().Replace(',', '.')}, O2Reaksjonstid = {Batch.O2Reaksjonstid.ToString().Replace(',', '.')}, DeltaTemp = {Batch.DeltaTemp.ToString().Replace(',', '.')}, AnalysertFe3 = {Batch.AnalysertFe3.ToString().Replace(',', '.')}, ";
-            sql = sql + $"AnalysertFeTot = {Batch.AnalysertFeTot.ToString().Replace(',', '.')}, VannSluttjustering = {Batch.VannSluttJustering.ToString().Replace(',', '.')}, VirkeligMVann = {Batch.VirkeligMVann.ToString().Replace(',', '.')}, TotTilLager = {Batch.TotTilLager.ToString().Replace(',', '.')} ";
+            sql = sql + $" SET batchNr = {Batch[0]}, ID = '{Batch[3]}', SAP = {Batch[2]}, Reaktor = {Batch[4]}, Satsvolum = {Batch[5].Replace(',','.')}, ";
+            sql = sql + $" ForvFe = {Batch[6].Replace(',', '.')}, OnsketFe = {Batch[7].Replace(',', '.')}, OnsketSyre = {Batch[8].Replace(',', '.')}, OnsketFe2 = {Batch[9].ToString().Replace(',', '.')}, ";
+            sql = sql + $"HCLType = {Batch[10].Replace(',', '.')}, ForvDamp = {Batch[11].Replace(',', '.')}, VannOverordnet = {Batch[12].Replace(',', '.')}, VarmtVann = {Batch[13].Replace(',', '.')}, ";
+            sql = sql + $"SpillVann = {Batch[14].Replace(',', '.')}, ScrubberVaeske = {Batch[15].Replace(',', '.')}, HCL = {Batch[16].Replace(',', '.')}, JernSulfat = {Batch[17].Replace(',', '.')}, ";
+            sql = sql + $"Temp = {Batch[18].Replace(',', '.')}, Modningstid = {Batch[19].Replace(',', '.')}, DampVentil = {Batch[20].Replace(',', '.')}, ";
+            sql = sql + $"O2Trykk = {Batch[22].Replace(',', '.')}, O2Reaksjonstid = {Batch[23].Replace(',', '.')}, DeltaTemp = {Batch[24].Replace(',', '.')}, AnalysertFe3 = {Batch[25].Replace(',', '.')}, ";
+            sql = sql + $"AnalysertFeTot = {Batch[26].Replace(',', '.')}, VannSluttjustering = {Batch[27].Replace(',', '.')}, VirkeligMVann = {Batch[28].Replace(',', '.')}, TotTilLager = {Batch[29].Replace(',', '.')} ";
             sql = sql + $"where dato between '{SQLStartDate}' AND '{SQLEndDate}'; ";
 
 

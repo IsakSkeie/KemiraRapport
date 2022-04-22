@@ -1,6 +1,7 @@
 ﻿using DataAccesLib.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,9 +14,12 @@ namespace DataAccesLib
         {
             List<List<string>> FormattedList = new List<List<string>>();
             List<string> TempList = new List<string>();
-          
+            
+
             foreach (RecipeModels recipe in recipes)
             {
+                List<string> TempList = new List<string>();
+
                 TempList.Add(recipe.BatchNr.ToString());
                 TempList.Add(recipe.Dato);
                 TempList.Add(recipe.SAP.ToString());
@@ -46,13 +50,17 @@ namespace DataAccesLib
                 TempList.Add(recipe.VannSluttJustering.ToString());
                 TempList.Add(recipe.VirkeligMVann.ToString());
                 TempList.Add(recipe.TotTilLager.ToString());
-                
+
                 TempList.Add(recipe.filter.ToString());
                 TempList.Add(recipe.edit.ToString());
 
                 FormattedList.Add(TempList);
 
+           
+
             }
+
+            //Debug.WriteLine(FormattedList[2][0].ToString());
             return FormattedList;
         }
     }

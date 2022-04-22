@@ -110,6 +110,13 @@ using BlazorDateRangePicker;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
+using System.Diagnostics;
+
+#line default
+#line hidden
+#nullable disable
     public partial class Tables : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -118,17 +125,26 @@ using BlazorDateRangePicker;
         }
         #pragma warning restore 1998
 #nullable restore
-<<<<<<< Updated upstream
-#line 370 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
-=======
-#line 288 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
->>>>>>> Stashed changes
+#line 98 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
        
-    
-    private RecipeModels RecipeEdit = new RecipeModels();
+    public List<string> RecipeEdit;
     private List<RecipeModels> recipes;
     Queries query = new Queries();
     private int TableLen = 30;
+    public DataFormatter format = new DataFormatter();
+    public List<List<string>> TableList = new List<List<string>>();
+
+    //public List<string> List = new List<string>();
+    //public string Edit { get; set; }
+    private int N = 0;
+
+    EditRow TableEdit = new EditRow { Edits = new List<EditInstance>() };
+
+
+
+
+
+
 
     [Parameter]
     public filtering[] filter {get;set;}
@@ -137,11 +153,7 @@ using BlazorDateRangePicker;
     protected override async Task OnInitializedAsync()
     {
         string sql = query.pix318();
-<<<<<<< Updated upstream
 
-        recipes = await _db.GetRecipes(sql);
-
-        RecipeRead.Table = recipes;
         TableUpdate();
 =======
       
@@ -151,42 +163,82 @@ using BlazorDateRangePicker;
         TableUpdate();
 
     }
->>>>>>> Stashed changes
-
-    }
     
     private void EnableEditing(bool flag, RecipeModels batch)
     {
-        batch.edit = flag;
-        if (flag)
+        if(flag)
         {
+            batch[31] = "True";
             RecipeEdit = batch;
+            flag = !flag;
+
+            List<EditInstance> _EditInstance = new List<EditInstance>();
+
+            for(int n = 0; n < 30; n++)
+            {
+                EditInstance _Entry = new EditInstance(){Name = batch[n], filter = filter[n].sort};
+
+                TableEdit.Edits.Add(_Entry);
+            }
+
+
+
+
         }
+
 
         StateHasChanged();
 
     }
 
 
-    private async void BatchEdit(RecipeModels batch)
+
+    private async void BatchEdit()
     {
+
+        List<string> batch = new List<string>();
+
+        foreach(var variable in TableEdit.Edits)
+        {
+            batch.Add(variable.Name);
+        }
+
+
         string sql = query.RecipeUpdate(batch);
+        Debug.WriteLine(sql);
         await _db.EditRecipe(sql);
 
         sql = query.pix318();
         TableUpdate();
+
+        batch.Clear();
+        TableEdit.Edits.Clear();
     }
 
     public async void TableUpdate()
     {
 
+
         recipes = await _db.GetRecipes(Queries.sql);
         RecipeRead.Table = recipes;
-        //await InvokeAsync(StateHasChanged);
-        StateHasChanged();
+
+        TableList = format.Pix318Model(recipes);
+        RecipeRead.TableList = TableList;
+
+
+
+
+        try
+        {
+            StateHasChanged();
+        }
+        catch
+        {
+            
+        }StateHasChanged();
     }
 
- 
+
 
     public void FilterUpdate()
     {
@@ -196,8 +248,22 @@ using BlazorDateRangePicker;
         }
     }
 
+    public void EditUpdate(List<string> batch)
+    {
 
+    }
 
+    //private void CheckInput(KeyboardEventArgs keyEvent)
+    //{
+    //    if(keyEvent.Key == "Enter")
+    //    {
+    //        Debug.WriteLine(N);
+    //        RecipeEdit.Insert(N, Edit);
+    //    }
+
+    //}
+
+   
 
 #line default
 #line hidden

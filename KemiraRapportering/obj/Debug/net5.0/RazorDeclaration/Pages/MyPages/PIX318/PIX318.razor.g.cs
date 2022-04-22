@@ -127,7 +127,8 @@ using BlazorDateRangePicker;
     private List<RecipeModels> recipes;
     private RecipeModels RecipeEdit = new RecipeModels();
     public filtering[] filter = new filtering[30];
-
+    public DataFormatter format = new DataFormatter();
+    public List<List<string>> TableList = new List<List<string>>();
 
 
     Queries query = new Queries();
@@ -159,55 +160,26 @@ using BlazorDateRangePicker;
 <<<<<<< Updated upstream
     }
 
-    //public async void TableUpdate()
-    //{
-
-    //    recipes = await _db.GetRecipes(Queries.sql);
-    //    RecipeRead.Table = recipes;
-    //    //await InvokeAsync(StateHasChanged);
-    //    try
-    //    {
-    //        StateHasChanged();
-    //    }
-    //    catch
-    //    {
-=======
-
-
-
-        recipes = await _db.GetRecipes(sql);
-
-        //Debug.WriteLine("Test" + recipes[0].BatchNr);
-        //TableList = format.Pix318Model(recipes);
-
-
-        //RecipeRead.TableList = TableList;
-        //RecipeRead.Table = recipes;
-        //TableUpdate();
-
-    }
-
     public async void TableUpdate()
     {
 
         recipes = await _db.GetRecipes(Queries.sql);
-        TableList = format.Pix318Model(recipes);
-
         RecipeRead.Table = recipes;
+
+        TableList = format.Pix318Model(recipes);
         RecipeRead.TableList = TableList;
 
-        //await InvokeAsync(StateHasChanged);
+        
         try
         {
             StateHasChanged();
         }
         catch
         {
->>>>>>> Stashed changes
             
-    //    }
+        }
 
-    //}
+    }
 
     private void UpdateFilter(filtering[] _filter)
     {
