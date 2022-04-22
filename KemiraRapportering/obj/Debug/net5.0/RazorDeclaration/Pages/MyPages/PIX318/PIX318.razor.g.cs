@@ -157,13 +157,30 @@ using BlazorDateRangePicker;
         filter[25].sort = true;
         filter[26].sort = true;
 
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
+//=======
+
+
+
+//        recipes = await _db.GetRecipes(sql);
+
+//        //Debug.WriteLine("Test" + recipes[0].BatchNr);
+//        //TableList = format.Pix318Model(recipes);
+
+
+//        //RecipeRead.TableList = TableList;
+//        //RecipeRead.Table = recipes;
+//        //TableUpdate();
+
+//>>>>>>> Stashed changes
     }
 
     public async void TableUpdate()
     {
 
         recipes = await _db.GetRecipes(Queries.sql);
+        TableList = format.Pix318Model(recipes);
+
         RecipeRead.Table = recipes;
 
         TableList = format.Pix318Model(recipes);

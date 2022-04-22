@@ -125,7 +125,7 @@ using System.Diagnostics;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 98 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
+#line 102 "C:\Users\isak.skeie\source\repos\Kemira\KemiraRapportering\Pages\MyPages\PIX318\Tables.razor"
        
     public List<string> RecipeEdit;
     private List<RecipeModels> recipes;
@@ -152,19 +152,12 @@ using System.Diagnostics;
 
     protected override async Task OnInitializedAsync()
     {
-        string sql = query.pix318();
 
-        TableUpdate();
-=======
-      
-    
-        
-    
         TableUpdate();
 
     }
-    
-    private void EnableEditing(bool flag, RecipeModels batch)
+
+    private void EnableEditing(bool flag, List<string> batch)
     {
         if(flag)
         {
@@ -186,84 +179,11 @@ using System.Diagnostics;
 
         }
 
+}
 
         StateHasChanged();
 
-    }
-
-
-
-    private async void BatchEdit()
-    {
-
-        List<string> batch = new List<string>();
-
-        foreach(var variable in TableEdit.Edits)
-        {
-            batch.Add(variable.Name);
-        }
-
-
-        string sql = query.RecipeUpdate(batch);
-        Debug.WriteLine(sql);
-        await _db.EditRecipe(sql);
-
-        sql = query.pix318();
-        TableUpdate();
-
-        batch.Clear();
-        TableEdit.Edits.Clear();
-    }
-
-    public async void TableUpdate()
-    {
-
-
-        recipes = await _db.GetRecipes(Queries.sql);
-        RecipeRead.Table = recipes;
-
-        TableList = format.Pix318Model(recipes);
-        RecipeRead.TableList = TableList;
-
-
-
-
-        try
-        {
-            StateHasChanged();
-        }
-        catch
-        {
-            
-        }StateHasChanged();
-    }
-
-
-
-    public void FilterUpdate()
-    {
-        for(int n = 0; n < TableLen-1; n++)
-        {
-            FilterModel.filter[n] = filter[n].sort;
-        }
-    }
-
-    public void EditUpdate(List<string> batch)
-    {
-
-    }
-
-    //private void CheckInput(KeyboardEventArgs keyEvent)
-    //{
-    //    if(keyEvent.Key == "Enter")
-    //    {
-    //        Debug.WriteLine(N);
-    //        RecipeEdit.Insert(N, Edit);
-    //    }
-
-    //}
-
-   
+    
 
 #line default
 #line hidden
