@@ -5,11 +5,9 @@
 
 @inject IRecipeData _db
 
-<<<<<<< Updated upstream
+
 @if (recipes is null)
-=======
-@if (RecipeRead.TableList is null)
->>>>>>> Stashed changes
+
 {
     <p><em>Loading....</em></p>
 }
@@ -152,19 +150,20 @@ else
 
         }
 
+    StateHasChanged();
 }
 
-        StateHasChanged();
+        
 
-    }
+    
 
 
 
     private async void BatchEdit()
     {
-        string sql = query.pix318();
+        
 
-        recipes = await _db.GetRecipes(sql);
+      
 
         RecipeRead.Table = recipes;
         TableUpdate();
