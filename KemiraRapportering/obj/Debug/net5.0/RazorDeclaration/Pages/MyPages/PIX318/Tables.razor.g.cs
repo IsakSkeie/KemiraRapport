@@ -159,6 +159,7 @@ using System.Diagnostics;
 
     private void EnableEditing(bool flag, List<string> batch)
     {
+        Debug.WriteLine(flag);
         if(flag)
         {
             batch[31] = "True";
@@ -174,9 +175,10 @@ using System.Diagnostics;
                 TableEdit.Edits.Add(_Entry);
             }
 
-
-
-
+        }
+        else
+        {
+            batch[31] = "False";
         }
 
     StateHasChanged();

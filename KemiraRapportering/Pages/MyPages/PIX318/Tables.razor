@@ -130,6 +130,7 @@ else
 
     private void EnableEditing(bool flag, List<string> batch)
     {
+        
         if(flag)
         {
             batch[31] = "True";
@@ -145,9 +146,10 @@ else
                 TableEdit.Edits.Add(_Entry);
             }
 
-
-
-
+        }
+        else
+        {
+            batch[31] = "False";
         }
 
     StateHasChanged();
